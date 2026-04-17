@@ -3,20 +3,34 @@ info:
   # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: Hope Alive Children Spring Foundation API
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: donations
+    description: Donation operations
+  - name: contacts
+    description: Contact form operations
+  - name: admin
+    description: Admin operations
+  - name: content
+    description: Dynamic content management
+  - name: gallery
+    description: Gallery management
+  - name: faqs
+    description: FAQ management
+  - name: analytics
+    description: Analytics and summaries
+
 paths:
   /healthz:
     get:
       operationId: healthCheck
       tags: [health]
       summary: Health check
-      description: Returns server health status
       responses:
         "200":
           description: Healthy
@@ -24,6 +38,405 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+
+  /donations:
+    post:
+      operationId: createDonation
+      tags: [donations]
+      summary: Create a donation record
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateDonationBody"
+      responses:
+        "201":
+          description: Donation created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Donation"
+        "400":
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /donations/verify-stripe:
+    post:
+      operationId: verifyStripePayment
+      tags: [donations]
+      summary: Verify Stripe payment session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/VerifyStripeBody"
+      responses:
+        "200":
+          description: Payment verified
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Donation"
+
+  /donations/create-stripe-session:
+    post:
+      operationId: createStripeSession
+      tags: [donations]
+      summary: Create Stripe checkout session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateStripeSessionBody"
+      responses:
+        "200":
+          description: Session created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StripeSessionResponse"
+
+  /admin/donations:
+    get:
+      operationId: adminListDonations
+      tags: [admin]
+      summary: List all donations (admin)
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+        - name: method
+          in: query
+          schema:
+            type: string
+            enum: [stripe, paypal, korapay, bank_transfer]
+      responses:
+        "200":
+          description: List of donations
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DonationListResponse"
+        "401":
+          description: Unauthorized
+
+  /admin/login:
+    post:
+      operationId: adminLogin
+      tags: [admin]
+      summary: Admin login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AdminLoginBody"
+      responses:
+        "200":
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AdminLoginResponse"
+        "401":
+          description: Invalid credentials
+
+  /admin/logout:
+    post:
+      operationId: adminLogout
+      tags: [admin]
+      summary: Admin logout
+      responses:
+        "200":
+          description: Logged out
+
+  /admin/me:
+    get:
+      operationId: adminMe
+      tags: [admin]
+      summary: Get current admin session
+      responses:
+        "200":
+          description: Admin session info
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AdminSession"
+        "401":
+          description: Not authenticated
+
+  /admin/analytics:
+    get:
+      operationId: adminGetAnalytics
+      tags: [analytics]
+      summary: Get donation analytics and summary stats
+      responses:
+        "200":
+          description: Analytics data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AnalyticsResponse"
+        "401":
+          description: Unauthorized
+
+  /admin/contacts:
+    get:
+      operationId: adminListContacts
+      tags: [admin]
+      summary: List contact form submissions (admin)
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+      responses:
+        "200":
+          description: List of contacts
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactListResponse"
+        "401":
+          description: Unauthorized
+
+  /admin/gallery:
+    get:
+      operationId: adminListGallery
+      tags: [gallery]
+      summary: List all gallery images (admin)
+      responses:
+        "200":
+          description: Gallery images
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GalleryListResponse"
+        "401":
+          description: Unauthorized
+    post:
+      operationId: adminCreateGalleryImage
+      tags: [gallery]
+      summary: Add a gallery image (admin)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateGalleryImageBody"
+      responses:
+        "201":
+          description: Image added
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GalleryImage"
+        "401":
+          description: Unauthorized
+
+  /admin/gallery/{id}:
+    delete:
+      operationId: adminDeleteGalleryImage
+      tags: [gallery]
+      summary: Delete a gallery image (admin)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Deleted
+        "401":
+          description: Unauthorized
+
+  /admin/faqs:
+    get:
+      operationId: adminListFaqs
+      tags: [faqs]
+      summary: List all FAQs (admin)
+      responses:
+        "200":
+          description: FAQs list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FaqListResponse"
+        "401":
+          description: Unauthorized
+    post:
+      operationId: adminCreateFaq
+      tags: [faqs]
+      summary: Create a FAQ (admin)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateFaqBody"
+      responses:
+        "201":
+          description: FAQ created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Faq"
+        "401":
+          description: Unauthorized
+
+  /admin/faqs/{id}:
+    put:
+      operationId: adminUpdateFaq
+      tags: [faqs]
+      summary: Update a FAQ (admin)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateFaqBody"
+      responses:
+        "200":
+          description: FAQ updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Faq"
+    delete:
+      operationId: adminDeleteFaq
+      tags: [faqs]
+      summary: Delete a FAQ (admin)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Deleted
+
+  /contacts:
+    post:
+      operationId: submitContact
+      tags: [contacts]
+      summary: Submit a contact form
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateContactBody"
+      responses:
+        "201":
+          description: Contact submitted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Contact"
+        "400":
+          description: Validation error
+
+  /gallery:
+    get:
+      operationId: listGallery
+      tags: [gallery]
+      summary: List public gallery images
+      responses:
+        "200":
+          description: Gallery images
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GalleryListResponse"
+
+  /faqs:
+    get:
+      operationId: listFaqs
+      tags: [faqs]
+      summary: List public FAQs
+      responses:
+        "200":
+          description: FAQs
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FaqListResponse"
+
+  /content/{key}:
+    get:
+      operationId: getContent
+      tags: [content]
+      summary: Get dynamic content by key
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Content value
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContentItem"
+        "404":
+          description: Not found
+
+  /admin/content/{key}:
+    put:
+      operationId: adminUpdateContent
+      tags: [content]
+      summary: Update dynamic content by key (admin)
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateContentBody"
+      responses:
+        "200":
+          description: Content updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContentItem"
+        "401":
+          description: Unauthorized
+
 components:
   schemas:
     HealthStatus:
@@ -31,6 +444,352 @@ components:
       properties:
         status:
           type: string
-      required:
-        - status
+      required: [status]
 
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+      required: [error]
+
+    Donation:
+      type: object
+      properties:
+        id:
+          type: integer
+        donorName:
+          type: string
+          nullable: true
+        donorEmail:
+          type: string
+          nullable: true
+        donorPhone:
+          type: string
+          nullable: true
+        amount:
+          type: number
+        currency:
+          type: string
+        paymentMethod:
+          type: string
+          enum: [stripe, paypal, korapay, bank_transfer]
+        paymentStatus:
+          type: string
+          enum: [pending, completed, failed]
+        transactionId:
+          type: string
+          nullable: true
+        purpose:
+          type: string
+          nullable: true
+        isAnonymous:
+          type: boolean
+        createdAt:
+          type: string
+      required: [id, amount, currency, paymentMethod, paymentStatus, isAnonymous, createdAt]
+
+    CreateDonationBody:
+      type: object
+      properties:
+        donorName:
+          type: string
+          nullable: true
+        donorEmail:
+          type: string
+          nullable: true
+        donorPhone:
+          type: string
+          nullable: true
+        amount:
+          type: number
+        currency:
+          type: string
+          default: NGN
+        paymentMethod:
+          type: string
+          enum: [stripe, paypal, korapay, bank_transfer]
+        transactionId:
+          type: string
+          nullable: true
+        purpose:
+          type: string
+          nullable: true
+        isAnonymous:
+          type: boolean
+          default: false
+      required: [amount, currency, paymentMethod]
+
+    VerifyStripeBody:
+      type: object
+      properties:
+        sessionId:
+          type: string
+      required: [sessionId]
+
+    CreateStripeSessionBody:
+      type: object
+      properties:
+        amount:
+          type: number
+        currency:
+          type: string
+          default: usd
+        donorName:
+          type: string
+          nullable: true
+        donorEmail:
+          type: string
+          nullable: true
+        donorPhone:
+          type: string
+          nullable: true
+        purpose:
+          type: string
+          nullable: true
+        isAnonymous:
+          type: boolean
+          default: false
+      required: [amount, currency]
+
+    StripeSessionResponse:
+      type: object
+      properties:
+        sessionId:
+          type: string
+        url:
+          type: string
+      required: [sessionId, url]
+
+    DonationListResponse:
+      type: object
+      properties:
+        donations:
+          type: array
+          items:
+            $ref: "#/components/schemas/Donation"
+        total:
+          type: integer
+        page:
+          type: integer
+        limit:
+          type: integer
+      required: [donations, total, page, limit]
+
+    AdminLoginBody:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+      required: [username, password]
+
+    AdminLoginResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+      required: [success, message]
+
+    AdminSession:
+      type: object
+      properties:
+        username:
+          type: string
+        isAdmin:
+          type: boolean
+      required: [username, isAdmin]
+
+    AnalyticsResponse:
+      type: object
+      properties:
+        totalDonations:
+          type: integer
+        totalAmount:
+          type: number
+        totalDonors:
+          type: integer
+        methodBreakdown:
+          type: array
+          items:
+            type: object
+            properties:
+              method:
+                type: string
+              count:
+                type: integer
+              total:
+                type: number
+            required: [method, count, total]
+        monthlyTotals:
+          type: array
+          items:
+            type: object
+            properties:
+              month:
+                type: string
+              total:
+                type: number
+              count:
+                type: integer
+            required: [month, total, count]
+        recentDonations:
+          type: array
+          items:
+            $ref: "#/components/schemas/Donation"
+      required: [totalDonations, totalAmount, totalDonors, methodBreakdown, monthlyTotals, recentDonations]
+
+    Contact:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+          nullable: true
+        subject:
+          type: string
+        message:
+          type: string
+        createdAt:
+          type: string
+      required: [id, name, email, subject, message, createdAt]
+
+    CreateContactBody:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+          nullable: true
+        subject:
+          type: string
+        message:
+          type: string
+        honeypot:
+          type: string
+          nullable: true
+      required: [name, email, subject, message]
+
+    ContactListResponse:
+      type: object
+      properties:
+        contacts:
+          type: array
+          items:
+            $ref: "#/components/schemas/Contact"
+        total:
+          type: integer
+        page:
+          type: integer
+        limit:
+          type: integer
+      required: [contacts, total, page, limit]
+
+    GalleryImage:
+      type: object
+      properties:
+        id:
+          type: integer
+        url:
+          type: string
+        caption:
+          type: string
+          nullable: true
+        category:
+          type: string
+          nullable: true
+        sortOrder:
+          type: integer
+        createdAt:
+          type: string
+      required: [id, url, sortOrder, createdAt]
+
+    CreateGalleryImageBody:
+      type: object
+      properties:
+        url:
+          type: string
+        caption:
+          type: string
+          nullable: true
+        category:
+          type: string
+          nullable: true
+        sortOrder:
+          type: integer
+          default: 0
+      required: [url]
+
+    GalleryListResponse:
+      type: object
+      properties:
+        images:
+          type: array
+          items:
+            $ref: "#/components/schemas/GalleryImage"
+      required: [images]
+
+    Faq:
+      type: object
+      properties:
+        id:
+          type: integer
+        question:
+          type: string
+        answer:
+          type: string
+        sortOrder:
+          type: integer
+        createdAt:
+          type: string
+      required: [id, question, answer, sortOrder, createdAt]
+
+    CreateFaqBody:
+      type: object
+      properties:
+        question:
+          type: string
+        answer:
+          type: string
+        sortOrder:
+          type: integer
+          default: 0
+      required: [question, answer]
+
+    FaqListResponse:
+      type: object
+      properties:
+        faqs:
+          type: array
+          items:
+            $ref: "#/components/schemas/Faq"
+      required: [faqs]
+
+    ContentItem:
+      type: object
+      properties:
+        key:
+          type: string
+        value:
+          type: string
+        updatedAt:
+          type: string
+      required: [key, value, updatedAt]
+
+    UpdateContentBody:
+      type: object
+      properties:
+        value:
+          type: string
+      required: [value]
