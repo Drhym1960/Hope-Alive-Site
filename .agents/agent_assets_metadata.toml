@@ -1,0 +1,56 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "b_PEnNvj8_MmHmXDw5Xkl"
+uri = "file://attached_assets/file_00000000154c71f8802d096fc6badf85_1776680948852.png"
+type = "image"
+title = "1. Children with Founder at Foundation Banner"
+
+[[outputs]]
+id = "tqWrEEERJZhUzXWyJmM_O"
+uri = "file://attached_assets/file_000000008a3071fda53a3064120eff69_1776680948914.png"
+type = "image"
+title = "2. Children with Foundation Motto Banner"
+
+[[outputs]]
+id = "OsrX-kNEq3ZFpyEZtMFIy"
+uri = "file://attached_assets/file_00000000ded871fda53d594c47cbf94d_1776680948937.png"
+type = "image"
+title = "3. Distribution Day — Gifts for Every Child"
+
+[[outputs]]
+id = "hjOV23L0f49rNYzVIDuuk"
+uri = "file://attached_assets/file_00000000c7c071fdaf3524db2a32f965_1776680948966.png"
+type = "image"
+title = "4. Joyful Moments with the Boys"
+
+[[outputs]]
+id = "8EMOTLN3yX-FDg0BjvMo1"
+uri = "file://attached_assets/file_000000003cf871f8942273e913213d6a_1776680949002.png"
+type = "image"
+title = "5. Young Men at Gidan Bege — House of Hope"
+
+[[outputs]]
+id = "r7P7Q_pFtOUg2-JVXNWVE"
+uri = "file://attached_assets/file_000000006b2871fdb04677d531835d82_1776680949100.png"
+type = "image"
+title = "6. Visiting Children in the Community"
+
+[[outputs]]
+id = "4euWTU6OE3dikNrQfKmUG"
+uri = "file://attached_assets/file_0000000088e871f89d623d0d5717e70b_1776680949139.png"
+type = "image"
+title = "7. Children Celebrating Together"
+
+[[outputs]]
+id = "OfA5Nhl31FTcP23a4oZVm"
+uri = "file://attached_assets/file_00000000eeb471f887e0f300041016ed_1776680949165.png"
+type = "image"
+title = "8. Family Bonds — Love and Trust"
+
+[[outputs]]
+id = "bIMUjsYD6B03kva5G-S8v"
+uri = "file://attached_assets/file_00000000457071f89c08e9b7f1dfab87_1776680949210.png"
+type = "image"
+title = "9. A Bright Smile from One of Our Girls"
