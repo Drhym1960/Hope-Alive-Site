@@ -56,17 +56,8 @@ donationsRouter.post("/create-stripe-session", async (req: Request, res: Respons
   const stripe = new Stripe(stripeKey);
 
   const data = parse.data;
-  const sourceCurrency = (data.currency ?? "NGN").toUpperCase();
-  const stripeCurrency = (process.env["STRIPE_CURRENCY"] ?? "gbp").toLowerCase();
-  const ngnToStripeRate = Number(process.env["NGN_TO_STRIPE_RATE"] ?? "2100");
-
-  let chargeAmount = data.amount;
-  if (sourceCurrency === "NGN" && stripeCurrency !== "ngn") {
-    chargeAmount = data.amount / ngnToStripeRate;
-  }
-  const minCharge = stripeCurrency === "gbp" ? 0.5 : stripeCurrency === "usd" ? 0.5 : 1;
-  if (chargeAmount < minCharge) chargeAmount = minCharge;
-  const amountCents = Math.round(chargeAmount * 100);
+  const stripeCurrency = (data.currency ?? "GBP").toLowerCase();
+  const amountCents = Math.round(data.amount * 100);
 
   const domains = process.env["REPLIT_DOMAINS"]?.split(",")[0];
   const baseUrl = domains ? `https://${domains}` : "http://localhost:80";
@@ -82,9 +73,7 @@ donationsRouter.post("/create-stripe-session", async (req: Request, res: Respons
             currency: stripeCurrency,
             product_data: {
               name: "Donation to Hope Alive Children Spring Foundation",
-              description: sourceCurrency === "NGN"
-                ? `${data.purpose || "Supporting orphans and vulnerable children"} (₦${data.amount.toLocaleString()} converted)`
-                : (data.purpose || "Supporting orphans and vulnerable children"),
+              description: data.purpose || "Supporting orphans and vulnerable children",
             },
             unit_amount: amountCents,
           },
@@ -96,8 +85,6 @@ donationsRouter.post("/create-stripe-session", async (req: Request, res: Respons
         donorPhone: data.donorPhone ?? "",
         purpose: data.purpose ?? "",
         isAnonymous: String(data.isAnonymous ?? false),
-        originalAmount: String(data.amount),
-        originalCurrency: sourceCurrency,
       },
       success_url: `${baseUrl}/donate/thank-you?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${baseUrl}/donate`,
@@ -144,15 +131,15 @@ donationsRouter.post("/verify-stripe", async (req: Request, res: Response) => {
     }
 
     const meta = session.metadata ?? {};
-    const originalAmount = meta.originalAmount ? Number(meta.originalAmount) : (session.amount_total ?? 0) / 100;
-    const originalCurrency = meta.originalCurrency || (session.currency ?? "gbp").toUpperCase();
+    const paidAmount = (session.amount_total ?? 0) / 100;
+    const paidCurrency = (session.currency ?? "gbp").toUpperCase();
 
     const [donation] = await db.insert(donationsTable).values({
       donorName: meta.donorName || null,
       donorEmail: session.customer_email || null,
       donorPhone: meta.donorPhone || null,
-      amount: String(originalAmount),
-      currency: originalCurrency,
+      amount: String(paidAmount),
+      currency: paidCurrency,
       paymentMethod: "stripe",
       paymentStatus: "completed",
       transactionId: session.payment_intent as string | null,

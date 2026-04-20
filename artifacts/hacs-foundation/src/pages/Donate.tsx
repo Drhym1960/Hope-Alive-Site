@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -7,7 +7,9 @@ import { useCreateDonation, useCreateStripeSession } from "@workspace/api-client
 import { useLocation } from "wouter";
 import { SectionHeader } from "@/components/SectionHeader";
 
-const presetAmounts = [1000, 5000, 10000, 50000];
+const ngnPresets = [1000, 5000, 10000, 50000];
+const gbpPresets = [5, 20, 50, 100];
+const usdPresets = [5, 25, 50, 100];
 
 const donationSchema = z.object({
   donorName: z.string().optional(),
@@ -15,12 +17,18 @@ const donationSchema = z.object({
   donorPhone: z.string().optional(),
   purpose: z.string().optional(),
   isAnonymous: z.boolean().default(false),
-  amount: z.number().min(100, "Minimum donation is ₦100"),
+  amount: z.number().min(1, "Please enter an amount"),
   currency: z.string().default("NGN"),
   paymentMethod: z.enum(["stripe", "paypal", "korapay", "bank_transfer"]),
 });
 
 type DonationForm = z.infer<typeof donationSchema>;
+
+const currencyForMethod = (m: string): { code: "NGN" | "GBP" | "USD"; symbol: string; presets: number[]; defaultAmt: number } => {
+  if (m === "stripe") return { code: "GBP", symbol: "£", presets: gbpPresets, defaultAmt: 20 };
+  if (m === "paypal") return { code: "USD", symbol: "$", presets: usdPresets, defaultAmt: 25 };
+  return { code: "NGN", symbol: "₦", presets: ngnPresets, defaultAmt: 5000 };
+};
 
 export default function Donate() {
   const [, navigate] = useLocation();
@@ -44,6 +52,16 @@ export default function Donate() {
 
   const paymentMethod = watch("paymentMethod");
   const isAnonymous = watch("isAnonymous");
+  const cur = currencyForMethod(paymentMethod);
+
+  // Reset amount when payment method changes (since currency changes)
+  useEffect(() => {
+    setSelectedPreset(cur.defaultAmt);
+    setCustomAmount("");
+    setValue("amount", cur.defaultAmt);
+    setValue("currency", cur.code);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [paymentMethod]);
 
   const handlePresetSelect = (amt: number) => {
     setSelectedPreset(amt);
@@ -66,7 +84,7 @@ export default function Donate() {
       if (data.paymentMethod === "stripe") {
         const session = await createStripeSession.mutateAsync({ data: {
           amount: data.amount,
-          currency: "NGN",
+          currency: "GBP",
           donorName: data.isAnonymous ? null : (data.donorName || null),
           donorEmail: data.donorEmail || null,
           donorPhone: data.donorPhone || null,
@@ -149,9 +167,9 @@ export default function Donate() {
                 <form onSubmit={handleSubmit(onSubmit)} className="bg-card border border-border rounded-3xl p-8 shadow-sm space-y-8">
                   {/* Amount */}
                   <div>
-                    <h3 className="font-serif text-xl font-semibold text-foreground mb-4">Choose Amount</h3>
+                    <h3 className="font-serif text-xl font-semibold text-foreground mb-4">Choose Amount <span className="text-sm font-normal text-muted-foreground">({cur.code})</span></h3>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
-                      {presetAmounts.map((amt) => (
+                      {cur.presets.map((amt) => (
                         <button
                           key={amt}
                           type="button"
@@ -162,12 +180,12 @@ export default function Donate() {
                               : "border-border text-foreground hover:border-primary hover:bg-primary/5"
                           }`}
                         >
-                          ₦{amt.toLocaleString()}
+                          {cur.symbol}{amt.toLocaleString()}
                         </button>
                       ))}
                     </div>
                     <div className="relative">
-                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground font-semibold">₦</span>
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground font-semibold">{cur.symbol}</span>
                       <input
                         type="text"
                         placeholder="Enter custom amount"

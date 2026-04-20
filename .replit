@@ -34,5 +34,3 @@ externalPort = 3000
 [userenv]
 
 [userenv.shared]
-STRIPE_CURRENCY = "gbp"
-NGN_TO_STRIPE_RATE = "2100"
