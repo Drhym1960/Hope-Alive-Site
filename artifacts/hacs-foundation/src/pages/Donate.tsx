@@ -9,7 +9,6 @@ import { SectionHeader } from "@/components/SectionHeader";
 
 const ngnPresets = [1000, 5000, 10000, 50000];
 const gbpPresets = [5, 20, 50, 100];
-const usdPresets = [5, 25, 50, 100];
 
 const donationSchema = z.object({
   donorName: z.string().optional(),
@@ -24,9 +23,8 @@ const donationSchema = z.object({
 
 type DonationForm = z.infer<typeof donationSchema>;
 
-const currencyForMethod = (m: string): { code: "NGN" | "GBP" | "USD"; symbol: string; presets: number[]; defaultAmt: number } => {
-  if (m === "stripe") return { code: "GBP", symbol: "£", presets: gbpPresets, defaultAmt: 20 };
-  if (m === "paypal") return { code: "USD", symbol: "$", presets: usdPresets, defaultAmt: 25 };
+const currencyForMethod = (m: string): { code: "NGN" | "GBP"; symbol: string; presets: number[]; defaultAmt: number } => {
+  if (m === "stripe" || m === "paypal") return { code: "GBP", symbol: "£", presets: gbpPresets, defaultAmt: 20 };
   return { code: "NGN", symbol: "₦", presets: ngnPresets, defaultAmt: 5000 };
 };
 
@@ -81,10 +79,11 @@ export default function Donate() {
     setError(null);
 
     try {
-      if (data.paymentMethod === "stripe") {
+      if (data.paymentMethod === "stripe" || data.paymentMethod === "paypal") {
         const session = await createStripeSession.mutateAsync({ data: {
           amount: data.amount,
           currency: "GBP",
+          method: data.paymentMethod === "paypal" ? "paypal" : "card",
           donorName: data.isAnonymous ? null : (data.donorName || null),
           donorEmail: data.donorEmail || null,
           donorPhone: data.donorPhone || null,
@@ -107,24 +106,6 @@ export default function Donate() {
           transactionId: null,
         }});
         navigate("/donate/thank-you");
-      } else if (data.paymentMethod === "paypal") {
-        await createDonation.mutateAsync({ data: {
-          amount: data.amount,
-          currency: "USD",
-          paymentMethod: "paypal",
-          donorName: data.isAnonymous ? null : (data.donorName || null),
-          donorEmail: data.donorEmail || null,
-          donorPhone: data.donorPhone || null,
-          purpose: data.purpose || null,
-          isAnonymous: data.isAnonymous,
-          transactionId: null,
-        }});
-        const ppKey = import.meta.env.VITE_PAYPAL_CLIENT_ID;
-        if (ppKey) {
-          window.open("https://www.paypal.com/donate", "_blank");
-        } else {
-          navigate("/donate/thank-you");
-        }
       } else if (data.paymentMethod === "korapay") {
         await createDonation.mutateAsync({ data: {
           amount: data.amount,
@@ -246,7 +227,7 @@ export default function Donate() {
                   {/* PayPal Notice */}
                   {paymentMethod === "paypal" && (
                     <div className="bg-blue-50 border border-blue-200 rounded-2xl p-4 text-sm text-blue-800">
-                      PayPal integration will redirect you to complete your donation on PayPal's secure platform. Fill your details below first.
+                      You'll be securely redirected to complete your donation through PayPal. Charges are processed in GBP.
                     </div>
                   )}
 

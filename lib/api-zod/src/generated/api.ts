@@ -58,11 +58,15 @@ export const VerifyStripePaymentResponse = zod.object({
  * @summary Create Stripe checkout session
  */
 export const createStripeSessionBodyCurrencyDefault = `usd`;
+export const createStripeSessionBodyMethodDefault = `card`;
 export const createStripeSessionBodyIsAnonymousDefault = false;
 
 export const CreateStripeSessionBody = zod.object({
   amount: zod.number(),
   currency: zod.string().default(createStripeSessionBodyCurrencyDefault),
+  method: zod
+    .enum(["card", "paypal"])
+    .default(createStripeSessionBodyMethodDefault),
   donorName: zod.string().nullish(),
   donorEmail: zod.string().nullish(),
   donorPhone: zod.string().nullish(),

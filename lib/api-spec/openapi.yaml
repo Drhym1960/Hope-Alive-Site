@@ -535,6 +535,10 @@ components:
         currency:
           type: string
           default: usd
+        method:
+          type: string
+          enum: [card, paypal]
+          default: card
         donorName:
           type: string
           nullable: true

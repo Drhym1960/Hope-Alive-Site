@@ -58,6 +58,8 @@ donationsRouter.post("/create-stripe-session", async (req: Request, res: Respons
   const data = parse.data;
   const stripeCurrency = (data.currency ?? "GBP").toLowerCase();
   const amountCents = Math.round(data.amount * 100);
+  const method = (data.method ?? "card") === "paypal" ? "paypal" : "card";
+  const paymentMethodTypes: ("card" | "paypal")[] = method === "paypal" ? ["paypal"] : ["card"];
 
   const domains = process.env["REPLIT_DOMAINS"]?.split(",")[0];
   const baseUrl = domains ? `https://${domains}` : "http://localhost:80";
@@ -65,7 +67,7 @@ donationsRouter.post("/create-stripe-session", async (req: Request, res: Respons
   try {
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
-      payment_method_types: ["card"],
+      payment_method_types: paymentMethodTypes,
       customer_email: data.donorEmail ?? undefined,
       line_items: [
         {
@@ -140,7 +142,7 @@ donationsRouter.post("/verify-stripe", async (req: Request, res: Response) => {
       donorPhone: meta.donorPhone || null,
       amount: String(paidAmount),
       currency: paidCurrency,
-      paymentMethod: "stripe",
+      paymentMethod: (session.payment_method_types?.[0] === "paypal") ? "paypal" : "stripe",
       paymentStatus: "completed",
       transactionId: session.payment_intent as string | null,
       purpose: meta.purpose || null,

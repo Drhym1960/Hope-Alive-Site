@@ -73,9 +73,18 @@ export interface VerifyStripeBody {
   sessionId: string;
 }
 
+export type CreateStripeSessionBodyMethod =
+  (typeof CreateStripeSessionBodyMethod)[keyof typeof CreateStripeSessionBodyMethod];
+
+export const CreateStripeSessionBodyMethod = {
+  card: "card",
+  paypal: "paypal",
+} as const;
+
 export interface CreateStripeSessionBody {
   amount: number;
   currency: string;
+  method?: CreateStripeSessionBodyMethod;
   donorName?: string | null;
   donorEmail?: string | null;
   donorPhone?: string | null;
