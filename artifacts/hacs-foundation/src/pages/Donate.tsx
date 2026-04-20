@@ -65,8 +65,8 @@ export default function Donate() {
     try {
       if (data.paymentMethod === "stripe") {
         const session = await createStripeSession.mutateAsync({ data: {
-          amount: data.amount / 100,
-          currency: "usd",
+          amount: data.amount,
+          currency: "NGN",
           donorName: data.isAnonymous ? null : (data.donorName || null),
           donorEmail: data.donorEmail || null,
           donorPhone: data.donorPhone || null,
