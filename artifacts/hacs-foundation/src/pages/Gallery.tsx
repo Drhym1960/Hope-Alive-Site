@@ -3,18 +3,32 @@ import { useListGallery } from "@workspace/api-client-react";
 import { getListGalleryQueryKey } from "@workspace/api-client-react";
 import { Link } from "wouter";
 
-const placeholderImages = [
-  { id: 1, url: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&q=80", caption: "Children at morning assembly", category: "Daily Life" },
-  { id: 2, url: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80", caption: "Education for every child", category: "Education" },
-  { id: 3, url: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&q=80", caption: "Community gathering", category: "Community" },
-  { id: 4, url: "https://images.unsplash.com/photo-1561484930-998b6a7b22e8?w=600&q=80", caption: "Meal time at the foundation", category: "Feeding Program" },
-  { id: 5, url: "https://images.unsplash.com/photo-1544717302-de2939b7ef71?w=600&q=80", caption: "Children in class", category: "Education" },
-  { id: 6, url: "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=600&q=80", caption: "Health check day", category: "Healthcare" },
+import img1 from "@assets/file_00000000154c71f8802d096fc6badf85_1776680948852.png";
+import img2 from "@assets/file_000000008a3071fda53a3064120eff69_1776680948914.png";
+import img3 from "@assets/file_00000000ded871fda53d594c47cbf94d_1776680948937.png";
+import img4 from "@assets/file_00000000c7c071fdaf3524db2a32f965_1776680948966.png";
+import img5 from "@assets/file_000000003cf871f8942273e913213d6a_1776680949002.png";
+import img6 from "@assets/file_000000006b2871fdb04677d531835d82_1776680949100.png";
+import img7 from "@assets/file_0000000088e871f89d623d0d5717e70b_1776680949139.png";
+import img8 from "@assets/file_00000000eeb471f887e0f300041016ed_1776680949165.png";
+import img9 from "@assets/file_00000000457071f89c08e9b7f1dfab87_1776680949210.png";
+
+const foundationImages = [
+  { id: 1, url: img1, caption: "Children with our founder at the foundation banner", category: "Our Family" },
+  { id: 2, url: img2, caption: "The children proudly displaying our motto: Giving Love a Chance", category: "Our Identity" },
+  { id: 3, url: img3, caption: "Distribution day — gifts for every child", category: "Outreach" },
+  { id: 4, url: img4, caption: "Joyful moments with the boys at the orphanage", category: "Daily Life" },
+  { id: 5, url: img5, caption: "Our young men at Gidan Bege — House of Hope", category: "Our Family" },
+  { id: 6, url: img6, caption: "Visiting children in the community", category: "Community Outreach" },
+  { id: 7, url: img7, caption: "Children celebrating together", category: "Daily Life" },
+  { id: 8, url: img8, caption: "Family bonds built on love and trust", category: "Our Family" },
+  { id: 9, url: img9, caption: "A bright smile from one of our girls", category: "Voices of Hope" },
 ];
 
 export default function Gallery() {
   const { data, isLoading } = useListGallery({ query: { queryKey: getListGalleryQueryKey() } });
-  const images = data?.images?.length ? data.images : placeholderImages;
+  const adminImages = data?.images ?? [];
+  const allImages = [...foundationImages, ...adminImages];
 
   return (
     <Layout>
@@ -24,7 +38,7 @@ export default function Gallery() {
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Our Story in Pictures</p>
             <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-4">Gallery & Impact</h1>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
-              A glimpse into the lives we are touching every day — children laughing, learning, growing, and thriving.
+              A glimpse into the lives we are touching every day — children laughing, learning, growing, and thriving at Hope Alive Children Spring Foundation.
             </p>
           </div>
         </section>
@@ -39,16 +53,18 @@ export default function Gallery() {
               </div>
             ) : (
               <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-                {images.map((img) => (
-                  <div key={img.id} className="break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
-                    <img
-                      src={img.url}
-                      alt={img.caption || "HACS Foundation"}
-                      className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
+                {allImages.map((img) => (
+                  <div key={img.id} className="break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group bg-card border border-border">
+                    <div className="overflow-hidden">
+                      <img
+                        src={img.url}
+                        alt={img.caption || "HACS Foundation"}
+                        className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                    </div>
                     {img.caption && (
-                      <div className="bg-card border border-border px-4 py-3">
+                      <div className="px-4 py-3">
                         <p className="text-sm text-foreground font-medium">{img.caption}</p>
                         {img.category && <p className="text-xs text-muted-foreground mt-0.5">{img.category}</p>}
                       </div>
