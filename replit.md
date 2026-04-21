@@ -26,7 +26,7 @@ pnpm workspace monorepo with:
 - **API framework**: Express 5
 - **Database**: PostgreSQL + Drizzle ORM
 - **Auth**: Session-based admin auth (express-session). Env: ADMIN_USERNAME / ADMIN_PASSWORD (default: admin / hacsadmin2024)
-- **Payment**: Stripe checkout sessions (graceful 503 if STRIPE_SECRET_KEY not set), bank transfer, PayPal, KoraPay stubs
+- **Payment**: Stripe Checkout for Card (GBP) and PayPal (GBP via Stripe), KoraPay (NGN, card/bank/USSD/mobile money) for the "Pay Online (Naira)" flow, plus Zenith Bank manual transfer details shown as fallback. Donations are recorded with `paymentStatus: pending` and verified after redirect.
 - **Email**: Nodemailer (admin at hacs1960@gmail.com, foundation at hacsfoundation10@gmail.com)
 - **Validation**: Zod, drizzle-zod, react-hook-form
 - **API codegen**: Orval (from OpenAPI spec)

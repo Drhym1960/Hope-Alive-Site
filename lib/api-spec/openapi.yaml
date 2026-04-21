@@ -102,6 +102,48 @@ paths:
               schema:
                 $ref: "#/components/schemas/StripeSessionResponse"
 
+  /donations/create-korapay-charge:
+    post:
+      operationId: createKorapayCharge
+      tags: [donations]
+      summary: Create KoraPay checkout charge
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateKorapayChargeBody"
+      responses:
+        "200":
+          description: KoraPay checkout created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/KorapayChargeResponse"
+
+  /donations/verify-korapay:
+    post:
+      operationId: verifyKorapayPayment
+      tags: [donations]
+      summary: Verify a KoraPay payment by reference
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reference:
+                  type: string
+              required: [reference]
+      responses:
+        "200":
+          description: Payment verified
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Donation"
+
   /admin/donations:
     get:
       operationId: adminListDonations
@@ -526,6 +568,40 @@ components:
         sessionId:
           type: string
       required: [sessionId]
+
+    CreateKorapayChargeBody:
+      type: object
+      properties:
+        amount:
+          type: number
+        currency:
+          type: string
+          default: NGN
+        donorName:
+          type: string
+          nullable: true
+        donorEmail:
+          type: string
+          nullable: true
+        donorPhone:
+          type: string
+          nullable: true
+        purpose:
+          type: string
+          nullable: true
+        isAnonymous:
+          type: boolean
+          default: false
+      required: [amount]
+
+    KorapayChargeResponse:
+      type: object
+      properties:
+        reference:
+          type: string
+        checkoutUrl:
+          type: string
+      required: [reference, checkoutUrl]
 
     CreateStripeSessionBody:
       type: object

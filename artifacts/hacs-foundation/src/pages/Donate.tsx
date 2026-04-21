@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Layout from "@/components/Layout";
-import { useCreateDonation, useCreateStripeSession } from "@workspace/api-client-react";
+import { useCreateDonation, useCreateStripeSession, useCreateKorapayCharge } from "@workspace/api-client-react";
 import { useLocation } from "wouter";
 import { SectionHeader } from "@/components/SectionHeader";
 
@@ -18,7 +18,7 @@ const donationSchema = z.object({
   isAnonymous: z.boolean().default(false),
   amount: z.number().min(1, "Please enter an amount"),
   currency: z.string().default("NGN"),
-  paymentMethod: z.enum(["stripe", "paypal", "korapay", "bank_transfer"]),
+  paymentMethod: z.enum(["stripe", "paypal", "bank_transfer"]),
 });
 
 type DonationForm = z.infer<typeof donationSchema>;
@@ -26,6 +26,12 @@ type DonationForm = z.infer<typeof donationSchema>;
 const currencyForMethod = (m: string): { code: "NGN" | "GBP"; symbol: string; presets: number[]; defaultAmt: number } => {
   if (m === "stripe" || m === "paypal") return { code: "GBP", symbol: "£", presets: gbpPresets, defaultAmt: 20 };
   return { code: "NGN", symbol: "₦", presets: ngnPresets, defaultAmt: 5000 };
+};
+
+const methodLabel = (m: string) => {
+  if (m === "stripe") return "Card (Stripe)";
+  if (m === "paypal") return "PayPal";
+  return "Pay Online (Naira)";
 };
 
 export default function Donate() {
@@ -37,6 +43,7 @@ export default function Donate() {
 
   const createDonation = useCreateDonation();
   const createStripeSession = useCreateStripeSession();
+  const createKorapayCharge = useCreateKorapayCharge();
 
   const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm<DonationForm>({
     resolver: zodResolver(donationSchema),
@@ -94,31 +101,18 @@ export default function Donate() {
           window.location.href = session.url;
         }
       } else if (data.paymentMethod === "bank_transfer") {
-        await createDonation.mutateAsync({ data: {
+        const charge = await createKorapayCharge.mutateAsync({ data: {
           amount: data.amount,
           currency: "NGN",
-          paymentMethod: "bank_transfer",
           donorName: data.isAnonymous ? null : (data.donorName || null),
           donorEmail: data.donorEmail || null,
           donorPhone: data.donorPhone || null,
           purpose: data.purpose || null,
           isAnonymous: data.isAnonymous,
-          transactionId: null,
         }});
-        navigate("/donate/thank-you");
-      } else if (data.paymentMethod === "korapay") {
-        await createDonation.mutateAsync({ data: {
-          amount: data.amount,
-          currency: "NGN",
-          paymentMethod: "korapay",
-          donorName: data.isAnonymous ? null : (data.donorName || null),
-          donorEmail: data.donorEmail || null,
-          donorPhone: data.donorPhone || null,
-          purpose: data.purpose || null,
-          isAnonymous: data.isAnonymous,
-          transactionId: null,
-        }});
-        navigate("/donate/thank-you");
+        if (charge.checkoutUrl) {
+          window.location.href = charge.checkoutUrl;
+        }
       }
     } catch (err: any) {
       setError(err?.message || "Something went wrong. Please try again or use bank transfer.");
@@ -183,10 +177,9 @@ export default function Donate() {
                     <h3 className="font-serif text-xl font-semibold text-foreground mb-4">Payment Method</h3>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                       {[
-                        { value: "bank_transfer", label: "Bank Transfer" },
+                        { value: "bank_transfer", label: "Pay Online (Naira)" },
                         { value: "stripe", label: "Card (Stripe)" },
                         { value: "paypal", label: "PayPal" },
-                        { value: "korapay", label: "KoraPay" },
                       ].map((m) => (
                         <label key={m.value} className="cursor-pointer">
                           <input type="radio" value={m.value} {...register("paymentMethod")} className="sr-only" />
@@ -202,25 +195,11 @@ export default function Donate() {
                     </div>
                   </div>
 
-                  {/* Bank Transfer Info */}
+                  {/* Online Naira Payment Notice */}
                   {paymentMethod === "bank_transfer" && (
-                    <div className="bg-accent border border-border rounded-2xl p-6">
-                      <h4 className="font-semibold text-foreground mb-4">Bank Account Details</h4>
-                      <div className="space-y-3 text-sm">
-                        <div>
-                          <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Naira Account (Zenith Bank)</div>
-                          <div className="font-semibold text-foreground">Hope Alive Children Spring Foundation</div>
-                          <div className="font-mono text-primary text-lg font-bold">1224366497</div>
-                        </div>
-                        <div className="border-t border-border pt-3">
-                          <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Dollar Account</div>
-                          <div className="font-semibold text-foreground">Hope Alive Children Spring Foundation</div>
-                          <div className="font-mono text-primary text-lg font-bold">5074649270</div>
-                        </div>
-                      </div>
-                      <p className="text-xs text-muted-foreground mt-4">
-                        After making your transfer, fill the form below and click "Confirm Donation" so we can acknowledge your gift.
-                      </p>
+                    <div className="bg-green-50 border border-green-200 rounded-2xl p-5 text-sm text-green-900">
+                      <p className="font-semibold mb-1">Pay securely in Naira via card, bank transfer, USSD or mobile money.</p>
+                      <p className="text-green-800/90">You'll be redirected to our secure payment partner (KoraPay) to complete your donation. Prefer to transfer manually? Use the Zenith Bank details in the sidebar.</p>
                     </div>
                   )}
 
@@ -228,13 +207,6 @@ export default function Donate() {
                   {paymentMethod === "paypal" && (
                     <div className="bg-blue-50 border border-blue-200 rounded-2xl p-4 text-sm text-blue-800">
                       You'll be securely redirected to complete your donation through PayPal. Charges are processed in GBP.
-                    </div>
-                  )}
-
-                  {/* KoraPay Notice */}
-                  {paymentMethod === "korapay" && (
-                    <div className="bg-green-50 border border-green-200 rounded-2xl p-4 text-sm text-green-800">
-                      KoraPay is being set up. For now, your donation record will be saved and you will receive confirmation. You can also use Bank Transfer for immediate processing.
                     </div>
                   )}
 
@@ -287,7 +259,7 @@ export default function Donate() {
                     disabled={isSubmitting}
                     className="w-full py-4 bg-secondary text-secondary-foreground rounded-xl font-bold text-lg hover:bg-secondary/90 transition-all disabled:opacity-60 disabled:cursor-not-allowed donate-btn-pulse"
                   >
-                    {isSubmitting ? "Processing..." : paymentMethod === "bank_transfer" ? "Confirm Donation" : paymentMethod === "stripe" ? "Continue to Secure Payment" : `Donate with ${paymentMethod === "paypal" ? "PayPal" : "KoraPay"}`}
+                    {isSubmitting ? "Processing..." : `Donate ${cur.symbol}${(watch("amount") || 0).toLocaleString()} • ${methodLabel(paymentMethod)}`}
                   </button>
 
                   <p className="text-xs text-muted-foreground text-center">

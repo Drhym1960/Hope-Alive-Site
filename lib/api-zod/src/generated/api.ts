@@ -80,6 +80,49 @@ export const CreateStripeSessionResponse = zod.object({
 });
 
 /**
+ * @summary Create KoraPay checkout charge
+ */
+export const createKorapayChargeBodyCurrencyDefault = `NGN`;
+export const createKorapayChargeBodyIsAnonymousDefault = false;
+
+export const CreateKorapayChargeBody = zod.object({
+  amount: zod.number(),
+  currency: zod.string().default(createKorapayChargeBodyCurrencyDefault),
+  donorName: zod.string().nullish(),
+  donorEmail: zod.string().nullish(),
+  donorPhone: zod.string().nullish(),
+  purpose: zod.string().nullish(),
+  isAnonymous: zod.boolean().default(createKorapayChargeBodyIsAnonymousDefault),
+});
+
+export const CreateKorapayChargeResponse = zod.object({
+  reference: zod.string(),
+  checkoutUrl: zod.string(),
+});
+
+/**
+ * @summary Verify a KoraPay payment by reference
+ */
+export const VerifyKorapayPaymentBody = zod.object({
+  reference: zod.string(),
+});
+
+export const VerifyKorapayPaymentResponse = zod.object({
+  id: zod.number(),
+  donorName: zod.string().nullish(),
+  donorEmail: zod.string().nullish(),
+  donorPhone: zod.string().nullish(),
+  amount: zod.number(),
+  currency: zod.string(),
+  paymentMethod: zod.enum(["stripe", "paypal", "korapay", "bank_transfer"]),
+  paymentStatus: zod.enum(["pending", "completed", "failed"]),
+  transactionId: zod.string().nullish(),
+  purpose: zod.string().nullish(),
+  isAnonymous: zod.boolean(),
+  createdAt: zod.string(),
+});
+
+/**
  * @summary List all donations (admin)
  */
 export const adminListDonationsQueryPageDefault = 1;

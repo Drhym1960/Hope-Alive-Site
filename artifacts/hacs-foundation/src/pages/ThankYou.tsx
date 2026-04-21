@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import { useSearch, Link } from "wouter";
 import Layout from "@/components/Layout";
-import { useVerifyStripePayment } from "@workspace/api-client-react";
+import { useVerifyStripePayment, useVerifyKorapayPayment } from "@workspace/api-client-react";
 
 export default function ThankYou() {
   const search = useSearch();
   const params = new URLSearchParams(search);
   const sessionId = params.get("session_id");
+  const korapayRef = params.get("korapay_ref");
   const [verified, setVerified] = useState(false);
   const [donation, setDonation] = useState<any>(null);
 
   const verifyStripe = useVerifyStripePayment();
+  const verifyKorapay = useVerifyKorapayPayment();
 
   useEffect(() => {
     if (sessionId && !verified) {
@@ -20,10 +22,17 @@ export default function ThankYou() {
       }).catch(() => {
         setVerified(true);
       });
-    } else if (!sessionId) {
+    } else if (korapayRef && !verified) {
+      verifyKorapay.mutateAsync({ data: { reference: korapayRef } }).then((d) => {
+        setDonation(d);
+        setVerified(true);
+      }).catch(() => {
+        setVerified(true);
+      });
+    } else if (!sessionId && !korapayRef) {
       setVerified(true);
     }
-  }, [sessionId]);
+  }, [sessionId, korapayRef]);
 
   return (
     <Layout>

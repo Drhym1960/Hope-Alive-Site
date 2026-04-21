@@ -73,6 +73,21 @@ export interface VerifyStripeBody {
   sessionId: string;
 }
 
+export interface CreateKorapayChargeBody {
+  amount: number;
+  currency?: string;
+  donorName?: string | null;
+  donorEmail?: string | null;
+  donorPhone?: string | null;
+  purpose?: string | null;
+  isAnonymous?: boolean;
+}
+
+export interface KorapayChargeResponse {
+  reference: string;
+  checkoutUrl: string;
+}
+
 export type CreateStripeSessionBodyMethod =
   (typeof CreateStripeSessionBodyMethod)[keyof typeof CreateStripeSessionBodyMethod];
 
@@ -213,6 +228,10 @@ export interface ContentItem {
 export interface UpdateContentBody {
   value: string;
 }
+
+export type VerifyKorapayPaymentBody = {
+  reference: string;
+};
 
 export type AdminListDonationsParams = {
   page?: number;

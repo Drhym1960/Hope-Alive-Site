@@ -30,6 +30,7 @@ import type {
   CreateDonationBody,
   CreateFaqBody,
   CreateGalleryImageBody,
+  CreateKorapayChargeBody,
   CreateStripeSessionBody,
   Donation,
   DonationListResponse,
@@ -39,8 +40,10 @@ import type {
   GalleryImage,
   GalleryListResponse,
   HealthStatus,
+  KorapayChargeResponse,
   StripeSessionResponse,
   UpdateContentBody,
+  VerifyKorapayPaymentBody,
   VerifyStripeBody,
 } from "./api.schemas";
 
@@ -384,6 +387,179 @@ export const useCreateStripeSession = <
   TContext
 > => {
   return useMutation(getCreateStripeSessionMutationOptions(options));
+};
+
+/**
+ * @summary Create KoraPay checkout charge
+ */
+export const getCreateKorapayChargeUrl = () => {
+  return `/api/donations/create-korapay-charge`;
+};
+
+export const createKorapayCharge = async (
+  createKorapayChargeBody: CreateKorapayChargeBody,
+  options?: RequestInit,
+): Promise<KorapayChargeResponse> => {
+  return customFetch<KorapayChargeResponse>(getCreateKorapayChargeUrl(), {
+    ...options,
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...options?.headers },
+    body: JSON.stringify(createKorapayChargeBody),
+  });
+};
+
+export const getCreateKorapayChargeMutationOptions = <
+  TError = ErrorType<unknown>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof createKorapayCharge>>,
+    TError,
+    { data: BodyType<CreateKorapayChargeBody> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof createKorapayCharge>>,
+  TError,
+  { data: BodyType<CreateKorapayChargeBody> },
+  TContext
+> => {
+  const mutationKey = ["createKorapayCharge"];
+  const { mutation: mutationOptions, request: requestOptions } = options
+    ? options.mutation &&
+      "mutationKey" in options.mutation &&
+      options.mutation.mutationKey
+      ? options
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey }, request: undefined };
+
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof createKorapayCharge>>,
+    { data: BodyType<CreateKorapayChargeBody> }
+  > = (props) => {
+    const { data } = props ?? {};
+
+    return createKorapayCharge(data, requestOptions);
+  };
+
+  return { mutationFn, ...mutationOptions };
+};
+
+export type CreateKorapayChargeMutationResult = NonNullable<
+  Awaited<ReturnType<typeof createKorapayCharge>>
+>;
+export type CreateKorapayChargeMutationBody = BodyType<CreateKorapayChargeBody>;
+export type CreateKorapayChargeMutationError = ErrorType<unknown>;
+
+/**
+ * @summary Create KoraPay checkout charge
+ */
+export const useCreateKorapayCharge = <
+  TError = ErrorType<unknown>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof createKorapayCharge>>,
+    TError,
+    { data: BodyType<CreateKorapayChargeBody> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationResult<
+  Awaited<ReturnType<typeof createKorapayCharge>>,
+  TError,
+  { data: BodyType<CreateKorapayChargeBody> },
+  TContext
+> => {
+  return useMutation(getCreateKorapayChargeMutationOptions(options));
+};
+
+/**
+ * @summary Verify a KoraPay payment by reference
+ */
+export const getVerifyKorapayPaymentUrl = () => {
+  return `/api/donations/verify-korapay`;
+};
+
+export const verifyKorapayPayment = async (
+  verifyKorapayPaymentBody: VerifyKorapayPaymentBody,
+  options?: RequestInit,
+): Promise<Donation> => {
+  return customFetch<Donation>(getVerifyKorapayPaymentUrl(), {
+    ...options,
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...options?.headers },
+    body: JSON.stringify(verifyKorapayPaymentBody),
+  });
+};
+
+export const getVerifyKorapayPaymentMutationOptions = <
+  TError = ErrorType<unknown>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof verifyKorapayPayment>>,
+    TError,
+    { data: BodyType<VerifyKorapayPaymentBody> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof verifyKorapayPayment>>,
+  TError,
+  { data: BodyType<VerifyKorapayPaymentBody> },
+  TContext
+> => {
+  const mutationKey = ["verifyKorapayPayment"];
+  const { mutation: mutationOptions, request: requestOptions } = options
+    ? options.mutation &&
+      "mutationKey" in options.mutation &&
+      options.mutation.mutationKey
+      ? options
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey }, request: undefined };
+
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof verifyKorapayPayment>>,
+    { data: BodyType<VerifyKorapayPaymentBody> }
+  > = (props) => {
+    const { data } = props ?? {};
+
+    return verifyKorapayPayment(data, requestOptions);
+  };
+
+  return { mutationFn, ...mutationOptions };
+};
+
+export type VerifyKorapayPaymentMutationResult = NonNullable<
+  Awaited<ReturnType<typeof verifyKorapayPayment>>
+>;
+export type VerifyKorapayPaymentMutationBody =
+  BodyType<VerifyKorapayPaymentBody>;
+export type VerifyKorapayPaymentMutationError = ErrorType<unknown>;
+
+/**
+ * @summary Verify a KoraPay payment by reference
+ */
+export const useVerifyKorapayPayment = <
+  TError = ErrorType<unknown>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof verifyKorapayPayment>>,
+    TError,
+    { data: BodyType<VerifyKorapayPaymentBody> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationResult<
+  Awaited<ReturnType<typeof verifyKorapayPayment>>,
+  TError,
+  { data: BodyType<VerifyKorapayPaymentBody> },
+  TContext
+> => {
+  return useMutation(getVerifyKorapayPaymentMutationOptions(options));
 };
 
 /**

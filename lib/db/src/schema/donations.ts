@@ -15,6 +15,7 @@ export const donationsTable = pgTable("donations", {
   purpose: text("purpose"),
   isAnonymous: boolean("is_anonymous").notNull().default(false),
   stripeSessionId: text("stripe_session_id"),
+  korapayReference: text("korapay_reference"),
   createdAt: timestamp("created_at").notNull().defaultNow(),
 });
 
