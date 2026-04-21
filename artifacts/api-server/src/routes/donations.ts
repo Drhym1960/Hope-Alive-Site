@@ -6,6 +6,17 @@ import { sendAdminDonationNotification, sendDonorReceipt } from "../lib/email";
 
 export const donationsRouter = Router();
 
+function getPublicBaseUrl(req: Request): string {
+  const explicit = process.env["PUBLIC_BASE_URL"];
+  if (explicit) return explicit.replace(/\/$/, "");
+  const replitDomain = process.env["REPLIT_DOMAINS"]?.split(",")[0];
+  if (replitDomain) return `https://${replitDomain}`;
+  const forwardedHost = (req.headers["x-forwarded-host"] as string | undefined) || req.headers.host;
+  const forwardedProto = (req.headers["x-forwarded-proto"] as string | undefined) || (req.secure ? "https" : "http");
+  if (forwardedHost) return `${forwardedProto}://${forwardedHost}`;
+  return "http://localhost:80";
+}
+
 donationsRouter.post("/", async (req: Request, res: Response) => {
   const parse = CreateDonationBody.safeParse(req.body);
   if (!parse.success) {
@@ -61,8 +72,7 @@ donationsRouter.post("/create-stripe-session", async (req: Request, res: Respons
   const method = (data.method ?? "card") === "paypal" ? "paypal" : "card";
   const paymentMethodTypes: ("card" | "paypal")[] = method === "paypal" ? ["paypal"] : ["card"];
 
-  const domains = process.env["REPLIT_DOMAINS"]?.split(",")[0];
-  const baseUrl = domains ? `https://${domains}` : "http://localhost:80";
+  const baseUrl = getPublicBaseUrl(req);
 
   try {
     const session = await stripe.checkout.sessions.create({
@@ -175,8 +185,7 @@ donationsRouter.post("/create-korapay-charge", async (req: Request, res: Respons
 
   const data = parse.data;
   const reference = `HACS-${Date.now()}-${Math.floor(Math.random() * 100000)}`;
-  const domains = process.env["REPLIT_DOMAINS"]?.split(",")[0];
-  const baseUrl = domains ? `https://${domains}` : "http://localhost:80";
+  const baseUrl = getPublicBaseUrl(req);
 
   const payload = {
     amount: data.amount,
