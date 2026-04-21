@@ -101,6 +101,11 @@ export default function Donate() {
           window.location.href = session.url;
         }
       } else if (data.paymentMethod === "bank_transfer") {
+        if (!data.donorEmail || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.donorEmail)) {
+          setError("Please enter a valid email address — KoraPay requires it to send your receipt.");
+          setIsSubmitting(false);
+          return;
+        }
         const charge = await createKorapayCharge.mutateAsync({ data: {
           amount: data.amount,
           currency: "NGN",

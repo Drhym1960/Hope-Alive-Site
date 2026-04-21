@@ -7,7 +7,6 @@ import img1 from "@assets/file_00000000154c71f8802d096fc6badf85_1776680948852.pn
 import img2 from "@assets/file_000000008a3071fda53a3064120eff69_1776680948914.png";
 import img3 from "@assets/file_00000000ded871fda53d594c47cbf94d_1776680948937.png";
 import img4 from "@assets/file_00000000c7c071fdaf3524db2a32f965_1776680948966.png";
-import img5 from "@assets/file_000000003cf871f8942273e913213d6a_1776680949002.png";
 import img6 from "@assets/file_000000006b2871fdb04677d531835d82_1776680949100.png";
 import img7 from "@assets/file_0000000088e871f89d623d0d5717e70b_1776680949139.png";
 import img8 from "@assets/file_00000000eeb471f887e0f300041016ed_1776680949165.png";
@@ -18,7 +17,6 @@ const foundationImages = [
   { id: 2, url: img2, caption: "The children proudly displaying our motto: Giving Love a Chance", category: "Our Identity" },
   { id: 3, url: img3, caption: "Distribution day — gifts for every child", category: "Outreach" },
   { id: 4, url: img4, caption: "Joyful moments with the boys at the orphanage", category: "Daily Life" },
-  { id: 5, url: img5, caption: "Our young men at Gidan Bege — House of Hope", category: "Our Family" },
   { id: 6, url: img6, caption: "Visiting children in the community", category: "Community Outreach" },
   { id: 7, url: img7, caption: "Children celebrating together", category: "Daily Life" },
   { id: 8, url: img8, caption: "Family bonds built on love and trust", category: "Our Family" },

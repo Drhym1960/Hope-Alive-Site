@@ -12,7 +12,11 @@ function getPublicBaseUrl(req: Request): string {
   const replitDomain = process.env["REPLIT_DOMAINS"]?.split(",")[0];
   if (replitDomain) return `https://${replitDomain}`;
   const forwardedHost = (req.headers["x-forwarded-host"] as string | undefined) || req.headers.host;
-  const forwardedProto = (req.headers["x-forwarded-proto"] as string | undefined) || (req.secure ? "https" : "http");
+  // On Render/most prod hosts the public site is always HTTPS; force https in production.
+  const isProd = process.env["NODE_ENV"] === "production";
+  const forwardedProto = isProd
+    ? "https"
+    : ((req.headers["x-forwarded-proto"] as string | undefined) || (req.secure ? "https" : "http"));
   if (forwardedHost) return `${forwardedProto}://${forwardedHost}`;
   return "http://localhost:80";
 }
@@ -184,27 +188,39 @@ donationsRouter.post("/create-korapay-charge", async (req: Request, res: Respons
   }
 
   const data = parse.data;
-  const reference = `HACS-${Date.now()}-${Math.floor(Math.random() * 100000)}`;
+  // KoraPay requires alphanumeric/underscore-only references
+  const reference = `HACS_${Date.now()}_${Math.floor(Math.random() * 1000000)}`;
   const baseUrl = getPublicBaseUrl(req);
 
-  const payload = {
+  // KoraPay requires a valid email and a non-empty customer name.
+  if (!data.donorEmail || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.donorEmail)) {
+    res.status(400).json({ error: "A valid email address is required to pay online with KoraPay." });
+    return;
+  }
+
+  const customerName = (data.isAnonymous ? "Anonymous Donor" : (data.donorName || "Donor")).slice(0, 60);
+  const narration = (data.purpose || "Donation to HACS Foundation").slice(0, 60);
+
+  const payload: Record<string, unknown> = {
     amount: data.amount,
-    currency: data.currency ?? "NGN",
+    currency: (data.currency ?? "NGN").toUpperCase(),
     reference,
-    notification_url: `${baseUrl}/api/donations/korapay-webhook`,
     redirect_url: `${baseUrl}/donate/thank-you?korapay_ref=${reference}`,
-    narration: data.purpose || "Donation to Hope Alive Children Spring Foundation",
+    narration,
     customer: {
-      name: data.donorName || "Donor",
-      email: data.donorEmail || "donor@hacsfoundation.org",
+      name: customerName,
+      email: data.donorEmail,
     },
     metadata: {
-      donorName: data.donorName ?? "",
       donorPhone: data.donorPhone ?? "",
       purpose: data.purpose ?? "",
       isAnonymous: String(data.isAnonymous ?? false),
     },
   };
+  // Only include notification_url when we have a real public HTTPS URL — KoraPay rejects http URLs.
+  if (baseUrl.startsWith("https://")) {
+    payload["notification_url"] = `${baseUrl}/api/donations/korapay-webhook`;
+  }
 
   try {
     const response = await fetch("https://api.korapay.com/merchant/api/v1/charges/initialize", {
@@ -217,8 +233,9 @@ donationsRouter.post("/create-korapay-charge", async (req: Request, res: Respons
     });
     const json: any = await response.json();
     if (!response.ok || !json?.status) {
-      req.log.error({ json }, "KoraPay initialize failed");
-      res.status(500).json({ error: json?.message || "Failed to create KoraPay checkout" });
+      req.log.error({ status: response.status, korapayResponse: json, sentPayload: { ...payload, customer: { ...(payload as any).customer, email: "***" } } }, "KoraPay initialize failed");
+      const detail = json?.message || json?.error?.message || JSON.stringify(json?.errors || json) || "Unknown KoraPay error";
+      res.status(502).json({ error: `KoraPay rejected the request: ${detail}` });
       return;
     }
 
