@@ -1,7 +1,10 @@
-import express, { type Express } from "express";
+import express, { type Express, type Request, type Response } from "express";
 import cors from "cors";
 import pinoHttp from "pino-http";
 import session from "express-session";
+import path from "path";
+import fs from "fs";
+import { fileURLToPath } from "url";
 import router from "./routes";
 import { logger } from "./lib/logger";
 
@@ -50,5 +53,24 @@ app.use(session({
 }));
 
 app.use("/api", router);
+
+// Serve the built frontend (when deployed as a single service)
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const candidatePaths = [
+  path.resolve(__dirname, "../../hacs-foundation/dist/public"),
+  path.resolve(__dirname, "../../../artifacts/hacs-foundation/dist/public"),
+  path.resolve(process.cwd(), "artifacts/hacs-foundation/dist/public"),
+];
+const frontendDist = candidatePaths.find((p) => fs.existsSync(path.join(p, "index.html")));
+
+if (frontendDist) {
+  logger.info({ frontendDist }, "Serving static frontend");
+  app.use(express.static(frontendDist));
+  app.get(/^\/(?!api).*/, (_req: Request, res: Response) => {
+    res.sendFile(path.join(frontendDist, "index.html"));
+  });
+} else {
+  logger.warn({ candidatePaths }, "Frontend dist not found; API-only mode");
+}
 
 export default app;
