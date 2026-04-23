@@ -6,6 +6,48 @@ import { sendAdminDonationNotification, sendDonorReceipt } from "../lib/email";
 
 export const donationsRouter = Router();
 
+// Diagnostic endpoint: hits KoraPay with a minimal known-good test payload
+// using the configured key, and returns whatever KoraPay says verbatim.
+// Hit this on the live site to verify the deployed key + connectivity.
+donationsRouter.get("/korapay-diagnose", async (req: Request, res: Response) => {
+  const koraKey = process.env["KORAPAY_SECRET_KEY"];
+  const keyInfo = koraKey
+    ? {
+        present: true,
+        length: koraKey.length,
+        prefix: koraKey.slice(0, 8),
+        looksLikeTest: koraKey.startsWith("sk_test"),
+        looksLikeLive: koraKey.startsWith("sk_live"),
+      }
+    : { present: false };
+
+  if (!koraKey) {
+    res.json({ keyInfo, note: "KORAPAY_SECRET_KEY is NOT set on this server." });
+    return;
+  }
+
+  const testPayload = {
+    amount: 100,
+    currency: "NGN",
+    reference: `DIAG${Date.now()}`,
+    redirect_url: "https://example.com/thank-you",
+    customer: { name: "Diagnose User", email: "diagnose@example.com" },
+    narration: "diagnostic ping",
+  };
+
+  try {
+    const r = await fetch("https://api.korapay.com/merchant/api/v1/charges/initialize", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${koraKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify(testPayload),
+    });
+    const body = await r.text();
+    res.json({ keyInfo, korapayHttpStatus: r.status, korapayBody: body, sentPayload: testPayload });
+  } catch (err: any) {
+    res.json({ keyInfo, error: String(err?.message ?? err) });
+  }
+});
+
 function getPublicBaseUrl(req: Request): string {
   const explicit = process.env["PUBLIC_BASE_URL"];
   if (explicit) return explicit.replace(/\/$/, "");
