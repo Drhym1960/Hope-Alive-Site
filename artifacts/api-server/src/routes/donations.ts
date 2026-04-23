@@ -319,9 +319,77 @@ donationsRouter.post("/create-korapay-charge", async (req: Request, res: Respons
     });
 
     res.json({ reference, checkoutUrl: json.data.checkout_url });
-  } catch (err) {
-    req.log.error({ err }, "KoraPay request error");
-    res.status(500).json({ error: "Failed to create KoraPay checkout" });
+  } catch (err: any) {
+    req.log.error({ err: err?.message, stack: err?.stack }, "KoraPay request error");
+    const detail = err?.message || String(err);
+    res.status(500).json({ error: `Failed to create KoraPay checkout: ${detail}` });
+  }
+});
+
+// Diagnostic: verify the donations table exists with all required columns.
+// Hit on the live site to confirm the DB schema is up to date.
+donationsRouter.get("/db-diagnose", async (_req: Request, res: Response) => {
+  try {
+    const result: any = await db.execute(sql`
+      SELECT column_name, data_type
+      FROM information_schema.columns
+      WHERE table_name = 'donations'
+      ORDER BY ordinal_position
+    `);
+    const rows = (result?.rows ?? result) as Array<{ column_name: string; data_type: string }>;
+    const required = [
+      "id","donor_name","donor_email","donor_phone","amount","currency",
+      "payment_method","payment_status","transaction_id","purpose",
+      "is_anonymous","stripe_session_id","korapay_reference","created_at",
+    ];
+    const present = rows.map(r => r.column_name);
+    const missing = required.filter(c => !present.includes(c));
+    res.json({ tableExists: rows.length > 0, columns: rows, missing });
+  } catch (err: any) {
+    res.status(500).json({ error: err?.message || String(err) });
+  }
+});
+
+// Repair: add any missing columns to the donations table (idempotent, safe to call repeatedly).
+donationsRouter.post("/db-repair", async (_req: Request, res: Response) => {
+  try {
+    await db.execute(sql`
+      CREATE TABLE IF NOT EXISTS donations (
+        id SERIAL PRIMARY KEY,
+        donor_name TEXT,
+        donor_email TEXT,
+        donor_phone TEXT,
+        amount NUMERIC(12,2) NOT NULL,
+        currency TEXT NOT NULL DEFAULT 'NGN',
+        payment_method TEXT NOT NULL,
+        payment_status TEXT NOT NULL DEFAULT 'pending',
+        transaction_id TEXT,
+        purpose TEXT,
+        is_anonymous BOOLEAN NOT NULL DEFAULT FALSE,
+        stripe_session_id TEXT,
+        korapay_reference TEXT,
+        created_at TIMESTAMP NOT NULL DEFAULT NOW()
+      )
+    `);
+    // Add columns if they're missing (in case the table existed before in an older shape).
+    const alterStatements = [
+      sql`ALTER TABLE donations ADD COLUMN IF NOT EXISTS donor_name TEXT`,
+      sql`ALTER TABLE donations ADD COLUMN IF NOT EXISTS donor_email TEXT`,
+      sql`ALTER TABLE donations ADD COLUMN IF NOT EXISTS donor_phone TEXT`,
+      sql`ALTER TABLE donations ADD COLUMN IF NOT EXISTS transaction_id TEXT`,
+      sql`ALTER TABLE donations ADD COLUMN IF NOT EXISTS purpose TEXT`,
+      sql`ALTER TABLE donations ADD COLUMN IF NOT EXISTS is_anonymous BOOLEAN NOT NULL DEFAULT FALSE`,
+      sql`ALTER TABLE donations ADD COLUMN IF NOT EXISTS stripe_session_id TEXT`,
+      sql`ALTER TABLE donations ADD COLUMN IF NOT EXISTS korapay_reference TEXT`,
+      sql`ALTER TABLE donations ADD COLUMN IF NOT EXISTS currency TEXT NOT NULL DEFAULT 'NGN'`,
+      sql`ALTER TABLE donations ADD COLUMN IF NOT EXISTS payment_status TEXT NOT NULL DEFAULT 'pending'`,
+    ];
+    for (const stmt of alterStatements) {
+      try { await db.execute(stmt); } catch { /* ignore individual column failures */ }
+    }
+    res.json({ ok: true, message: "donations table created/repaired" });
+  } catch (err: any) {
+    res.status(500).json({ error: err?.message || String(err) });
   }
 });
 
