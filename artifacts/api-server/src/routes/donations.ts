@@ -326,8 +326,49 @@ donationsRouter.post("/create-korapay-charge", async (req: Request, res: Respons
   }
 });
 
+function describeError(err: any): Record<string, unknown> {
+  return {
+    message: err?.message || String(err),
+    cause: err?.cause?.message || err?.cause || null,
+    code: err?.code || err?.cause?.code || null,
+    detail: err?.detail || err?.cause?.detail || null,
+    hint: err?.hint || err?.cause?.hint || null,
+    position: err?.position || err?.cause?.position || null,
+    stack: err?.stack?.split("\n").slice(0, 5).join("\n") || null,
+  };
+}
+
+// Diagnostic: simple DB connectivity check (just runs SELECT 1).
+donationsRouter.get("/db-ping", async (_req: Request, res: Response) => {
+  const dbUrlInfo = (() => {
+    const u = process.env["DATABASE_URL"];
+    if (!u) return { present: false };
+    try {
+      const parsed = new URL(u);
+      return {
+        present: true,
+        protocol: parsed.protocol,
+        host: parsed.hostname,
+        port: parsed.port || "(default)",
+        database: parsed.pathname.replace(/^\//, ""),
+        hasUser: Boolean(parsed.username),
+        hasPassword: Boolean(parsed.password),
+        hasSslmode: parsed.searchParams.has("sslmode"),
+        sslmode: parsed.searchParams.get("sslmode"),
+      };
+    } catch {
+      return { present: true, parseError: true };
+    }
+  })();
+  try {
+    const result: any = await db.execute(sql`SELECT 1 AS ok`);
+    res.json({ dbUrlInfo, ok: true, result: result?.rows ?? result });
+  } catch (err: any) {
+    res.status(500).json({ dbUrlInfo, ok: false, error: describeError(err) });
+  }
+});
+
 // Diagnostic: verify the donations table exists with all required columns.
-// Hit on the live site to confirm the DB schema is up to date.
 donationsRouter.get("/db-diagnose", async (_req: Request, res: Response) => {
   try {
     const result: any = await db.execute(sql`
@@ -346,7 +387,7 @@ donationsRouter.get("/db-diagnose", async (_req: Request, res: Response) => {
     const missing = required.filter(c => !present.includes(c));
     res.json({ tableExists: rows.length > 0, columns: rows, missing });
   } catch (err: any) {
-    res.status(500).json({ error: err?.message || String(err) });
+    res.status(500).json({ error: describeError(err) });
   }
 });
 
@@ -389,7 +430,7 @@ donationsRouter.post("/db-repair", async (_req: Request, res: Response) => {
     }
     res.json({ ok: true, message: "donations table created/repaired" });
   } catch (err: any) {
-    res.status(500).json({ error: err?.message || String(err) });
+    res.status(500).json({ error: describeError(err) });
   }
 });
 
