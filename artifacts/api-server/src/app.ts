@@ -67,8 +67,19 @@ const frontendDist = candidatePaths.find((p) => fs.existsSync(path.join(p, "inde
 
 if (frontendDist) {
   logger.info({ frontendDist }, "Serving static frontend");
-  app.use(express.static(frontendDist));
+  // Hashed assets in /assets are immutable; everything else (esp. index.html) must NEVER be cached
+  // so users always pick up the latest deployed JS bundle.
+  app.use(express.static(frontendDist, {
+    setHeaders: (res, filePath) => {
+      if (filePath.includes(`${path.sep}assets${path.sep}`)) {
+        res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+      } else {
+        res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+      }
+    },
+  }));
   app.get(/^\/(?!api).*/, (_req: Request, res: Response) => {
+    res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
     res.sendFile(path.join(frontendDist, "index.html"));
   });
 } else {
