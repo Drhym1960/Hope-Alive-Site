@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import Layout from "@/components/Layout";
 import { SectionHeader } from "@/components/SectionHeader";
+import CertificatesSection from "@/components/CertificatesSection";
 import { Link } from "wouter";
 
 const values = [
@@ -12,6 +14,16 @@ const values = [
 ];
 
 export default function About() {
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const hash = window.location.hash.replace("#", "");
+    if (!hash) return;
+    requestAnimationFrame(() => {
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }, []);
+
   return (
     <Layout>
       <div className="pt-16">
@@ -82,6 +94,9 @@ export default function About() {
             </div>
           </div>
         </section>
+
+        {/* Registration & Certification */}
+        <CertificatesSection />
 
         {/* CTA */}
         <section className="py-16 bg-background">

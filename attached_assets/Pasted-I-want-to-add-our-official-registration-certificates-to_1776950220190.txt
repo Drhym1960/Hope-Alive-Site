@@ -1,0 +1,113 @@
+I want to add our official registration certificates to the charity website so visitors can clearly see that our foundation is legitimate, registered, and trustworthy.
+
+GOAL
+Add a trust-building “Registration & Certification” section to the website using our official certificates.
+
+MAIN PURPOSE
+This section should help visitors:
+- trust the foundation
+- see that we are properly registered
+- feel confident donating
+- understand that the organisation is real and transparent
+
+WHERE TO PLACE IT
+1. HOMEPAGE
+Add a small trust section on the homepage, below the hero section or below the main mission/impact section.
+
+Homepage section title:
+“Verified & Registered”
+
+Homepage text:
+“Hope Alive Children Spring Foundation is a legally registered charitable organisation in Nigeria. View our official registration documents below.”
+
+On the homepage:
+- show a neat preview card or thumbnail of the certificates
+- add a button:
+  “View Full Registration Documents”
+- this button should link to the About page or the dedicated certification section
+
+2. ABOUT PAGE
+Create a full section on the About page called:
+
+“Our Registration & Certification”
+
+Section intro text:
+“We believe in transparency, accountability, and public trust. Below are our official registration documents showing that Hope Alive Children Spring Foundation is duly registered.”
+
+WHAT TO DISPLAY
+Display these two official documents:
+1. CAC Certificate of Incorporation
+2. SCUML / Special Control Unit Against Money Laundering Certificate of Registration
+
+LAYOUT
+- Desktop: show the 2 certificates side by side
+- Mobile: stack them one under the other
+- Use clean white background
+- Use a professional card layout with soft shadow and rounded corners
+- Keep enough spacing around the certificates
+- Make the section look polished and trustworthy
+
+CERTIFICATE IMAGE HANDLING
+- Save the uploaded certificate images in a proper folder such as:
+  /public/certificates/
+- Use clean file names like:
+  cac-certificate.jpg
+  scuml-certificate.jpg
+
+IMAGE DISPLAY REQUIREMENTS
+- show the certificates clearly
+- do not crop out important text
+- keep image proportions correct
+- allow users to click each certificate to enlarge it
+- open enlarged version in modal/lightbox overlay
+- modal should have:
+  - close button
+  - dark overlay
+  - image centered
+  - mobile-friendly scrolling if needed
+
+TRUST CONTENT BELOW CERTIFICATES
+Below the certificates add a trust message like:
+
+“Hope Alive Children Spring Foundation is officially registered in Nigeria and committed to operating with integrity, transparency, and accountability in all charitable activities.”
+
+OPTIONAL SMALL TRUST ICONS BELOW
+Add 3 small trust points with icons:
+- Registered Organisation
+- Transparent Operations
+- Donation Accountability
+
+FOOTER TRUST LINE
+Add a small line in the footer:
+“Registered charitable organisation in Nigeria”
+
+SEO / ACCESSIBILITY
+Use alt text for images:
+- “CAC Certificate of Incorporation for Hope Alive Children Spring Foundation”
+- “SCUML Registration Certificate for Hope Alive Children Spring Foundation”
+
+PERFORMANCE
+- optimize certificate images for web without making text unreadable
+- lazy load if needed
+- keep quality high enough for visitors to read
+
+ADMIN / EDITABILITY
+If possible, make certificate images editable from admin later so I can replace them in future without touching code.
+If that is too much for now, just use the uploaded files directly in /public/certificates/.
+
+STYLE
+- clean
+- nonprofit style
+- trust-focused
+- elegant
+- not flashy
+- green accent can be used lightly
+- should match the charity website branding
+
+OUTPUT I WANT
+After implementing it, show me:
+1. where you placed the trust section on homepage
+2. where you placed the full certificate section on About page
+3. the exact file paths used for the certificates
+4. confirmation that visitors can click and enlarge them
+5. confirmation that the layout works on mobile and desktop

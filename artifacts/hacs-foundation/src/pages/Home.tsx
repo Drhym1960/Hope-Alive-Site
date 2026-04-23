@@ -1,5 +1,7 @@
 import { Link } from "wouter";
 import { SectionHeader } from "@/components/SectionHeader";
+import scumlCert from "@assets/file_0000000005dc72468a99f867fb432e41_1776950214037.png";
+import cacCert from "@assets/file_00000000ffdc7243a39fe6ba3dd8dfef_1776950214093.png";
 
 const stats = [
   { number: "500+", label: "Children Supported" },
@@ -158,6 +160,62 @@ export default function Home() {
                 <div className="text-3xl font-serif font-bold text-primary mb-2">12+</div>
                 <div className="text-sm text-muted-foreground">Years of dedicated service to Nigeria's most vulnerable children.</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Verified & Registered (Trust Strip) */}
+      <section className="py-16 bg-accent/30 border-y border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <p className="text-secondary text-xs font-semibold uppercase tracking-widest mb-3">
+                Verified & Registered
+              </p>
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-4">
+                A Charity You Can Trust
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Hope Alive Children Spring Foundation is a legally registered charitable organisation in Nigeria. View our official registration documents below.
+              </p>
+              <Link
+                href="/about#certificates"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-primary/90 transition-colors text-sm"
+              >
+                View Full Registration Documents
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <Link
+                href="/about#certificates"
+                className="bg-card border border-border rounded-2xl shadow-sm hover:shadow-md transition-all p-3 flex flex-col items-center"
+                aria-label="View CAC Certificate of Incorporation"
+              >
+                <img
+                  src={cacCert}
+                  alt="CAC Certificate of Incorporation thumbnail"
+                  loading="lazy"
+                  className="h-40 w-auto object-contain"
+                />
+                <span className="mt-3 text-xs font-semibold text-primary text-center">CAC Certificate of Incorporation</span>
+              </Link>
+              <Link
+                href="/about#certificates"
+                className="bg-card border border-border rounded-2xl shadow-sm hover:shadow-md transition-all p-3 flex flex-col items-center"
+                aria-label="View SCUML Registration Certificate"
+              >
+                <img
+                  src={scumlCert}
+                  alt="SCUML Certificate of Registration thumbnail"
+                  loading="lazy"
+                  className="h-40 w-auto object-contain"
+                />
+                <span className="mt-3 text-xs font-semibold text-primary text-center">SCUML Certificate of Registration</span>
+              </Link>
             </div>
           </div>
         </div>

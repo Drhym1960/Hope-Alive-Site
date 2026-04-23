@@ -181,7 +181,12 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-primary-foreground/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/60">
-          <p>&copy; {new Date().getFullYear()} Hope Alive Children Spring Foundation. All rights reserved.</p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <p>&copy; {new Date().getFullYear()} Hope Alive Children Spring Foundation. All rights reserved.</p>
+            <Link href="/about#certificates" className="text-secondary/90 hover:text-secondary transition-colors">
+              Registered charitable organisation in Nigeria
+            </Link>
+          </div>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-secondary transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-secondary transition-colors">Terms of Use</Link>
