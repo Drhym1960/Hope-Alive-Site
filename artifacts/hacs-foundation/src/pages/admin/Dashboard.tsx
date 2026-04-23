@@ -251,11 +251,11 @@ function DonationsTab() {
                 {data?.donations.map((d) => (
                   <tr key={d.id} className="border-t border-border hover:bg-muted/50">
                     <td className="px-4 py-3 text-muted-foreground">#{d.id}</td>
-                    <td className="px-4 py-3 font-medium text-foreground">{d.isAnonymous ? "Anonymous" : (d.donorName || "—")}</td>
-                    <td className="px-4 py-3 text-muted-foreground">{d.donorEmail || "—"}</td>
+                    <td className="px-4 py-3 font-medium text-foreground">{d.isAnonymous ? "Anonymous" : (d.donorName || "N/A")}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{d.donorEmail || "N/A"}</td>
                     <td className="px-4 py-3 font-semibold text-primary">{d.currency} {Number(d.amount).toLocaleString()}</td>
                     <td className="px-4 py-3 capitalize">{d.paymentMethod?.replace("_", " ")}</td>
-                    <td className="px-4 py-3 text-muted-foreground max-w-32 truncate">{d.purpose || "—"}</td>
+                    <td className="px-4 py-3 text-muted-foreground max-w-32 truncate">{d.purpose || "N/A"}</td>
                     <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{d.createdAt ? new Date(d.createdAt).toLocaleDateString() : ""}</td>
                     <td className="px-4 py-3">
                       <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${d.paymentStatus === "completed" ? "bg-green-100 text-green-700" : d.paymentStatus === "failed" ? "bg-red-100 text-red-700" : "bg-yellow-100 text-yellow-700"}`}>

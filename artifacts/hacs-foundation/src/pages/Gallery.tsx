@@ -15,7 +15,7 @@ import img9 from "@assets/file_00000000457071f89c08e9b7f1dfab87_1776680949210.pn
 const foundationImages = [
   { id: 1, url: img1, caption: "Children with our founder at the foundation banner", category: "Our Family" },
   { id: 2, url: img2, caption: "The children proudly displaying our motto: Giving Love a Chance", category: "Our Identity" },
-  { id: 3, url: img3, caption: "Distribution day — gifts for every child", category: "Outreach" },
+  { id: 3, url: img3, caption: "Distribution day: gifts for every child", category: "Outreach" },
   { id: 4, url: img4, caption: "Joyful moments with the boys at the orphanage", category: "Daily Life" },
   { id: 6, url: img6, caption: "Visiting children in the community", category: "Community Outreach" },
   { id: 7, url: img7, caption: "Children celebrating together", category: "Daily Life" },
@@ -36,7 +36,7 @@ export default function Gallery() {
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Our Story in Pictures</p>
             <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-4">Gallery & Impact</h1>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
-              A glimpse into the lives we are touching every day — children laughing, learning, growing, and thriving at Hope Alive Children Spring Foundation.
+              A glimpse into the lives we are touching every day: children laughing, learning, growing, and thriving at Hope Alive Children Spring Foundation.
             </p>
           </div>
         </section>

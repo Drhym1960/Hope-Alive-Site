@@ -6,7 +6,7 @@ const programs = [
   {
     title: "Daily Feeding Program",
     icon: "🍽️",
-    description: "Hunger is the most immediate threat facing many of the children we serve. Our Daily Feeding Program ensures that every child under our care receives three balanced, nutritious meals every day — breakfast, lunch, and dinner. We also operate a community feeding initiative that extends meals to vulnerable children in the surrounding neighborhood who may not be resident in our facility.",
+    description: "Hunger is the most immediate threat facing many of the children we serve. Our Daily Feeding Program ensures that every child under our care receives three balanced, nutritious meals every day: breakfast, lunch, and dinner. We also operate a community feeding initiative that extends meals to vulnerable children in the surrounding neighborhood who may not be resident in our facility.",
     impact: "Over 1,000 meals served monthly",
     color: "bg-amber-50 border-amber-200",
     details: [
@@ -32,7 +32,7 @@ const programs = [
   {
     title: "Healthcare & Medical Program",
     icon: "🏥",
-    description: "Healthy children are happy children. Our Healthcare Program provides comprehensive medical care to all children in our custody, including routine check-ups, immunizations, dental care, eye care, and emergency medical treatment. We partner with local hospitals and clinics to ensure every child receives prompt, quality healthcare without financial barriers.",
+    description: "Healthy children are happy children. Our Healthcare Program provides comprehensive medical care to all children in our custody, including routine checkups, immunizations, dental care, eye care, and emergency medical treatment. We partner with local hospitals and clinics to ensure every child receives prompt, quality healthcare without financial barriers.",
     impact: "Free healthcare for all resident children",
     color: "bg-red-50 border-red-200",
     details: [
@@ -45,7 +45,7 @@ const programs = [
   {
     title: "Shelter & Housing Program",
     icon: "🏠",
-    description: "Every child needs a safe, stable place to call home. Our Shelter and Housing Program maintains clean, well-maintained living quarters where children are safe, secure, and cared for. Beyond physical shelter, we create a genuine home — a family environment where children are loved, their voices are heard, and they belong.",
+    description: "Every child needs a safe, stable place to call home. Our Shelter and Housing Program maintains clean, well-maintained living quarters where children are safe, secure, and cared for. Beyond physical shelter, we create a genuine home, a family environment where children are loved, their voices are heard, and they belong.",
     impact: "Safe home for 50+ resident children",
     color: "bg-green-50 border-green-200",
     details: [
@@ -136,7 +136,7 @@ export default function Programs() {
               Every Program Needs Your Support
             </h2>
             <p className="text-secondary-foreground/80 mb-8">
-              Your donation helps us fund all six of these programs — from the meals we serve today to the skills we teach for tomorrow.
+              Your donation helps us fund all six of these programs, from the meals we serve today to the skills we teach for tomorrow.
             </p>
             <Link href="/donate" className="inline-block px-10 py-4 bg-primary text-primary-foreground rounded-full font-bold hover:bg-primary/90 transition-colors">
               Donate to Support Our Programs

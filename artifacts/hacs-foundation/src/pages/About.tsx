@@ -46,7 +46,7 @@ export default function About() {
                 <SectionHeader eyebrow="Our Story" title="Born from a Heart of Love" />
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Hope Alive Children Spring Foundation was born out of a deep conviction that no child should suffer alone. Confronted daily with the heartbreaking reality of children orphaned by poverty, disease, and loss, our founders were moved to act — not just to sympathize, but to step in as family.
+                    Hope Alive Children Spring Foundation was born out of a deep conviction that no child should suffer alone. Confronted daily with the heartbreaking reality of children orphaned by poverty, disease, and loss, our founders were moved to act, not just to sympathize, but to step in as family.
                   </p>
                   <p>
                     What began as a small gathering of concerned individuals caring for a handful of children in Makurdi has grown into a fully operational charitable organisation with multiple programs, a team of dedicated staff and volunteers, and the love and trust of hundreds of families across Benue State.
@@ -55,7 +55,7 @@ export default function About() {
                     Today, Hope Alive Children Spring Foundation operates as both an orphanage and a community support center, providing comprehensive care that addresses not just the physical needs of children, but their emotional, educational, and spiritual wellbeing.
                   </p>
                   <p>
-                    Our motto — <em className="text-primary font-medium">"Giving Love a Chance"</em> — is not just a tagline. It is the promise we make to every child who walks through our doors: you are loved, you are valued, and you belong.
+                    Our motto, <em className="text-primary font-medium">"Giving Love a Chance"</em>, is not just a tagline. It is the promise we make to every child who walks through our doors: you are loved, you are valued, and you belong.
                   </p>
                 </div>
               </div>
@@ -105,7 +105,7 @@ export default function About() {
               Join Us in Giving Love a Chance
             </h2>
             <p className="text-muted-foreground mb-8">
-              Whether through a donation, volunteering, or spreading the word — every act of kindness changes a child's story.
+              Whether through a donation, volunteering, or spreading the word, every act of kindness changes a child's story.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href="/donate" className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-primary/90 transition-colors">

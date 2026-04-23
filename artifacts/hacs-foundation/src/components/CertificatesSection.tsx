@@ -7,14 +7,14 @@ const certificates = [
   {
     id: "cac",
     title: "CAC Certificate of Incorporation",
-    subtitle: "Corporate Affairs Commission — Registration No. 179461",
+    subtitle: "Corporate Affairs Commission · Registration No. 179461",
     src: cacCert,
     alt: "CAC Certificate of Incorporation for Hope Alive Children Spring Foundation",
   },
   {
     id: "scuml",
     title: "SCUML Certificate of Registration",
-    subtitle: "Special Control Unit Against Money Laundering — RN: SC 071401705",
+    subtitle: "Special Control Unit Against Money Laundering · RN: SC 071401705",
     src: scumlCert,
     alt: "SCUML Registration Certificate for Hope Alive Children Spring Foundation",
   },

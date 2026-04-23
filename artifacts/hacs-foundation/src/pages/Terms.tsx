@@ -32,7 +32,7 @@ export default function Terms() {
               </div>
               <div>
                 <h2 className="font-serif text-xl font-bold text-foreground mb-3">4. Intellectual Property</h2>
-                <p>All content on this website — including text, images, logos, and design — is the property of Hope Alive Children Spring Foundation or used with permission. Reproduction without written consent is prohibited.</p>
+                <p>All content on this website, including text, images, logos, and design, is the property of Hope Alive Children Spring Foundation or used with permission. Reproduction without written consent is prohibited.</p>
               </div>
               <div>
                 <h2 className="font-serif text-xl font-bold text-foreground mb-3">5. Limitation of Liability</h2>

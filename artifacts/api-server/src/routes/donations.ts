@@ -199,10 +199,18 @@ donationsRouter.post("/create-korapay-charge", async (req: Request, res: Respons
   }
 
   const customerName = (data.isAnonymous ? "Anonymous Donor" : (data.donorName || "Donor")).slice(0, 60);
-  const narration = (data.purpose || "Donation to HACS Foundation").slice(0, 60);
+  // KoraPay narration field has a 30-char maximum.
+  const narration = (data.purpose || "HACS donation").slice(0, 30);
+
+  // Build metadata, dropping empty/undefined values (KoraPay rejects empty strings).
+  const metadataEntries: Array<[string, string]> = [];
+  if (data.donorPhone) metadataEntries.push(["donorPhone", String(data.donorPhone).slice(0, 50)]);
+  if (data.purpose) metadataEntries.push(["purpose", String(data.purpose).slice(0, 50)]);
+  metadataEntries.push(["isAnonymous", String(data.isAnonymous ?? false)]);
+  const metadata = Object.fromEntries(metadataEntries);
 
   const payload: Record<string, unknown> = {
-    amount: data.amount,
+    amount: Number(data.amount),
     currency: (data.currency ?? "NGN").toUpperCase(),
     reference,
     redirect_url: `${baseUrl}/donate/thank-you?korapay_ref=${reference}`,
@@ -211,13 +219,11 @@ donationsRouter.post("/create-korapay-charge", async (req: Request, res: Respons
       name: customerName,
       email: data.donorEmail,
     },
-    metadata: {
-      donorPhone: data.donorPhone ?? "",
-      purpose: data.purpose ?? "",
-      isAnonymous: String(data.isAnonymous ?? false),
-    },
   };
-  // Only include notification_url when we have a real public HTTPS URL — KoraPay rejects http URLs.
+  if (Object.keys(metadata).length > 0) {
+    payload["metadata"] = metadata;
+  }
+  // Only include notification_url when we have a real public HTTPS URL.
   if (baseUrl.startsWith("https://")) {
     payload["notification_url"] = `${baseUrl}/api/donations/korapay-webhook`;
   }
@@ -231,10 +237,27 @@ donationsRouter.post("/create-korapay-charge", async (req: Request, res: Respons
       },
       body: JSON.stringify(payload),
     });
-    const json: any = await response.json();
+    const rawText = await response.text();
+    let json: any = {};
+    try { json = JSON.parse(rawText); } catch { json = { raw: rawText }; }
     if (!response.ok || !json?.status) {
-      req.log.error({ status: response.status, korapayResponse: json, sentPayload: { ...payload, customer: { ...(payload as any).customer, email: "***" } } }, "KoraPay initialize failed");
-      const detail = json?.message || json?.error?.message || JSON.stringify(json?.errors || json) || "Unknown KoraPay error";
+      req.log.error({
+        status: response.status,
+        korapayResponse: json,
+        sentPayload: { ...payload, customer: { ...(payload as any).customer, email: "***" } },
+      }, "KoraPay initialize failed");
+      // Extract a helpful message: KoraPay returns either { message } or { errors: { field: [msg] } }
+      let detail = json?.message || json?.error?.message;
+      if (!detail && json?.errors) {
+        if (typeof json.errors === "string") detail = json.errors;
+        else if (Array.isArray(json.errors)) detail = json.errors.join("; ");
+        else if (typeof json.errors === "object") {
+          detail = Object.entries(json.errors)
+            .map(([k, v]) => `${k}: ${Array.isArray(v) ? v.join(", ") : v}`)
+            .join("; ");
+        }
+      }
+      if (!detail) detail = rawText?.slice(0, 200) || "Unknown KoraPay error";
       res.status(502).json({ error: `KoraPay rejected the request: ${detail}` });
       return;
     }

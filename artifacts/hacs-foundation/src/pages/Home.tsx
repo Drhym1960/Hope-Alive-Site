@@ -24,7 +24,7 @@ const programs = [
   {
     icon: "🏥",
     title: "Healthcare",
-    desc: "Regular medical check-ups, immunizations, and emergency care.",
+    desc: "Regular medical checkups, immunizations, and emergency care.",
   },
   {
     icon: "🏠",
@@ -131,10 +131,10 @@ export default function Home() {
               <SectionHeader
                 eyebrow="Our Mission"
                 title="Transforming Lives, One Child at a Time"
-                subtitle="Hope Alive Children Spring Foundation was established to provide a loving, safe environment for orphaned and vulnerable children in Benue State, Nigeria. We believe every child deserves the chance to grow, learn, and thrive — regardless of their circumstances."
+                subtitle="Hope Alive Children Spring Foundation was established to provide a loving, safe environment for orphaned and vulnerable children in Benue State, Nigeria. We believe every child deserves the chance to grow, learn, and thrive, regardless of their circumstances."
               />
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Founded with compassion at its core, our foundation works tirelessly to address the root causes of child vulnerability — poverty, loss, abuse, and neglect. Through comprehensive care programs, we restore hope and dignity to children who have been left behind by circumstance.
+                Founded with compassion at its core, our foundation works tirelessly to address the root causes of child vulnerability: poverty, loss, abuse, and neglect. Through comprehensive care programs, we restore hope and dignity to children who have been left behind by circumstance.
               </p>
               <Link href="/mission" className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary/80 transition-colors">
                 Read our full mission
@@ -298,7 +298,7 @@ export default function Home() {
             href="/donate"
             className="inline-flex items-center gap-2 px-10 py-4 bg-secondary text-secondary-foreground rounded-full font-bold text-lg hover:bg-secondary/90 transition-all shadow-xl donate-btn-pulse"
           >
-            Donate Now — Give Love a Chance
+            Donate Now · Give Love a Chance
           </Link>
         </div>
       </section>

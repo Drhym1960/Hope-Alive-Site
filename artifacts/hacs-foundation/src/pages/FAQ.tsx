@@ -5,7 +5,7 @@ import { getListFaqsQueryKey } from "@workspace/api-client-react";
 import { Link } from "wouter";
 
 const defaultFaqs = [
-  { id: 1, question: "What is Hope Alive Children Spring Foundation?", answer: "Hope Alive Children Spring Foundation (HACS Foundation) is a registered charitable organisation and orphanage based in Makurdi, Benue State, Nigeria. We provide comprehensive care — shelter, food, education, healthcare, and love — to orphaned and vulnerable children." },
+  { id: 1, question: "What is Hope Alive Children Spring Foundation?", answer: "Hope Alive Children Spring Foundation (HACS Foundation) is a registered charitable organisation and orphanage based in Makurdi, Benue State, Nigeria. We provide comprehensive care including shelter, food, education, healthcare, and love to orphaned and vulnerable children." },
   { id: 2, question: "How can I donate to the foundation?", answer: "You can donate through our secure online donation page using Stripe (card payment), PayPal, KoraPay, or via direct bank transfer to our Zenith Bank account: 1224366497 (Naira) or our dollar account: 5074649270. Every donation, no matter the size, makes a real difference." },
   { id: 3, question: "Is my donation tax-deductible?", answer: "HACS Foundation is a registered charitable organisation in Nigeria. Please consult your local tax authority for information regarding deductibility in your country of residence. We issue receipts for all donations upon request." },
   { id: 4, question: "How are donations used?", answer: "100% of your donation goes directly to program activities: feeding, education, healthcare, shelter, and skills training for the children in our care. Administrative costs are covered separately through institutional grants and partnerships." },

@@ -36,12 +36,12 @@ const goals = [
   {
     number: "07",
     title: "Reunify Families Where Possible",
-    desc: "To actively pursue safe family reunification for children where suitable family members can provide stable, loving homes — reconnecting children to their roots and heritage.",
+    desc: "To actively pursue safe family reunification for children where suitable family members can provide stable, loving homes, reconnecting children to their roots and heritage.",
   },
   {
     number: "08",
     title: "Advocate for Children's Rights",
-    desc: "To amplify the voices of vulnerable children through advocacy, public awareness, and policy engagement — ensuring their rights are protected by law and respected in practice.",
+    desc: "To amplify the voices of vulnerable children through advocacy, public awareness, and policy engagement, ensuring their rights are protected by law and respected in practice.",
   },
   {
     number: "09",
@@ -64,7 +64,7 @@ export default function Goals() {
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Our Direction</p>
             <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-6">Goals & Objectives</h1>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
-              These are the specific outcomes we pursue every day — the concrete commitments that give shape to our mission and direction to our work.
+              These are the specific outcomes we pursue every day: the concrete commitments that give shape to our mission and direction to our work.
             </p>
           </div>
         </section>
@@ -74,7 +74,7 @@ export default function Goals() {
             <SectionHeader
               eyebrow="What We Are Working Toward"
               title="Our Strategic Goals"
-              subtitle="Every goal below is not aspirational language — it is an active commitment backed by programs, staff, partnerships, and your generous support."
+              subtitle="Every goal below is not aspirational language. It is an active commitment backed by programs, staff, partnerships, and your generous support."
               centered
             />
             <div className="space-y-4">
@@ -97,7 +97,7 @@ export default function Goals() {
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-4">Help Us Achieve These Goals</h2>
             <p className="text-primary-foreground/80 mb-8">
-              Your donation directly funds these objectives — from feeding a child today to building the infrastructure that serves children for decades.
+              Your donation directly funds these objectives, from feeding a child today to building the infrastructure that serves children for decades.
             </p>
             <Link href="/donate" className="inline-block px-10 py-4 bg-secondary text-secondary-foreground rounded-full font-bold hover:bg-secondary/90 transition-colors">
               Donate Now

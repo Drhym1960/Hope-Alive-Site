@@ -25,7 +25,7 @@ export default function Mission() {
                 <h2 className="font-serif text-2xl font-bold text-white mb-6">What We Are Called to Do</h2>
                 <div className="space-y-4 text-primary-foreground/85 leading-relaxed">
                   <p>
-                    The mission of Hope Alive Children Spring Foundation is to provide comprehensive, compassionate care to orphaned, abandoned, and vulnerable children in Nigeria — restoring their dignity, nurturing their potential, and empowering them to become confident, contributing members of society.
+                    The mission of Hope Alive Children Spring Foundation is to provide comprehensive, compassionate care to orphaned, abandoned, and vulnerable children in Nigeria, restoring their dignity, nurturing their potential, and empowering them to become confident, contributing members of society.
                   </p>
                   <p>
                     We exist to be a haven of safety, love, and opportunity for every child who has been left without a family or means of survival. Through education, healthcare, nutrition, shelter, and psychosocial support, we address every dimension of a child's wellbeing.
@@ -42,7 +42,7 @@ export default function Mission() {
                 <h2 className="font-serif text-2xl font-bold text-primary mb-6">The Future We Are Building</h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Our vision is a Nigeria where every child — regardless of background, circumstance, or loss — has access to love, protection, quality education, healthcare, and the opportunity to fulfill their God-given potential.
+                    Our vision is a Nigeria where every child, regardless of background, circumstance, or loss, has access to love, protection, quality education, healthcare, and the opportunity to fulfill their God-given potential.
                   </p>
                   <p>
                     We envision communities where orphans are embraced, not excluded; where vulnerable children are championed, not overlooked; and where every child knows their life has purpose, value, and infinite possibility.

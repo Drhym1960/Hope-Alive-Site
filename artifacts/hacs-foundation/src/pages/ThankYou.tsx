@@ -97,7 +97,7 @@ export default function ThankYou() {
           <div className="bg-primary rounded-2xl p-6 text-primary-foreground mb-8">
             <p className="font-serif italic text-lg mb-2">"Giving Love a Chance"</p>
             <p className="text-primary-foreground/80 text-sm">
-              — Hope Alive Children Spring Foundation
+              Hope Alive Children Spring Foundation
             </p>
           </div>
 

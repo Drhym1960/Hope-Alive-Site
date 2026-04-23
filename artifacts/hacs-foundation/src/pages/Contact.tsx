@@ -45,7 +45,7 @@ export default function Contact() {
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Get in Touch</p>
             <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-4">Contact Us</h1>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
-              We'd love to hear from you. Whether you want to partner with us, volunteer, or simply ask a question — reach out anytime.
+              We'd love to hear from you. Whether you want to partner with us, volunteer, or simply ask a question, reach out anytime.
             </p>
           </div>
         </section>

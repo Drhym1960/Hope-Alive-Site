@@ -102,7 +102,7 @@ export default function Donate() {
         }
       } else if (data.paymentMethod === "bank_transfer") {
         if (!data.donorEmail || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.donorEmail)) {
-          setError("Please enter a valid email address — KoraPay requires it to send your receipt.");
+          setError("Please enter a valid email address. KoraPay requires it to send your receipt.");
           setIsSubmitting(false);
           return;
         }
