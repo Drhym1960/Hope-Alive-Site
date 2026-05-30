@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/
 
-Sitemap: https://hacsfoundation.org/sitemap.xml
+Sitemap: https://hacsfoundation.com/sitemap.xml

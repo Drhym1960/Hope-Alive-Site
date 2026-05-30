@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import { useListGallery } from "@workspace/api-client-react";
 import { getListGalleryQueryKey } from "@workspace/api-client-react";
 import { Link } from "wouter";
@@ -30,6 +31,7 @@ export default function Gallery() {
 
   return (
     <Layout>
+      <Seo title="Gallery" description="See the work of Hope Alive Children Spring Foundation in pictures: moments of joy, care, and hope shared with the children we serve in Makurdi, Benue State, Nigeria." path="/gallery" />
       <div className="pt-16">
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">

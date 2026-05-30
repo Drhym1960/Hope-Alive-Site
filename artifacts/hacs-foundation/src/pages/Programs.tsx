@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Link } from "wouter";
 
@@ -86,6 +87,7 @@ const programs = [
 export default function Programs() {
   return (
     <Layout>
+      <Seo title="Programs & Services" description="Explore the programs and services of Hope Alive Children Spring Foundation: feeding, education, healthcare, shelter, skills training, and community outreach in Makurdi, Nigeria." path="/programs" />
       <div className="pt-16">
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">

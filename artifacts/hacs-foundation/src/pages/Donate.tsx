@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import { useCreateDonation, useCreateStripeSession, useCreateKorapayCharge } from "@workspace/api-client-react";
 import { useLocation } from "wouter";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -128,6 +129,7 @@ export default function Donate() {
 
   return (
     <Layout>
+      <Seo title="Donate" description="Donate to Hope Alive Children Spring Foundation and change a child's life. Give securely by card, PayPal, KoraPay, or bank transfer to support orphaned children in Makurdi, Nigeria." path="/donate" />
       <div className="pt-16">
         <section className="hero-gradient py-20 px-4 sm:px-6 text-center">
           <div className="max-w-3xl mx-auto">

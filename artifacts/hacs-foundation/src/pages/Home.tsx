@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import Seo from "@/components/Seo";
 import { SectionHeader } from "@/components/SectionHeader";
 import scumlCert from "@assets/file_0000000005dc72468a99f867fb432e41_1776950214037.png";
 import cacCert from "@assets/file_00000000ffdc7243a39fe6ba3dd8dfef_1776950214093.png";
@@ -79,6 +80,7 @@ const stories = [
 export default function Home() {
   return (
     <div>
+      <Seo title="Giving Love a Chance" description="Hope Alive Children Spring Foundation is a charitable foundation in Makurdi, Benue State, Nigeria, providing shelter, food, education, and healthcare to orphaned and vulnerable children." path="/" />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center hero-gradient overflow-hidden">
         <div className="absolute inset-0 opacity-20">

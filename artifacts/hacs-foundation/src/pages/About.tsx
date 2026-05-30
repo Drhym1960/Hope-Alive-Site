@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import { SectionHeader } from "@/components/SectionHeader";
 import CertificatesSection from "@/components/CertificatesSection";
 import { Link } from "wouter";
@@ -26,6 +27,7 @@ export default function About() {
 
   return (
     <Layout>
+      <Seo title="About Us" description="Learn about Hope Alive Children Spring Foundation, a registered charitable foundation in Makurdi, Benue State, Nigeria, caring for orphaned and vulnerable children since our founding." path="/about" />
       <div className="pt-16">
         {/* Hero */}
         <section className="hero-gradient py-24 px-4 sm:px-6">

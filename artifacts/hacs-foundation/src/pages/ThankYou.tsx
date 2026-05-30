@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearch, Link } from "wouter";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import { useVerifyStripePayment, useVerifyKorapayPayment } from "@workspace/api-client-react";
 
 export default function ThankYou() {
@@ -36,6 +37,7 @@ export default function ThankYou() {
 
   return (
     <Layout>
+      <Seo title="Thank You" description="Thank you for supporting Hope Alive Children Spring Foundation." path="/donate/thank-you" noindex />
       <div className="pt-16 min-h-screen flex items-center">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg">

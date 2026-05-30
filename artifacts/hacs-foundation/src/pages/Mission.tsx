@@ -1,10 +1,12 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Link } from "wouter";
 
 export default function Mission() {
   return (
     <Layout>
+      <Seo title="Mission & Vision" description="Our mission and vision at Hope Alive Children Spring Foundation: giving orphaned and vulnerable children in Makurdi, Nigeria a future filled with love, care, and hope." path="/mission" />
       <div className="pt-16">
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">

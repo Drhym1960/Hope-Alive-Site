@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
+import Seo from "@/components/Seo";
 import { useAdminLogin } from "@workspace/api-client-react";
 
 export default function AdminLogin() {
@@ -26,6 +27,7 @@ export default function AdminLogin() {
 
   return (
     <div className="min-h-screen flex items-center justify-center hero-gradient px-4">
+      <Seo title="Admin Login" description="Administrator login." path="/admin/login" noindex />
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4 shadow-lg">

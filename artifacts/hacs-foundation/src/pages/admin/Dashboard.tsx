@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLocation, Link } from "wouter";
+import Seo from "@/components/Seo";
 import {
   useAdminMe,
   useAdminLogout,
@@ -64,6 +65,7 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Seo title="Admin Dashboard" description="Administrator dashboard." path="/admin" noindex />
       {/* Header */}
       <header className="bg-primary text-primary-foreground px-4 sm:px-6 py-4 flex items-center justify-between sticky top-0 z-40 shadow-md">
         <div className="flex items-center gap-3">

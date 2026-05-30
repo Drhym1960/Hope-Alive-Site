@@ -1,8 +1,10 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 
 export default function Terms() {
   return (
     <Layout>
+      <Seo title="Terms of Use" description="Terms of Use for the Hope Alive Children Spring Foundation website, outlining the conditions for accessing and using our site and making charitable donations." path="/terms" />
       <div className="pt-16">
         <section className="hero-gradient py-20 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">

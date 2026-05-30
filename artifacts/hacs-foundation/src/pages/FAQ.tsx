@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import { useListFaqs } from "@workspace/api-client-react";
 import { getListFaqsQueryKey } from "@workspace/api-client-react";
 import { Link } from "wouter";
@@ -22,6 +23,7 @@ export default function FAQ() {
 
   return (
     <Layout>
+      <Seo title="FAQ" description="Frequently asked questions about Hope Alive Children Spring Foundation: who we are, how to donate, child sponsorship, volunteering, and partnering with our foundation." path="/faq" />
       <div className="pt-16">
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">

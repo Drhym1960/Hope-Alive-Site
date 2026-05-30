@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Link } from "wouter";
 
@@ -58,6 +59,7 @@ const goals = [
 export default function Goals() {
   return (
     <Layout>
+      <Seo title="Goals & Objectives" description="The strategic goals and objectives guiding Hope Alive Children Spring Foundation as we care for and empower orphaned and vulnerable children in Benue State, Nigeria." path="/goals" />
       <div className="pt-16">
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">

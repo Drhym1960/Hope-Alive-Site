@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import { useSubmitContact } from "@workspace/api-client-react";
 import { SectionHeader } from "@/components/SectionHeader";
 
@@ -39,6 +40,7 @@ export default function Contact() {
 
   return (
     <Layout>
+      <Seo title="Contact Us" description="Get in touch with Hope Alive Children Spring Foundation in Makurdi, Benue State, Nigeria. Call 08036238076 or email hacsfoundation10@gmail.com to support our children." path="/contact" />
       <div className="pt-16">
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">

@@ -1,8 +1,10 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 
 export default function Privacy() {
   return (
     <Layout>
+      <Seo title="Privacy Policy" description="Privacy Policy for Hope Alive Children Spring Foundation, explaining how we collect, use, and protect your information when you visit our website or make a donation." path="/privacy" />
       <div className="pt-16">
         <section className="hero-gradient py-20 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">
