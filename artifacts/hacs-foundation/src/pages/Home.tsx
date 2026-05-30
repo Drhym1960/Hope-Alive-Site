@@ -59,6 +59,21 @@ const stories = [
     quote: "I used to sleep hungry. Now I eat every day and I learn every day. Thank you HACS.",
     location: "Makurdi, Benue State",
   },
+  {
+    name: "Kunde Aondofa",
+    quote: "Supporting HACS Foundation has been deeply rewarding. I have seen first-hand how every contribution turns into real meals, school fees, and brighter smiles for these children.",
+    location: "Makurdi, Benue State",
+  },
+  {
+    name: "Sonia Doo Peter",
+    quote: "What this foundation does for vulnerable children is remarkable. The care, the love, and the commitment are genuine. I am proud to stand with their mission.",
+    location: "Makurdi, Benue State",
+  },
+  {
+    name: "Faith Kumater",
+    quote: "HACS Foundation gives these children more than shelter, it gives them dignity and hope for the future. Their work has truly touched my heart.",
+    location: "Makurdi, Benue State",
+  },
 ];
 
 export default function Home() {
@@ -82,7 +97,7 @@ export default function Home() {
               <span className="text-secondary">Hope</span>
             </h1>
             <p className="text-primary-foreground/85 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl animate-fade-in-up">
-              We are a charitable orphanage in Makurdi, Nigeria, dedicated to supporting orphans and vulnerable children with shelter, education, healthcare, and unconditional love. <em className="text-secondary">Giving Love a Chance.</em>
+              We are a charitable foundation in Makurdi, Nigeria, dedicated to supporting orphans and vulnerable children with shelter, education, healthcare, and unconditional love. <em className="text-secondary">Giving Love a Chance.</em>
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-in-up">
               <Link

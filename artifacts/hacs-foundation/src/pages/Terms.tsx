@@ -15,7 +15,7 @@ export default function Terms() {
             <div className="space-y-8 text-muted-foreground leading-relaxed">
               <div>
                 <h2 className="font-serif text-xl font-bold text-foreground mb-3">1. Acceptance of Terms</h2>
-                <p>By accessing and using the website of Hope Alive Children Spring Foundation (hacsfoundation.org), you accept and agree to be bound by these Terms of Use. If you do not agree, please do not use this website.</p>
+                <p>By accessing and using the website of Hope Alive Children Spring Foundation (hacsfoundation.com), you accept and agree to be bound by these Terms of Use. If you do not agree, please do not use this website.</p>
               </div>
               <div>
                 <h2 className="font-serif text-xl font-bold text-foreground mb-3">2. Use of Website</h2>

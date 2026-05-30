@@ -15,7 +15,7 @@ export default function Privacy() {
             <div className="space-y-8 text-muted-foreground leading-relaxed">
               <div>
                 <h2 className="font-serif text-xl font-bold text-foreground mb-3">1. Introduction</h2>
-                <p>Hope Alive Children Spring Foundation ("HACS Foundation", "we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website hacsfoundation.org or make a donation.</p>
+                <p>Hope Alive Children Spring Foundation ("HACS Foundation", "we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website hacsfoundation.com or make a donation.</p>
               </div>
               <div>
                 <h2 className="font-serif text-xl font-bold text-foreground mb-3">2. Information We Collect</h2>
@@ -57,7 +57,7 @@ export default function Privacy() {
                 <h2 className="font-serif text-xl font-bold text-foreground mb-3">8. Contact Us</h2>
                 <p>For privacy-related questions, contact us at:</p>
                 <p className="mt-2"><strong>Hope Alive Children Spring Foundation</strong><br />
-                Shop No 6, Udoo Plaza, Terwase Agbadu Road, Opp NKST Church, Makurdi, Benue State, Nigeria<br />
+                Office No 5, Udoo Plaza, Opp NKST Church, Ama Terwase Agbadu Road, Makurdi, Benue State, Nigeria<br />
                 Email: hacsfoundation10@gmail.com<br />
                 Phone: 08036238076</p>
               </div>

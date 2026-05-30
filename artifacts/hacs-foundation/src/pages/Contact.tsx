@@ -62,9 +62,8 @@ export default function Contact() {
                   <div>
                     <h4 className="font-semibold text-primary text-sm uppercase tracking-wide mb-1">Address</h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">
-                      Shop No 6, Udoo Plaza,<br />
-                      Terwase Agbadu Road,<br />
-                      Opp NKST Church,<br />
+                      Office No 5, Udoo Plaza,<br />
+                      Opp NKST Church, Ama Terwase Agbadu Road,<br />
                       Makurdi, Benue State, Nigeria
                     </p>
                   </div>
@@ -81,8 +80,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-primary text-sm uppercase tracking-wide mb-1">Website</h4>
-                    <a href="https://hacsfoundation.org" className="text-muted-foreground text-sm hover:text-primary">
-                      hacsfoundation.org
+                    <a href="https://hacsfoundation.com" className="text-muted-foreground text-sm hover:text-primary">
+                      hacsfoundation.com
                     </a>
                   </div>
                 </div>

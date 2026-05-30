@@ -16,7 +16,7 @@ const foundationImages = [
   { id: 1, url: img1, caption: "Children with our founder at the foundation banner", category: "Our Family" },
   { id: 2, url: img2, caption: "The children proudly displaying our motto: Giving Love a Chance", category: "Our Identity" },
   { id: 3, url: img3, caption: "Distribution day: gifts for every child", category: "Outreach" },
-  { id: 4, url: img4, caption: "Joyful moments with the boys at the orphanage", category: "Daily Life" },
+  { id: 4, url: img4, caption: "Joyful moments with the boys at the foundation", category: "Daily Life" },
   { id: 6, url: img6, caption: "Visiting children in the community", category: "Community Outreach" },
   { id: 7, url: img7, caption: "Children celebrating together", category: "Daily Life" },
   { id: 8, url: img8, caption: "Family bonds built on love and trust", category: "Our Family" },

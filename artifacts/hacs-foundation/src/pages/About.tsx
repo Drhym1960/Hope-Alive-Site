@@ -33,7 +33,7 @@ export default function About() {
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">About Us</p>
             <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-6">Who We Are</h1>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
-              Hope Alive Children Spring Foundation is a registered charitable organisation and orphanage serving the most vulnerable children in Makurdi, Benue State, Nigeria.
+              Hope Alive Children Spring Foundation is a registered charitable foundation serving the most vulnerable children in Makurdi, Benue State, Nigeria.
             </p>
           </div>
         </section>
@@ -52,7 +52,7 @@ export default function About() {
                     What began as a small gathering of concerned individuals caring for a handful of children in Makurdi has grown into a fully operational charitable organisation with multiple programs, a team of dedicated staff and volunteers, and the love and trust of hundreds of families across Benue State.
                   </p>
                   <p>
-                    Today, Hope Alive Children Spring Foundation operates as both an orphanage and a community support center, providing comprehensive care that addresses not just the physical needs of children, but their emotional, educational, and spiritual wellbeing.
+                    Today, Hope Alive Children Spring Foundation operates as a children's care and community support center, providing comprehensive care that addresses not just the physical needs of children, but their emotional, educational, and spiritual wellbeing.
                   </p>
                   <p>
                     Our motto, <em className="text-primary font-medium">"Giving Love a Chance"</em>, is not just a tagline. It is the promise we make to every child who walks through our doors: you are loved, you are valued, and you belong.
@@ -64,9 +64,9 @@ export default function About() {
                   <h3 className="font-serif text-xl font-semibold text-secondary mb-3">Our Identity</h3>
                   <ul className="space-y-2 text-primary-foreground/85 text-sm">
                     <li><strong>Name:</strong> Hope Alive Children Spring Foundation</li>
-                    <li><strong>Type:</strong> Charitable Organisation & Orphanage</li>
+                    <li><strong>Type:</strong> Charitable Foundation</li>
                     <li><strong>Location:</strong> Makurdi, Benue State, Nigeria</li>
-                    <li><strong>Website:</strong> hacsfoundation.org</li>
+                    <li><strong>Website:</strong> hacsfoundation.com</li>
                     <li><strong>Email:</strong> hacsfoundation10@gmail.com</li>
                   </ul>
                 </div>

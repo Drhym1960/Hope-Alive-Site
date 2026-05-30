@@ -5,13 +5,13 @@ import { getListFaqsQueryKey } from "@workspace/api-client-react";
 import { Link } from "wouter";
 
 const defaultFaqs = [
-  { id: 1, question: "What is Hope Alive Children Spring Foundation?", answer: "Hope Alive Children Spring Foundation (HACS Foundation) is a registered charitable organisation and orphanage based in Makurdi, Benue State, Nigeria. We provide comprehensive care including shelter, food, education, healthcare, and love to orphaned and vulnerable children." },
+  { id: 1, question: "What is Hope Alive Children Spring Foundation?", answer: "Hope Alive Children Spring Foundation (HACS Foundation) is a registered charitable foundation based in Makurdi, Benue State, Nigeria. We provide comprehensive care including shelter, food, education, healthcare, and love to orphaned and vulnerable children." },
   { id: 2, question: "How can I donate to the foundation?", answer: "You can donate through our secure online donation page using Stripe (card payment), PayPal, KoraPay, or via direct bank transfer to our Zenith Bank account: 1224366497 (Naira) or our dollar account: 5074649270. Every donation, no matter the size, makes a real difference." },
   { id: 3, question: "Is my donation tax-deductible?", answer: "HACS Foundation is a registered charitable organisation in Nigeria. Please consult your local tax authority for information regarding deductibility in your country of residence. We issue receipts for all donations upon request." },
   { id: 4, question: "How are donations used?", answer: "100% of your donation goes directly to program activities: feeding, education, healthcare, shelter, and skills training for the children in our care. Administrative costs are covered separately through institutional grants and partnerships." },
   { id: 5, question: "Can I sponsor a specific child?", answer: "Yes! Child sponsorship is one of the most impactful ways to give. Contact us at hacsfoundation10@gmail.com to learn more about our child sponsorship program and how you can support a specific child's journey." },
   { id: 6, question: "How can I volunteer with the foundation?", answer: "We welcome volunteers with skills in education, healthcare, counseling, administration, and more. Reach out to us via email or phone to discuss available opportunities and how your skills can serve our children." },
-  { id: 7, question: "Where is the foundation located?", answer: "We are located at Shop No 6, Udoo Plaza, Terwase Agbadu Road, Opp NKST Church, Makurdi, Benue State, Nigeria. You can contact us at 08036238076 or 09016662836." },
+  { id: 7, question: "Where is the foundation located?", answer: "We are located at Office No 5, Udoo Plaza, Opp NKST Church, Ama Terwase Agbadu Road, Makurdi, Benue State, Nigeria. You can contact us at 08036238076 or 09016662836." },
   { id: 8, question: "Can organisations partner with HACS Foundation?", answer: "Absolutely. We actively seek partnerships with churches, NGOs, corporations, and government agencies. Corporate sponsorships, in-kind donations, and program partnerships are all welcome. Contact us to discuss partnership opportunities." },
 ];
 

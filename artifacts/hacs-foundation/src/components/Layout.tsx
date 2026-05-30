@@ -158,7 +158,7 @@ export function Footer() {
             <h4 className="font-serif font-semibold text-secondary mb-4">Contact Us</h4>
             <ul className="space-y-3 text-sm text-primary-foreground/80">
               <li className="leading-relaxed">
-                Shop No 6, Udoo Plaza, Terwase Agbadu Road, Opp NKST Church, Makurdi, Benue State, Nigeria
+                Office No 5, Udoo Plaza, Opp NKST Church, Ama Terwase Agbadu Road, Makurdi, Benue State, Nigeria
               </li>
               <li>
                 <a href="tel:08036238076" className="hover:text-secondary transition-colors">08036238076</a>
@@ -172,8 +172,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://hacsfoundation.org" className="hover:text-secondary transition-colors">
-                  hacsfoundation.org
+                <a href="https://hacsfoundation.com" className="hover:text-secondary transition-colors">
+                  hacsfoundation.com
                 </a>
               </li>
             </ul>
