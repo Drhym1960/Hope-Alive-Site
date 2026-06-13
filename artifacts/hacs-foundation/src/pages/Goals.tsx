@@ -59,7 +59,27 @@ const goals = [
 export default function Goals() {
   return (
     <Layout>
-      <Seo title="Goals & Objectives" description="The strategic goals and objectives guiding Hope Alive Children Spring Foundation as we care for and empower orphaned and vulnerable children in Benue State, Nigeria." path="/goals" />
+      <Seo
+        title="Goals & Objectives — Building a Future for Nigeria's Children"
+        description="Explore the 10 strategic goals of Hope Alive Children Spring Foundation: providing shelter, education, healthcare, nutrition, skills training, and advocacy for orphaned and vulnerable children in Benue State, Nigeria."
+        path="/goals"
+        keywords="HACS Foundation goals, Hope Alive Children Spring Foundation objectives, child welfare goals Nigeria, orphan support objectives Benue State, education shelter healthcare children Nigeria, NGO strategic goals Nigeria"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "url": "https://www.hacsfoundation.com/goals",
+          "name": "Goals & Objectives | Hope Alive Children Spring Foundation",
+          "description": "The strategic goals guiding HACS Foundation as we care for and empower orphaned and vulnerable children in Benue State, Nigeria.",
+          "isPartOf": { "@id": "https://www.hacsfoundation.com/#website" },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.hacsfoundation.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Goals & Objectives", "item": "https://www.hacsfoundation.com/goals" }
+            ]
+          }
+        }}
+      />
       <div className="pt-16">
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">

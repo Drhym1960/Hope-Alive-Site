@@ -6,7 +6,27 @@ import { Link } from "wouter";
 export default function Mission() {
   return (
     <Layout>
-      <Seo title="Mission & Vision" description="Our mission and vision at Hope Alive Children Spring Foundation: giving orphaned and vulnerable children in Makurdi, Nigeria a future filled with love, care, and hope." path="/mission" />
+      <Seo
+        title="Our Mission & Vision — Transforming Children's Lives in Nigeria"
+        description="The mission of Hope Alive Children Spring Foundation is to provide compassionate care to orphaned and vulnerable children in Nigeria, restoring their dignity and empowering their future. Discover what drives us."
+        path="/mission"
+        keywords="HACS Foundation mission, Hope Alive Children Spring Foundation vision, child welfare mission Nigeria, orphan care mission Benue State, compassionate care children Nigeria, NGO mission statement Nigeria"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "url": "https://www.hacsfoundation.com/mission",
+          "name": "Mission & Vision | Hope Alive Children Spring Foundation",
+          "description": "The mission and vision of HACS Foundation: giving orphaned and vulnerable children in Nigeria a future filled with love, care, and hope.",
+          "isPartOf": { "@id": "https://www.hacsfoundation.com/#website" },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.hacsfoundation.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Mission & Vision", "item": "https://www.hacsfoundation.com/mission" }
+            ]
+          }
+        }}
+      />
       <div className="pt-16">
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">

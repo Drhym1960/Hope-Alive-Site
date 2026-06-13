@@ -87,7 +87,27 @@ const programs = [
 export default function Programs() {
   return (
     <Layout>
-      <Seo title="Programs & Services" description="Explore the programs and services of Hope Alive Children Spring Foundation: feeding, education, healthcare, shelter, skills training, and community outreach in Makurdi, Nigeria." path="/programs" />
+      <Seo
+        title="Programs & Services — Feeding, Education, Healthcare & More"
+        description="Hope Alive Children Spring Foundation runs 6 life-changing programs for orphaned children in Nigeria: daily feeding (1,000+ meals/month), education support, free healthcare, safe shelter, skills training, and psychosocial support."
+        path="/programs"
+        keywords="HACS Foundation programs, children feeding program Nigeria, education support orphans Nigeria, free healthcare children Benue State, shelter orphaned children Nigeria, skills training youth Nigeria, psychosocial support children, NGO programs Makurdi"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "url": "https://www.hacsfoundation.com/programs",
+          "name": "Programs & Services | Hope Alive Children Spring Foundation",
+          "description": "6 life-changing programs by HACS Foundation: feeding, education, healthcare, shelter, skills training, and psychosocial support for orphaned children in Nigeria.",
+          "isPartOf": { "@id": "https://www.hacsfoundation.com/#website" },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.hacsfoundation.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Programs", "item": "https://www.hacsfoundation.com/programs" }
+            ]
+          }
+        }}
+      />
       <div className="pt-16">
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">

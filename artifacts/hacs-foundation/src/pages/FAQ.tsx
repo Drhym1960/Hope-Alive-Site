@@ -23,7 +23,70 @@ export default function FAQ() {
 
   return (
     <Layout>
-      <Seo title="FAQ" description="Frequently asked questions about Hope Alive Children Spring Foundation: who we are, how to donate, child sponsorship, volunteering, and partnering with our foundation." path="/faq" />
+      <Seo
+        title="Frequently Asked Questions — HACS Foundation"
+        description="Get answers to common questions about Hope Alive Children Spring Foundation: how to donate, child sponsorship, volunteering, how your money is used, and how to partner with our NGO in Nigeria."
+        path="/faq"
+        keywords="HACS Foundation FAQ, Hope Alive Children Spring Foundation questions, how to donate Nigeria charity, child sponsorship questions, volunteer with NGO Nigeria, HACS Foundation answers, donation questions Nigeria foundation"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "url": "https://www.hacsfoundation.com/faq",
+            "name": "FAQ | Hope Alive Children Spring Foundation",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Hope Alive Children Spring Foundation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Hope Alive Children Spring Foundation (HACS Foundation) is a registered charitable foundation based in Makurdi, Benue State, Nigeria. We provide comprehensive care including shelter, food, education, healthcare, and love to orphaned and vulnerable children."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I donate to the foundation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can donate through our secure online donation page using Stripe (card payment), PayPal, KoraPay, or via direct bank transfer to our Zenith Bank account: 1224366497 (Naira) or our dollar account: 5074649270."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How are donations used?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "100% of your donation goes directly to program activities: feeding, education, healthcare, shelter, and skills training for the children in our care. Administrative costs are covered separately through institutional grants and partnerships."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I sponsor a specific child?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes! Child sponsorship is one of the most impactful ways to give. Contact us at hacsfoundation10@gmail.com to learn more about our child sponsorship program."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I volunteer with the foundation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We welcome volunteers with skills in education, healthcare, counseling, administration, and more. Reach out to us via email or phone to discuss available opportunities."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is the foundation located?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We are located at Office No 5, Udoo Plaza, Opp NKST Church, Ama Terwase Agbadu Road, Makurdi, Benue State, Nigeria. Contact us at 08036238076 or hacsfoundation10@gmail.com."
+                }
+              }
+            ]
+          }
+        ]}
+      />
       <div className="pt-16">
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">

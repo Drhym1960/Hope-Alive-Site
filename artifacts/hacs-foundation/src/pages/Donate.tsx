@@ -129,7 +129,37 @@ export default function Donate() {
 
   return (
     <Layout>
-      <Seo title="Donate" description="Donate to Hope Alive Children Spring Foundation and change a child's life. Give securely by card, PayPal, KoraPay, or bank transfer to support orphaned children in Makurdi, Nigeria." path="/donate" />
+      <Seo
+        title="Donate — Support Orphaned Children in Nigeria Today"
+        description="Donate to Hope Alive Children Spring Foundation and transform a child's life. Give securely by card (Stripe), PayPal, KoraPay, or bank transfer. 100% of donations support orphaned and vulnerable children in Makurdi, Nigeria."
+        path="/donate"
+        keywords="donate to HACS Foundation, support children Nigeria, donate to orphans Nigeria, sponsor a child Nigeria, child sponsorship Benue State, give to children charity Nigeria, donate Hope Alive Children Spring Foundation, KoraPay donation Nigeria, support vulnerable children"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "DonateAction",
+            "name": "Donate to Hope Alive Children Spring Foundation",
+            "description": "Support orphaned and vulnerable children in Makurdi, Benue State, Nigeria through a secure online or bank transfer donation.",
+            "recipient": { "@id": "https://www.hacsfoundation.com/#organization" },
+            "url": "https://www.hacsfoundation.com/donate"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "url": "https://www.hacsfoundation.com/donate",
+            "name": "Donate | Hope Alive Children Spring Foundation",
+            "description": "Give securely to HACS Foundation and support orphaned children in Nigeria with food, education, shelter, and healthcare.",
+            "isPartOf": { "@id": "https://www.hacsfoundation.com/#website" },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.hacsfoundation.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Donate", "item": "https://www.hacsfoundation.com/donate" }
+              ]
+            }
+          }
+        ]}
+      />
       <div className="pt-16">
         <section className="hero-gradient py-20 px-4 sm:px-6 text-center">
           <div className="max-w-3xl mx-auto">

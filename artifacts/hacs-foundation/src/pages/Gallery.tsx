@@ -31,7 +31,27 @@ export default function Gallery() {
 
   return (
     <Layout>
-      <Seo title="Gallery" description="See the work of Hope Alive Children Spring Foundation in pictures: moments of joy, care, and hope shared with the children we serve in Makurdi, Benue State, Nigeria." path="/gallery" />
+      <Seo
+        title="Gallery — Moments of Joy, Care & Hope"
+        description="See the real impact of HACS Foundation in photos: joyful children, community outreach, gift distributions, and daily life at Hope Alive Children Spring Foundation in Makurdi, Benue State, Nigeria."
+        path="/gallery"
+        keywords="HACS Foundation gallery, Hope Alive Children Spring Foundation photos, children Nigeria photos, orphan care images Nigeria, Makurdi foundation pictures, NGO impact photos Nigeria, children charity gallery"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ImageGallery",
+          "url": "https://www.hacsfoundation.com/gallery",
+          "name": "Gallery | Hope Alive Children Spring Foundation",
+          "description": "Photo gallery showing the real impact of HACS Foundation — joyful children, outreach programs, and daily life in Makurdi, Nigeria.",
+          "isPartOf": { "@id": "https://www.hacsfoundation.com/#website" },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.hacsfoundation.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Gallery", "item": "https://www.hacsfoundation.com/gallery" }
+            ]
+          }
+        }}
+      />
       <div className="pt-16">
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">

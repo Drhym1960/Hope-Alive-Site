@@ -40,7 +40,28 @@ export default function Contact() {
 
   return (
     <Layout>
-      <Seo title="Contact Us" description="Get in touch with Hope Alive Children Spring Foundation in Makurdi, Benue State, Nigeria. Call 08036238076 or email hacsfoundation10@gmail.com to support our children." path="/contact" />
+      <Seo
+        title="Contact HACS Foundation — Get in Touch"
+        description="Contact Hope Alive Children Spring Foundation in Makurdi, Benue State, Nigeria. Call 08036238076 or email hacsfoundation10@gmail.com to donate, volunteer, partner, or ask questions about our children's programs."
+        path="/contact"
+        keywords="contact HACS Foundation, Hope Alive Children Spring Foundation contact, Makurdi NGO contact, Benue State charity contact, donate Nigeria contact, volunteer Nigeria charity, partner HACS Foundation, hacsfoundation10@gmail.com, 08036238076"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "url": "https://www.hacsfoundation.com/contact",
+          "name": "Contact Us | Hope Alive Children Spring Foundation",
+          "description": "Contact HACS Foundation in Makurdi, Benue State to donate, volunteer, or partner with our children's charity.",
+          "isPartOf": { "@id": "https://www.hacsfoundation.com/#website" },
+          "about": { "@id": "https://www.hacsfoundation.com/#organization" },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.hacsfoundation.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.hacsfoundation.com/contact" }
+            ]
+          }
+        }}
+      />
       <div className="pt-16">
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">

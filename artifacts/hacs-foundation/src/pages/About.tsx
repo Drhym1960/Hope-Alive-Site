@@ -27,7 +27,28 @@ export default function About() {
 
   return (
     <Layout>
-      <Seo title="About Us" description="Learn about Hope Alive Children Spring Foundation, a registered charitable foundation in Makurdi, Benue State, Nigeria, caring for orphaned and vulnerable children since our founding." path="/about" />
+      <Seo
+        title="About HACS Foundation — Who We Are"
+        description="Hope Alive Children Spring Foundation is a CAC-registered Nigerian NGO in Makurdi, Benue State, dedicated to providing shelter, education, healthcare, and love to orphaned and vulnerable children. Learn our story."
+        path="/about"
+        keywords="about HACS Foundation, Hope Alive Children Spring Foundation history, registered Nigerian NGO children, Makurdi Benue State charity, CAC registered foundation Nigeria, who is HACS Foundation"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "url": "https://www.hacsfoundation.com/about",
+          "name": "About HACS Foundation | Hope Alive Children Spring Foundation",
+          "description": "Learn about Hope Alive Children Spring Foundation — a registered NGO in Makurdi, Benue State, Nigeria caring for orphaned and vulnerable children.",
+          "isPartOf": { "@id": "https://www.hacsfoundation.com/#website" },
+          "about": { "@id": "https://www.hacsfoundation.com/#organization" },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.hacsfoundation.com/" },
+              { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://www.hacsfoundation.com/about" }
+            ]
+          }
+        }}
+      />
       <div className="pt-16">
         {/* Hero */}
         <section className="hero-gradient py-24 px-4 sm:px-6">
