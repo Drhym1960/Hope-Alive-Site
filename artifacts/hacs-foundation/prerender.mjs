@@ -417,6 +417,313 @@ const PAGES = [
       },
     ],
   },
+
+  // ── Volunteer ─────────────────────────────────────────────────────────────
+  {
+    route: "/volunteer",
+    title: `Volunteer with HACS Foundation | Help Vulnerable Children in Nigeria`,
+    description:
+      "Join the HACS Foundation volunteer team in Makurdi, Nigeria. Opportunities in education support, healthcare, communications, skills training, and administration. All volunteers complete safeguarding orientation.",
+    h1: "Volunteer with HACS Foundation",
+    intro:
+      "Give your time, skills, and care to children who need it most. HACS Foundation welcomes volunteers in education, healthcare, communications, administration, and skills training. All volunteers complete our safeguarding orientation before working with children.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `${BASE_URL}/volunteer`,
+        name: `Volunteer | ${SITE_NAME}`,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+        breadcrumb: breadcrumb([
+          { name: "Home", item: `${BASE_URL}/` },
+          { name: "Volunteer", item: `${BASE_URL}/volunteer` },
+        ]),
+      },
+    ],
+  },
+
+  // ── Partner With Us ───────────────────────────────────────────────────────
+  {
+    route: "/partner-with-us",
+    title: `Partner with HACS Foundation | Corporate & Community Partnerships`,
+    description:
+      "Partner with Hope Alive Children Spring Foundation to support vulnerable children in Nigeria. We welcome corporate, school, faith community, NGO, and diaspora partnerships in Makurdi, Benue State.",
+    h1: "Partner with HACS Foundation",
+    intro:
+      "Join us in building a future for orphaned and vulnerable children in Nigeria. HACS Foundation welcomes partnerships with organisations that share our commitment to child welfare, dignity, and lasting change — including corporate sponsors, schools, faith communities, NGOs, and diaspora organisations.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `${BASE_URL}/partner-with-us`,
+        name: `Partner With Us | ${SITE_NAME}`,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+        breadcrumb: breadcrumb([
+          { name: "Home", item: `${BASE_URL}/` },
+          { name: "Partner With Us", item: `${BASE_URL}/partner-with-us` },
+        ]),
+      },
+    ],
+  },
+
+  // ── Transparency ──────────────────────────────────────────────────────────
+  {
+    route: "/transparency",
+    title: `Transparency & Accountability | ${SITE_NAME}`,
+    description:
+      "Verified organisational information, governance, and accountability for Hope Alive Children Spring Foundation — a registered Nigerian NGO serving orphaned children in Makurdi, Benue State since 2012.",
+    h1: "Transparency & Accountability",
+    intro:
+      "Hope Alive Children Spring Foundation is committed to transparent, accountable stewardship of every donation. This page provides verified information about our legal identity, contact details, programmes, governance, and financial policies.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        url: `${BASE_URL}/transparency`,
+        name: `Transparency & Accountability | ${SITE_NAME}`,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+        breadcrumb: breadcrumb([
+          { name: "Home", item: `${BASE_URL}/` },
+          { name: "Transparency", item: `${BASE_URL}/transparency` },
+        ]),
+      },
+    ],
+  },
+
+  // ── Child Safeguarding ────────────────────────────────────────────────────
+  {
+    route: "/child-safeguarding",
+    title: `Child Safeguarding Policy | ${SITE_NAME}`,
+    description:
+      "HACS Foundation's child safeguarding policy: protecting child dignity, privacy, and wellbeing. Covers photography consent, volunteer conduct standards, and how to report safeguarding concerns.",
+    h1: "Child Safeguarding Policy",
+    intro:
+      "Protecting every child in our care is the highest priority at HACS Foundation. This page sets out our safeguarding principles, photography and privacy policies, conduct standards for all staff and volunteers, and the process for reporting any concern about a child's welfare.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `${BASE_URL}/child-safeguarding`,
+        name: `Child Safeguarding Policy | ${SITE_NAME}`,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+        breadcrumb: breadcrumb([
+          { name: "Home", item: `${BASE_URL}/` },
+          { name: "Child Safeguarding", item: `${BASE_URL}/child-safeguarding` },
+        ]),
+      },
+    ],
+  },
+
+  // ── Education Support ─────────────────────────────────────────────────────
+  {
+    route: "/education-support",
+    title: `Education Support for Vulnerable Children | ${SITE_NAME}`,
+    description:
+      "HACS Foundation provides school fees, uniforms, textbooks, tutoring, and scholarships for orphaned and vulnerable children in Makurdi, Benue State, Nigeria. Education changes lives.",
+    h1: "Education Support for Vulnerable Children",
+    intro:
+      "Education is the most powerful tool a child has to change their future. HACS Foundation's Education Support Programme covers school fees, uniforms, books, tutoring, and scholarships — removing every barrier that stands between a child and their schooling.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `${BASE_URL}/education-support`,
+        name: `Education Support | ${SITE_NAME}`,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+        breadcrumb: breadcrumb([
+          { name: "Home", item: `${BASE_URL}/` },
+          { name: "Education Support", item: `${BASE_URL}/education-support` },
+        ]),
+      },
+    ],
+  },
+
+  // ── Orphans and Vulnerable Children ──────────────────────────────────────
+  {
+    route: "/orphans-and-vulnerable-children",
+    title: `Supporting Orphans and Vulnerable Children | ${SITE_NAME}`,
+    description:
+      "Hope Alive Children Spring Foundation provides shelter, education, healthcare, feeding, skills training, and psychosocial support to orphaned and vulnerable children in Makurdi, Nigeria.",
+    h1: "Orphans and Vulnerable Children",
+    intro:
+      "Every child deserves safety, love, and opportunity — regardless of whether they have parents to provide those things. Since 2012, HACS Foundation has bridged that gap for children in Makurdi, Benue State, Nigeria through six integrated programmes.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `${BASE_URL}/orphans-and-vulnerable-children`,
+        name: `Orphans and Vulnerable Children | ${SITE_NAME}`,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+        breadcrumb: breadcrumb([
+          { name: "Home", item: `${BASE_URL}/` },
+          { name: "Orphans & Vulnerable Children", item: `${BASE_URL}/orphans-and-vulnerable-children` },
+        ]),
+      },
+    ],
+  },
+
+  // ── Street Children Support ───────────────────────────────────────────────
+  {
+    route: "/street-children-support",
+    title: `Supporting Street Children and At-Risk Youth | ${SITE_NAME}`,
+    description:
+      "HACS Foundation provides safe, dignified support to street children and at-risk youth in Makurdi, Nigeria — shelter, education, nutrition, skills training, and trauma-informed care.",
+    h1: "Supporting Street Children and At-Risk Youth",
+    intro:
+      "Street children and at-risk youth are among the most visible yet most misunderstood young people in many communities. HACS Foundation provides safe, dignified, evidence-informed support — shelter, education, nutrition, vocational training, and psychosocial care — for children who need it most in Makurdi, Benue State, Nigeria.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `${BASE_URL}/street-children-support`,
+        name: `Street Children Support | ${SITE_NAME}`,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+        breadcrumb: breadcrumb([
+          { name: "Home", item: `${BASE_URL}/` },
+          { name: "Street Children Support", item: `${BASE_URL}/street-children-support` },
+        ]),
+      },
+    ],
+  },
+
+  // ── Blog Index ────────────────────────────────────────────────────────────
+  {
+    route: "/blog",
+    title: `HACS Foundation Blog | Children, Education & Community`,
+    description:
+      "Articles on child welfare, education support, donor guidance, and community action from Hope Alive Children Spring Foundation in Makurdi, Nigeria.",
+    h1: "HACS Foundation Blog",
+    intro:
+      "Articles and guides on child welfare, education support, responsible giving, and community action — from the HACS Foundation editorial team in Makurdi, Benue State, Nigeria.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        url: `${BASE_URL}/blog`,
+        name: `HACS Foundation Blog`,
+        description: "Articles on child welfare, education, and community action from HACS Foundation.",
+        publisher: { "@id": `${BASE_URL}/#organization` },
+      },
+    ],
+  },
+
+  // ── Compare Pages ─────────────────────────────────────────────────────────
+  {
+    route: "/compare/hacs-foundation-vs-crowdfunding",
+    title: `HACS Foundation vs Crowdfunding | Supporting Children Responsibly`,
+    description:
+      "Compare donating to HACS Foundation against crowdfunding campaigns for children. Understand accountability, child protection, financial oversight, and why registered charities matter.",
+    h1: "HACS Foundation vs Crowdfunding Campaigns",
+    intro:
+      "Understanding the difference between donating to a registered foundation and contributing to a crowdfunding campaign helps you give safely and effectively. This page compares accountability, child protection, financial oversight, and track record.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `${BASE_URL}/compare/hacs-foundation-vs-crowdfunding`,
+        name: `HACS Foundation vs Crowdfunding | ${SITE_NAME}`,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+        breadcrumb: breadcrumb([
+          { name: "Home", item: `${BASE_URL}/` },
+          { name: "Compare", item: `${BASE_URL}/site-map` },
+          { name: "HACS Foundation vs Crowdfunding", item: `${BASE_URL}/compare/hacs-foundation-vs-crowdfunding` },
+        ]),
+      },
+    ],
+  },
+  {
+    route: "/compare/sponsor-a-child-vs-general-donation",
+    title: `Child Sponsorship vs General Donation — Which Is Better? | ${SITE_NAME}`,
+    description:
+      "Compare child sponsorship to general charitable donations. Understand the benefits, limitations, and child protection considerations to decide how to best support vulnerable children.",
+    h1: "Child Sponsorship vs General Donation",
+    intro:
+      "Many donors ask: should I sponsor a specific child or make a general donation? Both approaches have real merits and real limitations. This comparison explains the key differences so you can make an informed, responsible choice.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `${BASE_URL}/compare/sponsor-a-child-vs-general-donation`,
+        name: `Child Sponsorship vs Donation | ${SITE_NAME}`,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+        breadcrumb: breadcrumb([
+          { name: "Home", item: `${BASE_URL}/` },
+          { name: "Compare", item: `${BASE_URL}/site-map` },
+          { name: "Sponsorship vs Donation", item: `${BASE_URL}/compare/sponsor-a-child-vs-general-donation` },
+        ]),
+      },
+    ],
+  },
+  {
+    route: "/compare/volunteering-vs-donating",
+    title: `Volunteering vs Donating — Which Makes a Bigger Difference? | ${SITE_NAME}`,
+    description:
+      "Compare volunteering and donating to a children's charity. Understand the different kinds of impact, commitment, and requirements so you can decide which fits your situation best.",
+    h1: "Volunteering vs Donating",
+    intro:
+      "Two powerful ways to support children's charities — but they work very differently. This guide compares volunteering and donating across impact, flexibility, distance, safeguarding requirements, and availability, to help you decide which is right for your situation.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `${BASE_URL}/compare/volunteering-vs-donating`,
+        name: `Volunteering vs Donating | ${SITE_NAME}`,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+        breadcrumb: breadcrumb([
+          { name: "Home", item: `${BASE_URL}/` },
+          { name: "Compare", item: `${BASE_URL}/site-map` },
+          { name: "Volunteering vs Donating", item: `${BASE_URL}/compare/volunteering-vs-donating` },
+        ]),
+      },
+    ],
+  },
+  {
+    route: "/compare/local-childrens-charity-vs-international-charity",
+    title: `Local vs International Children's Charity — Which to Support? | ${SITE_NAME}`,
+    description:
+      "Compare donating to a local Nigerian children's charity like HACS Foundation versus a large international organisation. Understand local knowledge, overhead, accountability, and community impact.",
+    h1: "Local vs International Children's Charities",
+    intro:
+      "Should you donate to a local Nigerian children's charity or a large international organisation? Both have genuine strengths. This page explains the key differences — local knowledge, overhead, accountability, and community impact — so you can make an informed choice.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `${BASE_URL}/compare/local-childrens-charity-vs-international-charity`,
+        name: `Local vs International Charity | ${SITE_NAME}`,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+        breadcrumb: breadcrumb([
+          { name: "Home", item: `${BASE_URL}/` },
+          { name: "Compare", item: `${BASE_URL}/site-map` },
+          { name: "Local vs International Charity", item: `${BASE_URL}/compare/local-childrens-charity-vs-international-charity` },
+        ]),
+      },
+    ],
+  },
+
+  // ── Site Map ──────────────────────────────────────────────────────────────
+  {
+    route: "/site-map",
+    title: `Site Map | ${SITE_NAME}`,
+    description:
+      "A complete list of all pages on the Hope Alive Children Spring Foundation website — programmes, blog, compare pages, accountability, and legal information.",
+    h1: "Site Map",
+    intro:
+      "A complete directory of every public page on the HACS Foundation website, grouped by section.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `${BASE_URL}/site-map`,
+        name: `Site Map | ${SITE_NAME}`,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+        breadcrumb: breadcrumb([
+          { name: "Home", item: `${BASE_URL}/` },
+          { name: "Site Map", item: `${BASE_URL}/site-map` },
+        ]),
+      },
+    ],
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -559,6 +866,102 @@ function buildHtml(template, page, googleVerification) {
 // Main
 // ---------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------
+// Blog post reading — parse frontmatter from .md files at build time
+// ---------------------------------------------------------------------------
+
+function parseBlogFrontmatter(raw) {
+  if (!raw.startsWith("---")) return { data: {}, content: raw };
+  const end = raw.indexOf("\n---", 3);
+  if (end === -1) return { data: {}, content: raw };
+  const yaml = raw.slice(4, end);
+  const content = raw.slice(end + 4).trimStart();
+  const data = {};
+  for (const line of yaml.split("\n")) {
+    const idx = line.indexOf(":");
+    if (idx <= 0) continue;
+    const key = line.slice(0, idx).trim();
+    const val = line.slice(idx + 1).trim().replace(/^["']|["']$/g, "");
+    data[key] = val;
+  }
+  return { data, content };
+}
+
+function readBlogPosts() {
+  const blogDir = path.join(__dirname, "src/content/blog");
+  if (!fs.existsSync(blogDir)) return [];
+  return fs
+    .readdirSync(blogDir)
+    .filter((f) => f.endsWith(".md"))
+    .map((file) => {
+      const raw = fs.readFileSync(path.join(blogDir, file), "utf-8");
+      const { data, content } = parseBlogFrontmatter(raw);
+      const slug = data.slug || file.replace(/\.md$/, "");
+      const draft = data.draft === "true";
+      const wordCount = content.trim().split(/\s+/).length;
+      const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+      const excerpt = content
+        .replace(/^##\s.+$/gm, "")
+        .replace(/[*_#\[\]()]/g, "")
+        .replace(/\s+/g, " ")
+        .trim()
+        .slice(0, 220);
+      return { slug, draft, data, excerpt, readingTime };
+    })
+    .filter((p) => !p.draft)
+    .sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
+}
+
+// ---------------------------------------------------------------------------
+// RSS feed generation
+// ---------------------------------------------------------------------------
+
+function escapeXml(str) {
+  return (str || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function generateRssFeed(posts) {
+  const pubDate = new Date().toUTCString();
+  const items = posts.slice(0, 10).map((p) => {
+    const title = escapeXml(p.data.title || p.slug);
+    const link = `${BASE_URL}/blog/${p.slug}`;
+    const description = escapeXml(p.data.description || p.excerpt || "");
+    const date = p.data.date
+      ? new Date(p.data.date).toUTCString()
+      : pubDate;
+    const author = escapeXml(p.data.author || "HACS Foundation Editorial Team");
+    return `  <item>
+    <title>${title}</title>
+    <link>${link}</link>
+    <guid isPermaLink="true">${link}</guid>
+    <description>${description}</description>
+    <pubDate>${date}</pubDate>
+    <author>${author}</author>
+  </item>`;
+  });
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${escapeXml(SITE_NAME)} Blog</title>
+    <link>${BASE_URL}/blog</link>
+    <description>Articles on child welfare, education support, donor guidance, and community action from Hope Alive Children Spring Foundation in Makurdi, Nigeria.</description>
+    <language>en-gb</language>
+    <lastBuildDate>${pubDate}</lastBuildDate>
+    <atom:link href="${BASE_URL}/feed.xml" rel="self" type="application/rss+xml" />
+${items.join("\n")}
+  </channel>
+</rss>`;
+}
+
+// ---------------------------------------------------------------------------
+// Main
+// ---------------------------------------------------------------------------
+
 async function run() {
   const template = fs.readFileSync(templatePath, "utf-8");
   const googleVerification = process.env.GOOGLE_SITE_VERIFICATION || "";
@@ -566,6 +969,7 @@ async function run() {
   let built = 0;
   let skipped = 0;
 
+  // ── Static pages ──────────────────────────────────────────────────────────
   for (const page of PAGES) {
     const html = buildHtml(template, page, googleVerification);
 
@@ -574,7 +978,7 @@ async function run() {
       fs.writeFileSync(templatePath, html, "utf-8");
       console.log(`  ✓  /  →  dist/public/index.html`);
     } else {
-      // Create dist/public/{slug}/index.html
+      // Create dist/public/{slug}/index.html (handles nested paths like /compare/*)
       const slug = page.route.replace(/^\//, "");
       const dir = path.join(distDir, slug);
       fs.mkdirSync(dir, { recursive: true });
@@ -584,6 +988,60 @@ async function run() {
     }
     built++;
   }
+
+  // ── Blog posts ────────────────────────────────────────────────────────────
+  const blogPosts = readBlogPosts();
+  for (const post of blogPosts) {
+    const { slug, data, excerpt, readingTime } = post;
+    const title = data.seoTitle || `${data.title || slug} | ${SITE_NAME}`;
+    const description = data.seoDescription || data.description || excerpt || "";
+    const dateStr = data.date || TODAY;
+    const postPage = {
+      route: `/blog/${slug}`,
+      title,
+      description,
+      h1: data.title || slug,
+      intro: description,
+      schema: [
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: title,
+          description,
+          datePublished: dateStr,
+          dateModified: data.updatedDate || dateStr,
+          author: {
+            "@type": "Organization",
+            name: SITE_NAME,
+            url: BASE_URL,
+          },
+          publisher: { "@id": `${BASE_URL}/#organization` },
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `${BASE_URL}/blog/${slug}`,
+          },
+        },
+        breadcrumb([
+          { name: "Home", item: `${BASE_URL}/` },
+          { name: "Blog", item: `${BASE_URL}/blog` },
+          { name: data.title || slug, item: `${BASE_URL}/blog/${slug}` },
+        ]),
+      ],
+    };
+
+    const html = buildHtml(template, postPage, googleVerification);
+    const dir = path.join(distDir, "blog", slug);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, "index.html"), html, "utf-8");
+    console.log(`  ✓  /blog/${slug}  →  dist/public/blog/${slug}/index.html`);
+    built++;
+  }
+
+  // ── RSS feed ──────────────────────────────────────────────────────────────
+  const rss = generateRssFeed(blogPosts);
+  const rssPath = path.join(distDir, "feed.xml");
+  fs.writeFileSync(rssPath, rss, "utf-8");
+  console.log(`  ✓  RSS feed  →  dist/public/feed.xml (${blogPosts.length} posts)`);
 
   console.log(`\n✅  Prerendered ${built} pages, skipped ${skipped}.`);
   console.log(`   Googlebot will now receive complete HTML for every public route.\n`);

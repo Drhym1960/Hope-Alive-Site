@@ -4,9 +4,10 @@ import { Link, useLocation } from "wouter";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/mission", label: "Mission" },
   { href: "/programs", label: "Programs" },
-  { href: "/gallery", label: "Gallery" },
+  { href: "/donate", label: "Donate" },
+  { href: "/volunteer", label: "Volunteer" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -47,13 +48,13 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium transition-colors hover:text-secondary ${
-                  location === link.href
+                  location === link.href || (link.href !== "/" && location.startsWith(link.href))
                     ? scrolled ? "text-primary" : "text-secondary"
                     : scrolled ? "text-foreground" : "text-white"
                 }`}
@@ -117,7 +118,8 @@ export function Footer() {
     <footer className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div className="lg:col-span-2">
+          {/* Brand */}
+          <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground font-bold text-sm">
                 HACS
@@ -133,17 +135,18 @@ export function Footer() {
             <div className="italic text-secondary font-serif">"Giving Love a Chance"</div>
           </div>
 
+          {/* About & Mission */}
           <div>
-            <h4 className="font-serif font-semibold text-secondary mb-4">Quick Links</h4>
+            <h4 className="font-serif font-semibold text-secondary mb-4">About & Mission</h4>
             <ul className="space-y-2 text-sm">
               {[
                 { href: "/about", label: "About Us" },
-                { href: "/mission", label: "Mission & Vision" },
-                { href: "/programs", label: "Our Programs" },
+                { href: "/mission", label: "Our Mission" },
                 { href: "/goals", label: "Goals & Objectives" },
+                { href: "/programs", label: "Our Programs" },
+                { href: "/transparency", label: "Transparency" },
+                { href: "/child-safeguarding", label: "Child Safeguarding" },
                 { href: "/gallery", label: "Gallery" },
-                { href: "/faq", label: "FAQ" },
-                { href: "/donate", label: "Donate" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-primary-foreground/70 hover:text-secondary transition-colors">
@@ -154,6 +157,29 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Get Involved */}
+          <div>
+            <h4 className="font-serif font-semibold text-secondary mb-4">Get Involved</h4>
+            <ul className="space-y-2 text-sm">
+              {[
+                { href: "/donate", label: "Donate" },
+                { href: "/volunteer", label: "Volunteer" },
+                { href: "/partner-with-us", label: "Partner With Us" },
+                { href: "/faq", label: "FAQ" },
+                { href: "/contact", label: "Contact" },
+                { href: "/blog", label: "Blog" },
+                { href: "/site-map", label: "Site Map" },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="text-primary-foreground/70 hover:text-secondary transition-colors">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
           <div>
             <h4 className="font-serif font-semibold text-secondary mb-4">Contact Us</h4>
             <ul className="space-y-3 text-sm text-primary-foreground/80">
@@ -172,14 +198,15 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://hacsfoundation.com" className="hover:text-secondary transition-colors">
-                  hacsfoundation.com
+                <a href="https://www.hacsfoundation.com" className="hover:text-secondary transition-colors">
+                  www.hacsfoundation.com
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
+        {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-primary-foreground/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/60">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
             <p>&copy; {new Date().getFullYear()} Hope Alive Children Spring Foundation. All rights reserved.</p>
@@ -187,9 +214,10 @@ export function Footer() {
               Registered charitable organisation in Nigeria
             </Link>
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-4 flex-wrap justify-center">
             <Link href="/privacy" className="hover:text-secondary transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-secondary transition-colors">Terms of Use</Link>
+            <Link href="/child-safeguarding" className="hover:text-secondary transition-colors">Safeguarding</Link>
           </div>
         </div>
       </div>

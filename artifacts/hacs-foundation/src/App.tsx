@@ -19,6 +19,26 @@ import Terms from "@/pages/Terms";
 import AdminLogin from "@/pages/admin/Login";
 import AdminDashboard from "@/pages/admin/Dashboard";
 
+// New pages (Task 4)
+import Volunteer from "@/pages/Volunteer";
+import PartnerWithUs from "@/pages/PartnerWithUs";
+import Transparency from "@/pages/Transparency";
+import ChildSafeguarding from "@/pages/ChildSafeguarding";
+import EducationSupport from "@/pages/EducationSupport";
+import OrphansAndVulnerableChildren from "@/pages/OrphansAndVulnerableChildren";
+import StreetChildrenSupport from "@/pages/StreetChildrenSupport";
+import SiteMap from "@/pages/SiteMap";
+
+// Blog
+import Blog from "@/pages/Blog";
+import BlogPost from "@/pages/BlogPost";
+
+// Compare pages
+import HacsVsCrowdfunding from "@/pages/compare/HacsVsCrowdfunding";
+import SponsorVsDonation from "@/pages/compare/SponsorVsDonation";
+import VolunteeringVsDonating from "@/pages/compare/VolunteeringVsDonating";
+import LocalVsInternational from "@/pages/compare/LocalVsInternational";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -31,8 +51,10 @@ const queryClient = new QueryClient({
 function Router() {
   return (
     <Switch>
+      {/* Home */}
       <Route path="/" component={() => <Layout><Home /></Layout>} />
 
+      {/* Existing pages */}
       <Route path="/about" component={About} />
       <Route path="/mission" component={Mission} />
       <Route path="/goals" component={Goals} />
@@ -44,8 +66,32 @@ function Router() {
       <Route path="/gallery" component={Gallery} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
+
+      {/* New core pages */}
+      <Route path="/volunteer" component={Volunteer} />
+      <Route path="/partner-with-us" component={PartnerWithUs} />
+      <Route path="/transparency" component={Transparency} />
+      <Route path="/child-safeguarding" component={ChildSafeguarding} />
+      <Route path="/education-support" component={EducationSupport} />
+      <Route path="/orphans-and-vulnerable-children" component={OrphansAndVulnerableChildren} />
+      <Route path="/street-children-support" component={StreetChildrenSupport} />
+      <Route path="/site-map" component={SiteMap} />
+
+      {/* Blog */}
+      <Route path="/blog" component={Blog} />
+      <Route path="/blog/:slug" component={BlogPost} />
+
+      {/* Compare pages */}
+      <Route path="/compare/hacs-foundation-vs-crowdfunding" component={HacsVsCrowdfunding} />
+      <Route path="/compare/sponsor-a-child-vs-general-donation" component={SponsorVsDonation} />
+      <Route path="/compare/volunteering-vs-donating" component={VolunteeringVsDonating} />
+      <Route path="/compare/local-childrens-charity-vs-international-charity" component={LocalVsInternational} />
+
+      {/* Admin */}
       <Route path="/admin/login" component={AdminLogin} />
       <Route path="/admin" component={AdminDashboard} />
+
+      {/* 404 */}
       <Route component={NotFound} />
     </Switch>
   );
