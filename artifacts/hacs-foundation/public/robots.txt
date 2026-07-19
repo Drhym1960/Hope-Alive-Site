@@ -1,7 +1,17 @@
+# robots.txt — Hope Alive Children Spring Foundation
+# https://www.hacsfoundation.com/robots.txt
+#
+# All search engine crawlers are welcome on all public pages.
+# Private sections (admin, API, payment callbacks) are blocked.
+
 User-agent: *
 Allow: /
+
+# Private / non-public paths
 Disallow: /admin
 Disallow: /admin/
+Disallow: /api/
 Disallow: /donate/thank-you
 
+# Sitemap location
 Sitemap: https://www.hacsfoundation.com/sitemap.xml

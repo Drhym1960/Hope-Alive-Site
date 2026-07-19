@@ -1,69 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core / High Priority -->
   <url>
     <loc>https://www.hacsfoundation.com/</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.hacsfoundation.com/donate</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About & Mission -->
+  <url>
     <loc>https://www.hacsfoundation.com/about</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.hacsfoundation.com/mission</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.hacsfoundation.com/programs</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Supporting Pages -->
+  <url>
     <loc>https://www.hacsfoundation.com/goals</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.hacsfoundation.com/programs</loc>
-    <lastmod>2025-06-01</lastmod>
+    <loc>https://www.hacsfoundation.com/contact</loc>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.hacsfoundation.com/donate</loc>
-    <lastmod>2025-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+
+  <!-- Discovery -->
   <url>
     <loc>https://www.hacsfoundation.com/gallery</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.hacsfoundation.com/faq</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://www.hacsfoundation.com/contact</loc>
-    <lastmod>2025-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+  <!-- Legal -->
   <url>
     <loc>https://www.hacsfoundation.com/privacy</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.hacsfoundation.com/terms</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+
 </urlset>
