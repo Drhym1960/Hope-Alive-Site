@@ -1,6 +1,8 @@
 import { Link } from "wouter";
 import Seo from "@/components/Seo";
 import { SectionHeader } from "@/components/SectionHeader";
+import { HeroSection } from "@/components/HeroSection";
+import { LeadershipSection } from "@/components/LeadershipSection";
 import scumlCert from "@assets/file_0000000005dc72468a99f867fb432e41_1776950214037.png";
 import cacCert from "@assets/file_00000000ffdc7243a39fe6ba3dd8dfef_1776950214093.png";
 
@@ -100,50 +102,7 @@ export default function Home() {
           }
         }}
       />
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center hero-gradient overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(245,158,11,0.2) 0%, transparent 50%)" }} />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
-          <div className="max-w-3xl">
-            <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4 animate-fade-in">
-              Hope Alive Children Spring Foundation
-            </p>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 animate-fade-in-up">
-              Every Child Deserves{" "}
-              <span className="text-secondary">Love,</span>{" "}
-              Care &{" "}
-              <span className="text-secondary">Hope</span>
-            </h1>
-            <p className="text-primary-foreground/85 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl animate-fade-in-up">
-              We are a charitable foundation in Makurdi, Nigeria, dedicated to supporting orphans and vulnerable children with shelter, education, healthcare, and unconditional love. <em className="text-secondary">Giving Love a Chance.</em>
-            </p>
-            <div className="flex flex-wrap gap-4 animate-fade-in-up">
-              <Link
-                href="/donate"
-                className="px-8 py-4 bg-secondary text-secondary-foreground rounded-full font-semibold text-base hover:bg-secondary/90 transition-all shadow-lg donate-btn-pulse"
-              >
-                Donate Today
-              </Link>
-              <Link
-                href="/about"
-                className="px-8 py-4 border-2 border-white/40 text-white rounded-full font-semibold text-base hover:bg-white/10 transition-all"
-              >
-                Learn Our Story
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Wave divider */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-16">
-            <path d="M0 80L60 73.3C120 66.7 240 53.3 360 46.7C480 40 600 40 720 46.7C840 53.3 960 66.7 1080 66.7C1200 66.7 1320 53.3 1380 46.7L1440 40V80H1380C1320 80 1200 80 1080 80C960 80 840 80 720 80C600 80 480 80 360 80C240 80 120 80 60 80H0Z" fill="hsl(42, 30%, 97%)" />
-          </svg>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Stats Bar */}
       <section className="bg-secondary py-10">
@@ -158,6 +117,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <LeadershipSection />
 
       {/* Mission Section */}
       <section className="py-20 bg-background">

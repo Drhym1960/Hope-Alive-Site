@@ -136,8 +136,8 @@ export default function BlogPostPage() {
 
           {/* Author */}
           <div className="mt-8 p-5 bg-accent/40 rounded-xl flex gap-4 items-start">
-            <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm shrink-0">
-              HACS
+            <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 bg-white shadow-sm">
+              <img src="/logo.png" alt="Hope Alive Children Spring Foundation" className="w-full h-full object-contain" />
             </div>
             <div>
               <p className="font-semibold text-foreground text-sm">{post.author}</p>

@@ -67,38 +67,38 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  /* Warm green/forest theme for Hope Alive Children Spring Foundation */
-  --background: 42 30% 97%;
-  --foreground: 150 25% 12%;
-  --border: 150 15% 82%;
-  --card: 42 40% 99%;
-  --card-foreground: 150 25% 12%;
-  --card-border: 150 15% 86%;
-  --sidebar: 150 22% 15%;
-  --sidebar-foreground: 42 60% 90%;
-  --sidebar-border: 150 20% 20%;
-  --sidebar-primary: 38 95% 52%;
-  --sidebar-primary-foreground: 150 30% 8%;
-  --sidebar-accent: 150 20% 22%;
-  --sidebar-accent-foreground: 42 60% 90%;
-  --sidebar-ring: 38 95% 52%;
-  --popover: 42 40% 99%;
-  --popover-foreground: 150 25% 12%;
-  --popover-border: 150 15% 86%;
-  --primary: 150 45% 28%;
-  --primary-foreground: 42 80% 96%;
-  --secondary: 38 90% 52%;
-  --secondary-foreground: 150 30% 8%;
-  --muted: 42 25% 92%;
-  --muted-foreground: 150 15% 42%;
-  --accent: 38 80% 94%;
-  --accent-foreground: 150 35% 18%;
+  /* Living Garden theme for Hope Alive Children Spring Foundation */
+  --background: 90 28% 97%;
+  --foreground: 140 28% 12%;
+  --border: 140 18% 82%;
+  --card: 90 35% 99%;
+  --card-foreground: 140 28% 12%;
+  --card-border: 140 18% 86%;
+  --sidebar: 142 28% 14%;
+  --sidebar-foreground: 80 40% 92%;
+  --sidebar-border: 142 22% 20%;
+  --sidebar-primary: 45 85% 48%;
+  --sidebar-primary-foreground: 140 30% 8%;
+  --sidebar-accent: 142 22% 22%;
+  --sidebar-accent-foreground: 80 40% 92%;
+  --sidebar-ring: 45 85% 48%;
+  --popover: 90 35% 99%;
+  --popover-foreground: 140 28% 12%;
+  --popover-border: 140 18% 86%;
+  --primary: 142 48% 26%;
+  --primary-foreground: 80 40% 97%;
+  --secondary: 45 85% 48%;
+  --secondary-foreground: 140 30% 8%;
+  --muted: 90 22% 93%;
+  --muted-foreground: 140 14% 38%;
+  --accent: 90 40% 93%;
+  --accent-foreground: 142 35% 18%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
   --input: 150 15% 76%;
-  --ring: 150 45% 28%;
-  --chart-1: 150 45% 28%;
-  --chart-2: 38 90% 52%;
+  --ring: 142 48% 26%;
+  --chart-1: 142 48% 26%;
+  --chart-2: 45 85% 48%;
   --chart-3: 200 60% 45%;
   --chart-4: 340 65% 48%;
   --chart-5: 270 50% 52%;
@@ -107,6 +107,9 @@
   --app-font-serif: 'Lora', Georgia, serif;
   --app-font-mono: Menlo, monospace;
   --radius: 0.5rem;
+  --hero-image: url("/looks/living-garden.jpg");
+  --hero-overlay-from: 142 40% 12%;
+  --hero-overlay-to: 90 30% 22%;
   --shadow-sm: 0 1px 3px 0 rgba(0,0,0,0.08), 0 1px 2px -1px rgba(0,0,0,0.06);
   --shadow: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.06);
   --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.06);
@@ -146,11 +149,16 @@ html {
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, hsl(150, 45%, 12%) 0%, hsl(150, 38%, 20%) 50%, hsl(150, 30%, 28%) 100%);
+  background-color: hsl(var(--hero-overlay-from));
+  background-image:
+    linear-gradient(135deg, hsl(var(--hero-overlay-from) / 0.88) 0%, hsl(var(--hero-overlay-to) / 0.72) 100%),
+    var(--hero-image);
+  background-size: cover;
+  background-position: center;
 }
 
 .warm-gradient {
-  background: linear-gradient(135deg, hsl(38, 90%, 96%) 0%, hsl(42, 70%, 94%) 100%);
+  background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--muted)) 100%);
 }
 
 .section-divider {

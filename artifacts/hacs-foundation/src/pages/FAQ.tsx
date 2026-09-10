@@ -17,7 +17,9 @@ const defaultFaqs = [
 ];
 
 export default function FAQ() {
-  const { data } = useListFaqs({ query: { queryKey: getListFaqsQueryKey() } });
+  const { data } = useListFaqs({
+    query: { queryKey: getListFaqsQueryKey(), retry: false },
+  });
   const faqs = (data?.faqs?.length ? data.faqs : defaultFaqs);
   const [open, setOpen] = useState<number | null>(0);
 

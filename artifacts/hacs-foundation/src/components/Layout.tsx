@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
+import { Logo } from "@/components/Logo";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -15,6 +17,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [location] = useLocation();
+  const isHome = location === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -26,38 +29,30 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-transparent"
-      }`}
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled || !isHome
+          ? "bg-white/95 backdrop-blur-md shadow-md"
+          : "bg-white/45 backdrop-blur-md",
+      )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm shadow-md group-hover:scale-105 transition-transform">
-              HACS
-            </div>
-            <div className="hidden sm:block">
-              <div className={`font-serif font-bold text-sm leading-tight transition-colors ${scrolled ? "text-primary" : "text-white"}`}>
-                Hope Alive Children Spring
-              </div>
-              <div className={`text-xs transition-colors ${scrolled ? "text-muted-foreground" : "text-white/80"}`}>
-                Foundation
-              </div>
-            </div>
+          <Link href="/" className="group">
+            <Logo size={52} wordmarkHiddenOnMobile />
           </Link>
 
-          {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-secondary ${
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-secondary",
                   location === link.href || (link.href !== "/" && location.startsWith(link.href))
-                    ? scrolled ? "text-primary" : "text-secondary"
-                    : scrolled ? "text-foreground" : "text-white"
-                }`}
+                    ? "text-primary"
+                    : "text-foreground",
+                )}
               >
                 {link.label}
               </Link>
@@ -70,21 +65,19 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile hamburger */}
           <button
             onClick={() => setOpen(!open)}
-            className={`lg:hidden p-2 rounded-md transition-colors ${scrolled ? "text-foreground hover:bg-muted" : "text-white hover:bg-white/10"}`}
+            className="lg:hidden p-2 rounded-md transition-colors text-foreground hover:bg-muted"
             aria-label="Toggle menu"
           >
             <div className="w-6 h-5 flex flex-col justify-between">
-              <span className={`block w-full h-0.5 transition-all ${scrolled ? "bg-foreground" : "bg-white"} ${open ? "rotate-45 translate-y-2" : ""}`} />
-              <span className={`block w-full h-0.5 transition-all ${scrolled ? "bg-foreground" : "bg-white"} ${open ? "opacity-0" : ""}`} />
-              <span className={`block w-full h-0.5 transition-all ${scrolled ? "bg-foreground" : "bg-white"} ${open ? "-rotate-45 -translate-y-2.5" : ""}`} />
+              <span className={cn("block w-full h-0.5 transition-all bg-foreground", open && "rotate-45 translate-y-2")} />
+              <span className={cn("block w-full h-0.5 transition-all bg-foreground", open && "opacity-0")} />
+              <span className={cn("block w-full h-0.5 transition-all bg-foreground", open && "-rotate-45 -translate-y-2.5")} />
             </div>
           </button>
         </div>
 
-        {/* Mobile menu */}
         {open && (
           <div className="lg:hidden bg-white border-t border-border shadow-lg rounded-b-xl">
             <div className="px-4 py-4 space-y-1">
@@ -92,9 +85,10 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                    location === link.href ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted"
-                  }`}
+                  className={cn(
+                    "block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors",
+                    location === link.href ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted",
+                  )}
                 >
                   {link.label}
                 </Link>
@@ -118,16 +112,9 @@ export function Footer() {
     <footer className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground font-bold text-sm">
-                HACS
-              </div>
-              <div>
-                <div className="font-serif font-bold text-lg">Hope Alive Children Spring</div>
-                <div className="text-sm text-primary-foreground/70">Foundation</div>
-              </div>
+            <div className="mb-4">
+              <Logo size={52} inverted />
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-4 max-w-sm">
               Dedicated to supporting orphans and vulnerable children in Nigeria with love, care, education, and hope. Every child deserves a chance.
@@ -135,7 +122,6 @@ export function Footer() {
             <div className="italic text-secondary font-serif">"Giving Love a Chance"</div>
           </div>
 
-          {/* About & Mission */}
           <div>
             <h4 className="font-serif font-semibold text-secondary mb-4">About & Mission</h4>
             <ul className="space-y-2 text-sm">
@@ -157,7 +143,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Get Involved */}
           <div>
             <h4 className="font-serif font-semibold text-secondary mb-4">Get Involved</h4>
             <ul className="space-y-2 text-sm">
@@ -179,7 +164,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h4 className="font-serif font-semibold text-secondary mb-4">Contact Us</h4>
             <ul className="space-y-3 text-sm text-primary-foreground/80">
@@ -206,7 +190,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-primary-foreground/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/60">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
             <p>&copy; {new Date().getFullYear()} Hope Alive Children Spring Foundation. All rights reserved.</p>

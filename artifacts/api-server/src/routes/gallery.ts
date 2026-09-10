@@ -20,6 +20,9 @@ function formatImage(img: any) {
 
 galleryRouter.get("/", async (req: Request, res: Response) => {
   try {
+    if (!process.env.DATABASE_URL) {
+      return res.json({ images: [] });
+    }
     const images = await db.select().from(galleryTable).orderBy(asc(galleryTable.sortOrder));
     res.json({ images: images.map(formatImage) });
   } catch (err) {

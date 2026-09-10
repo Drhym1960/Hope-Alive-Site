@@ -1,0 +1,46 @@
+name: Verify production build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build:render
+      - name: Start server and check health
+        run: |
+          PORT=8099 NODE_ENV=production node --enable-source-maps artifacts/api-server/dist/index.mjs &
+          pid=$!
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8099/api/healthz | grep -q ok; then
+              kill "$pid" || true
+              exit 0
+            fi
+            sleep 1
+          done
+          kill "$pid" || true
+          echo "Health check did not pass"
+          exit 1
+      - name: Trigger Render deploy hook
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        env:
+          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$RENDER_DEPLOY_HOOK" ]; then
+            echo "No RENDER_DEPLOY_HOOK secret set. After reconnecting GitHub in Render, Manual Deploy from main will use this build."
+            exit 0
+          fi
+          curl -fsS -X POST "$RENDER_DEPLOY_HOOK"

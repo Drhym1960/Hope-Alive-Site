@@ -4,6 +4,12 @@ modules = ["nodejs-20", "web", "bash", "python-base-3.13"]
 router = "application"
 deploymentTarget = "autoscale"
 
+[deployment.build]
+args = ["sh", "-c", "pnpm --filter @workspace/hacs-foundation run build && pnpm --filter @workspace/api-server run build"]
+
+[deployment.run]
+args = ["node", "--enable-source-maps", "artifacts/api-server/dist/index.mjs"]
+
 [deployment.postBuild]
 args = ["pnpm", "store", "prune"]
 env = { "CI" = "true" }
