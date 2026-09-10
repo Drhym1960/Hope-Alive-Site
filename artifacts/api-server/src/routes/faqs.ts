@@ -19,6 +19,9 @@ function formatFaq(f: any) {
 
 faqsRouter.get("/", async (req: Request, res: Response) => {
   try {
+    if (!process.env.DATABASE_URL) {
+      return res.json({ faqs: [] });
+    }
     const faqs = await db.select().from(faqsTable).orderBy(asc(faqsTable.sortOrder));
     res.json({ faqs: faqs.map(formatFaq) });
   } catch (err) {

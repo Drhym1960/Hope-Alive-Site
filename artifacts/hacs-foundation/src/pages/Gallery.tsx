@@ -25,7 +25,9 @@ const foundationImages = [
 ];
 
 export default function Gallery() {
-  const { data, isLoading } = useListGallery({ query: { queryKey: getListGalleryQueryKey() } });
+  const { data, isLoading } = useListGallery({
+    query: { queryKey: getListGalleryQueryKey(), retry: false },
+  });
   const adminImages = data?.images ?? [];
   const allImages = [...foundationImages, ...adminImages];
 
