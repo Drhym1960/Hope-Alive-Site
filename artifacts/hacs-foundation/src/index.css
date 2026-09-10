@@ -67,38 +67,38 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  /* Warm green/forest theme for Hope Alive Children Spring Foundation */
-  --background: 42 30% 97%;
-  --foreground: 150 25% 12%;
-  --border: 150 15% 82%;
-  --card: 42 40% 99%;
-  --card-foreground: 150 25% 12%;
-  --card-border: 150 15% 86%;
-  --sidebar: 150 22% 15%;
-  --sidebar-foreground: 42 60% 90%;
-  --sidebar-border: 150 20% 20%;
-  --sidebar-primary: 38 95% 52%;
-  --sidebar-primary-foreground: 150 30% 8%;
-  --sidebar-accent: 150 20% 22%;
-  --sidebar-accent-foreground: 42 60% 90%;
-  --sidebar-ring: 38 95% 52%;
-  --popover: 42 40% 99%;
-  --popover-foreground: 150 25% 12%;
-  --popover-border: 150 15% 86%;
-  --primary: 150 45% 28%;
-  --primary-foreground: 42 80% 96%;
-  --secondary: 38 90% 52%;
-  --secondary-foreground: 150 30% 8%;
-  --muted: 42 25% 92%;
-  --muted-foreground: 150 15% 42%;
-  --accent: 38 80% 94%;
-  --accent-foreground: 150 35% 18%;
+  /* Living Garden theme for Hope Alive Children Spring Foundation */
+  --background: 90 28% 97%;
+  --foreground: 140 28% 12%;
+  --border: 140 18% 82%;
+  --card: 90 35% 99%;
+  --card-foreground: 140 28% 12%;
+  --card-border: 140 18% 86%;
+  --sidebar: 142 28% 14%;
+  --sidebar-foreground: 80 40% 92%;
+  --sidebar-border: 142 22% 20%;
+  --sidebar-primary: 45 85% 48%;
+  --sidebar-primary-foreground: 140 30% 8%;
+  --sidebar-accent: 142 22% 22%;
+  --sidebar-accent-foreground: 80 40% 92%;
+  --sidebar-ring: 45 85% 48%;
+  --popover: 90 35% 99%;
+  --popover-foreground: 140 28% 12%;
+  --popover-border: 140 18% 86%;
+  --primary: 142 48% 26%;
+  --primary-foreground: 80 40% 97%;
+  --secondary: 45 85% 48%;
+  --secondary-foreground: 140 30% 8%;
+  --muted: 90 22% 93%;
+  --muted-foreground: 140 14% 38%;
+  --accent: 90 40% 93%;
+  --accent-foreground: 142 35% 18%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
   --input: 150 15% 76%;
-  --ring: 150 45% 28%;
-  --chart-1: 150 45% 28%;
-  --chart-2: 38 90% 52%;
+  --ring: 142 48% 26%;
+  --chart-1: 142 48% 26%;
+  --chart-2: 45 85% 48%;
   --chart-3: 200 60% 45%;
   --chart-4: 340 65% 48%;
   --chart-5: 270 50% 52%;
@@ -107,9 +107,9 @@
   --app-font-serif: 'Lora', Georgia, serif;
   --app-font-mono: Menlo, monospace;
   --radius: 0.5rem;
-  --hero-image: url("/looks/sunrise-hope.jpg");
-  --hero-overlay-from: 150 45% 10%;
-  --hero-overlay-to: 32 55% 22%;
+  --hero-image: url("/looks/living-garden.jpg");
+  --hero-overlay-from: 142 40% 12%;
+  --hero-overlay-to: 90 30% 22%;
   --shadow-sm: 0 1px 3px 0 rgba(0,0,0,0.08), 0 1px 2px -1px rgba(0,0,0,0.06);
   --shadow: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.06);
   --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.06);
@@ -195,91 +195,4 @@ html {
 
 .donate-btn-pulse {
   animation: pulse-glow 2s ease-in-out infinite;
-}
-
-/* Homepage look mockups — palette + inner-page heroes follow the selected look */
-html[data-look="1"] {
-  --background: 42 30% 97%;
-  --foreground: 150 25% 12%;
-  --primary: 150 45% 24%;
-  --primary-foreground: 42 80% 96%;
-  --secondary: 38 90% 52%;
-  --secondary-foreground: 150 30% 8%;
-  --accent: 38 80% 94%;
-  --muted: 42 25% 92%;
-  --hero-image: url("/looks/sunrise-hope.jpg");
-  --hero-overlay-from: 150 45% 10%;
-  --hero-overlay-to: 32 55% 22%;
-}
-
-html[data-look="2"] {
-  --background: 90 28% 97%;
-  --foreground: 140 28% 12%;
-  --border: 140 18% 82%;
-  --card: 90 35% 99%;
-  --primary: 142 48% 26%;
-  --primary-foreground: 80 40% 97%;
-  --secondary: 45 85% 48%;
-  --secondary-foreground: 140 30% 8%;
-  --accent: 90 40% 93%;
-  --accent-foreground: 142 35% 18%;
-  --muted: 90 22% 93%;
-  --muted-foreground: 140 14% 38%;
-  --hero-image: url("/looks/living-garden.jpg");
-  --hero-overlay-from: 142 40% 12%;
-  --hero-overlay-to: 90 30% 22%;
-}
-
-html[data-look="3"] {
-  --background: 32 42% 96%;
-  --foreground: 18 32% 14%;
-  --border: 24 22% 82%;
-  --card: 32 50% 99%;
-  --primary: 16 48% 28%;
-  --primary-foreground: 32 60% 97%;
-  --secondary: 38 86% 50%;
-  --secondary-foreground: 18 30% 10%;
-  --accent: 32 55% 92%;
-  --accent-foreground: 16 40% 20%;
-  --muted: 32 30% 92%;
-  --muted-foreground: 18 16% 40%;
-  --hero-image: url("/looks/warm-earth.jpg");
-  --hero-overlay-from: 16 45% 14%;
-  --hero-overlay-to: 28 40% 22%;
-}
-
-html[data-look="4"] {
-  --background: 210 40% 98%;
-  --foreground: 214 42% 14%;
-  --border: 210 20% 84%;
-  --card: 0 0% 100%;
-  --primary: 214 70% 28%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 45 82% 50%;
-  --secondary-foreground: 214 40% 12%;
-  --accent: 210 50% 94%;
-  --accent-foreground: 214 50% 20%;
-  --muted: 210 30% 94%;
-  --muted-foreground: 214 16% 40%;
-  --hero-image: url("/looks/open-sky.jpg");
-  --hero-overlay-from: 214 62% 16%;
-  --hero-overlay-to: 210 40% 28%;
-}
-
-html[data-look="5"] {
-  --background: 42 28% 97%;
-  --foreground: 214 40% 12%;
-  --border: 214 16% 82%;
-  --card: 0 0% 100%;
-  --primary: 214 72% 18%;
-  --primary-foreground: 42 50% 96%;
-  --secondary: 45 82% 52%;
-  --secondary-foreground: 214 50% 10%;
-  --accent: 214 30% 94%;
-  --accent-foreground: 214 50% 18%;
-  --muted: 214 20% 94%;
-  --muted-foreground: 214 14% 40%;
-  --hero-image: url("/looks/navy-gold.jpg");
-  --hero-overlay-from: 214 72% 8%;
-  --hero-overlay-to: 160 40% 14%;
 }

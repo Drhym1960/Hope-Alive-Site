@@ -14,7 +14,7 @@ import child3 from "@assets/file_00000000c7c071fdaf3524db2a32f965_1776680948966.
 import child4 from "@assets/file_00000000eeb471f887e0f300041016ed_1776680949165.png";
 import child5 from "@assets/file_000000006b2871fdb04677d531835d82_1776680949100.png";
 
-export const childrenSlides = [
+const childrenSlides = [
   {
     src: child1,
     alt: "A smiling Nigerian girl at Hope Alive Children Spring Foundation in Makurdi",
@@ -42,19 +42,7 @@ export const childrenSlides = [
   },
 ];
 
-export type CarouselVariant = "card" | "strip" | "polaroid" | "filmstrip" | "cinematic";
-
-type ChildrenCarouselProps = {
-  variant?: CarouselVariant;
-  className?: string;
-  showCaptions?: boolean;
-};
-
-export function ChildrenCarousel({
-  variant = "card",
-  className,
-  showCaptions = true,
-}: ChildrenCarouselProps) {
+export function ChildrenCarousel({ className }: { className?: string }) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -96,65 +84,25 @@ export function ChildrenCarousel({
 
   const goTo = useCallback((index: number) => api?.scrollTo(index), [api]);
 
-  const itemBasis =
-    variant === "strip"
-      ? "basis-[88%] sm:basis-[78%]"
-      : variant === "filmstrip"
-        ? "basis-[70%] sm:basis-[42%] lg:basis-[32%]"
-        : "basis-full";
-
-  const imageClass =
-    variant === "polaroid"
-      ? "aspect-[4/5] w-full object-cover"
-      : variant === "cinematic"
-        ? "aspect-[16/10] w-full object-cover"
-        : variant === "filmstrip"
-          ? "aspect-[4/5] w-full object-cover"
-          : variant === "strip"
-            ? "aspect-[4/5] sm:aspect-[5/6] w-full object-cover"
-            : "aspect-[4/5] w-full object-cover";
-
   return (
     <div className={cn("relative", className)}>
-      <Carousel
-        opts={{ loop: true, align: variant === "filmstrip" ? "center" : "start" }}
-        setApi={setApi}
-        className="w-full"
-      >
-        <CarouselContent className={variant === "filmstrip" || variant === "strip" ? "-ml-3" : undefined}>
+      <Carousel opts={{ loop: true, align: "start" }} setApi={setApi} className="w-full">
+        <CarouselContent className="-ml-3">
           {childrenSlides.map((slide, index) => (
-            <CarouselItem key={slide.alt} className={cn(itemBasis, (variant === "filmstrip" || variant === "strip") && "pl-3")}>
-              {variant === "polaroid" ? (
-                <figure className={cn("bg-white p-3 pb-8 shadow-xl", index % 2 === 0 ? "rotate-[-1.5deg]" : "rotate-[1.5deg]")}>
-                  <img src={slide.src} alt={slide.alt} className={imageClass} />
-                  {showCaptions && (
-                    <figcaption className="mt-3 text-center font-serif text-sm text-stone-700">
-                      {slide.caption}
-                    </figcaption>
-                  )}
-                </figure>
-              ) : (
-                <figure
+            <CarouselItem key={slide.alt} className="basis-[88%] sm:basis-[78%] pl-3">
+              <figure className="relative overflow-hidden bg-muted rounded-[1.75rem] shadow-xl">
+                <img
+                  src={slide.src}
+                  alt={slide.alt}
                   className={cn(
-                    "relative overflow-hidden bg-muted",
-                    variant === "cinematic" && "rounded-2xl ring-1 ring-secondary/60 shadow-2xl",
-                    variant === "card" && "rounded-3xl shadow-2xl ring-4 ring-white/80",
-                    variant === "strip" && "rounded-[1.75rem] shadow-xl",
-                    variant === "filmstrip" && "rounded-2xl shadow-lg ring-2 ring-white/70",
+                    "aspect-[4/5] sm:aspect-[5/6] w-full object-cover transition-transform duration-700",
+                    index === current ? "scale-100" : "scale-[1.03]",
                   )}
-                >
-                  <img
-                    src={slide.src}
-                    alt={slide.alt}
-                    className={cn(imageClass, index === current ? "scale-100" : "scale-[1.03]", "transition-transform duration-700")}
-                  />
-                  {showCaptions && (
-                    <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-4 py-4">
-                      <p className="text-white text-sm font-medium">{slide.caption}</p>
-                    </figcaption>
-                  )}
-                </figure>
-              )}
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-4 py-4">
+                  <p className="text-white text-sm font-medium">{slide.caption}</p>
+                </figcaption>
+              </figure>
             </CarouselItem>
           ))}
         </CarouselContent>
