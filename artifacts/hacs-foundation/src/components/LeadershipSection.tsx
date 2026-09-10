@@ -41,7 +41,7 @@ export function LeadershipSection() {
               <img
                 src={leader.src}
                 alt={leader.alt}
-                className="w-full h-auto rounded-2xl object-contain bg-white"
+                className="w-full h-auto rounded-2xl object-contain bg-white ring-1 ring-black/5"
               />
               <figcaption className="mt-4 text-center px-2">
                 <p className="text-secondary text-xs font-semibold uppercase tracking-widest mb-1">
