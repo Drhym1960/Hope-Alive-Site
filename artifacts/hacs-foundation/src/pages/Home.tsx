@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import Seo from "@/components/Seo";
 import { SectionHeader } from "@/components/SectionHeader";
 import { HeroSection } from "@/components/HeroSection";
+import { LeadershipSection } from "@/components/LeadershipSection";
 import scumlCert from "@assets/file_0000000005dc72468a99f867fb432e41_1776950214037.png";
 import cacCert from "@assets/file_00000000ffdc7243a39fe6ba3dd8dfef_1776950214093.png";
 
@@ -116,6 +117,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <LeadershipSection />
 
       {/* Mission Section */}
       <section className="py-20 bg-background">
