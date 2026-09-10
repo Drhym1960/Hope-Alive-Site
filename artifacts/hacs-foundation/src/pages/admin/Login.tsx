@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
 import Seo from "@/components/Seo";
+import { Logo } from "@/components/Logo";
 import { useAdminLogin } from "@workspace/api-client-react";
 
 export default function AdminLogin() {
@@ -30,8 +31,8 @@ export default function AdminLogin() {
       <Seo title="Admin Login" description="Administrator login." path="/admin/login" noindex />
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4 shadow-lg">
-            <span className="font-bold text-secondary-foreground">HACS</span>
+          <div className="flex justify-center mb-4">
+            <Logo size={72} wordmark={false} />
           </div>
           <h1 className="font-serif text-2xl font-bold text-white">Admin Login</h1>
           <p className="text-primary-foreground/70 text-sm mt-1">Hope Alive Children Spring Foundation</p>

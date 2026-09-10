@@ -23,6 +23,7 @@ import {
   getAdminListFaqsQueryKey,
 } from "@workspace/api-client-react";
 import { useQueryClient } from "@tanstack/react-query";
+import { Logo } from "@/components/Logo";
 
 type Tab = "overview" | "donations" | "contacts" | "gallery" | "faqs";
 
@@ -69,7 +70,7 @@ export default function AdminDashboard() {
       {/* Header */}
       <header className="bg-primary text-primary-foreground px-4 sm:px-6 py-4 flex items-center justify-between sticky top-0 z-40 shadow-md">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground font-bold text-xs">HACS</div>
+          <Logo size={40} wordmark={false} />
           <div>
             <div className="font-serif font-semibold text-sm text-primary-foreground">Admin Dashboard</div>
             <div className="text-xs text-primary-foreground/60">Hope Alive Children Spring Foundation</div>
