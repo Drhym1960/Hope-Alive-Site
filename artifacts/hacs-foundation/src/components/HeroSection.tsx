@@ -166,7 +166,7 @@ function OpenSkyHero() {
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-white/55 via-white/35 to-[#0b1f3a]/20" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-8 w-full">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-28 w-full">
         <HeroCopy tone="light" align="center" />
         <div className="mt-12">
           <ChildrenCarousel variant="filmstrip" />
@@ -186,10 +186,10 @@ function NavyGoldHero() {
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-[#071428]/45" />
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24 w-full">
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-28 w-full">
         <HeroCopy tone="dark" align="center" showLogo />
-        <div className="mt-12">
-          <ChildrenCarousel variant="cinematic" />
+        <div className="mt-12 max-w-md mx-auto">
+          <ChildrenCarousel variant="card" />
         </div>
       </div>
       <Wave />

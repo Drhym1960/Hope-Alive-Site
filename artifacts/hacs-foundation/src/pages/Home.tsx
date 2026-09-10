@@ -80,7 +80,7 @@ const stories = [
 
 export default function Home() {
   return (
-    <div className="pb-28">
+    <div>
       <Seo
         title="Giving Love a Chance to Orphaned & Vulnerable Children"
         description="Hope Alive Children Spring Foundation (HACS Foundation) gives love, care, education support, and hope to orphaned and vulnerable children in Benue State, Nigeria. Donate today and change a child's life."

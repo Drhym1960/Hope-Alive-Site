@@ -21,7 +21,7 @@ export function Navbar() {
   const [location] = useLocation();
   const { look } = useLook();
   const isHome = location === "/";
-  const inverted = !scrolled && (!isHome || look.tone === "dark");
+  const inverted = !scrolled && isHome && look.tone === "dark";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -35,9 +35,9 @@ export function Navbar() {
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled
+        scrolled || !isHome
           ? "bg-white/95 backdrop-blur-md shadow-md"
-          : isHome && look.tone === "light"
+          : look.tone === "light"
             ? "bg-white/45 backdrop-blur-md"
             : "bg-transparent",
       )}
@@ -222,8 +222,9 @@ export function Footer() {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const [location] = useLocation();
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className={cn("min-h-screen flex flex-col", location === "/" && "pb-28")}>
       <Navbar />
       <main className="flex-1">{children}</main>
       <Footer />
