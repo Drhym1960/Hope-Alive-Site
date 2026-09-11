@@ -165,7 +165,7 @@ export default function Donate() {
         <section className="hero-gradient py-20 px-4 sm:px-6 text-center">
           <div className="max-w-3xl mx-auto">
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Support Our Children</p>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-4">Make a Donation</h1>
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-4">Make a Donation</h1>
             <p className="text-primary-foreground/80 text-lg">
               Your generosity directly feeds, educates, and protects vulnerable children in Makurdi, Nigeria.
             </p>
@@ -235,9 +235,9 @@ export default function Donate() {
 
                   {/* Online Naira Payment Notice */}
                   {paymentMethod === "bank_transfer" && (
-                    <div className="bg-green-50 border border-green-200 rounded-2xl p-5 text-sm text-green-900">
+                    <div className="bg-accent border border-border rounded-2xl p-5 text-sm text-foreground">
                       <p className="font-semibold mb-1">Pay securely in Naira via card, bank transfer, USSD or mobile money.</p>
-                      <p className="text-green-800/90">You'll be redirected to our secure payment partner (KoraPay) to complete your donation. Prefer to transfer manually? Use the Zenith Bank details in the sidebar.</p>
+                      <p className="text-muted-foreground">You'll be redirected to our secure payment partner (KoraPay) to complete your donation. Prefer to transfer manually? Use the Zenith Bank details in the sidebar.</p>
                     </div>
                   )}
 

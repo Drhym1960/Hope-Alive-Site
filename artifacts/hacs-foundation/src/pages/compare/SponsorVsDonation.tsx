@@ -37,10 +37,10 @@ export default function SponsorVsDonation() {
       <section className="hero-gradient py-20 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">Compare</p>
-          <h1 className="font-serif text-4xl font-bold text-white mb-4 leading-tight">
+          <h1 className="font-serif text-4xl font-bold text-primary-foreground mb-4 leading-tight">
             Child Sponsorship vs General Donation
           </h1>
-          <p className="text-white/80 text-lg max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg max-w-xl mx-auto">
             Many donors want to know: should I sponsor a specific child, or make a general donation? Both approaches have real merits and real limitations. This page helps you decide.
           </p>
         </div>
@@ -49,7 +49,7 @@ export default function SponsorVsDonation() {
       <Breadcrumb items={[{ label: "Compare", href: "/site-map" }, { label: "Sponsorship vs Donation" }]} />
 
       {/* Intro */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Two Models"
@@ -62,9 +62,9 @@ export default function SponsorVsDonation() {
                 The donor is linked to one named child. They may receive updates, photographs, or letters from or about that child. Their donation is understood as supporting that specific child's needs over time.
               </p>
             </div>
-            <div className="bg-green-50 border border-green-200 rounded-2xl p-6">
-              <h3 className="font-serif font-bold text-green-900 text-lg mb-3">General Donation</h3>
-              <p className="text-green-800 text-sm leading-relaxed">
+            <div className="bg-card border border-secondary/30 rounded-2xl p-6">
+              <h3 className="font-serif font-bold text-primary text-lg mb-3">General Donation</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 The donor gives to the organisation's general programmes. Funds are allocated by staff to the areas of greatest current need — education, healthcare, feeding, shelter, or psychosocial support.
               </p>
             </div>
@@ -86,7 +86,7 @@ export default function SponsorVsDonation() {
               </thead>
               <tbody>
                 {rows.map((row, i) => (
-                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-white" : "bg-accent/20"}>
+                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-card" : "bg-accent/20"}>
                     <td className="px-5 py-4 font-semibold text-foreground align-top">{row.aspect}</td>
                     <td className="px-5 py-4 text-muted-foreground align-top">{row.sponsor}</td>
                     <td className="px-5 py-4 text-muted-foreground align-top">{row.general}</td>
@@ -99,7 +99,7 @@ export default function SponsorVsDonation() {
       </section>
 
       {/* Child protection note */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Child Protection" title="The Privacy and Dignity Consideration" />
           <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -135,7 +135,7 @@ export default function SponsorVsDonation() {
       </section>
 
       {/* Questions to ask */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Before You Decide" title="Questions to Ask Any Organisation" />
           <ul className="space-y-3 mt-2">

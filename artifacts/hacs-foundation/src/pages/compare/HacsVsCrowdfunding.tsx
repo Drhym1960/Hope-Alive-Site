@@ -46,10 +46,10 @@ export default function HacsVsCrowdfunding() {
       <section className="hero-gradient py-20 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">Compare</p>
-          <h1 className="font-serif text-4xl font-bold text-white mb-4 leading-tight">
+          <h1 className="font-serif text-4xl font-bold text-primary-foreground mb-4 leading-tight">
             HACS Foundation vs Crowdfunding Campaigns
           </h1>
-          <p className="text-white/80 text-lg max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg max-w-xl mx-auto">
             Understanding the difference between donating to a registered foundation and contributing to a crowdfunding campaign helps you give safely and effectively.
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function HacsVsCrowdfunding() {
       <Breadcrumb items={[{ label: "Compare", href: "/site-map" }, { label: "HACS Foundation vs Crowdfunding" }]} />
 
       {/* Intro */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="The Choice"
@@ -82,10 +82,10 @@ export default function HacsVsCrowdfunding() {
               </thead>
               <tbody>
                 {rows.map((row, i) => (
-                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-white" : "bg-accent/20"}>
+                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-card" : "bg-accent/20"}>
                     <td className="px-5 py-4 font-semibold text-foreground align-top">{row.aspect}</td>
                     <td className="px-5 py-4 text-muted-foreground align-top">
-                      <span className="flex gap-2"><span className="text-green-600 font-bold shrink-0">✓</span>{row.hacs}</span>
+                      <span className="flex gap-2"><span className="text-secondary font-bold shrink-0">✓</span>{row.hacs}</span>
                     </td>
                     <td className="px-5 py-4 text-muted-foreground align-top">
                       <span className="flex gap-2"><span className="text-amber-500 font-bold shrink-0">!</span>{row.crowd}</span>
@@ -99,7 +99,7 @@ export default function HacsVsCrowdfunding() {
       </section>
 
       {/* Crowdfunding risks */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Understanding Risk"
@@ -134,7 +134,7 @@ export default function HacsVsCrowdfunding() {
           />
           <ul className="space-y-3 mt-4">
             {donorQuestions.map((q) => (
-              <li key={q} className="flex items-start gap-3 bg-white rounded-xl px-5 py-4 border border-border">
+              <li key={q} className="flex items-start gap-3 bg-card rounded-xl px-5 py-4 border border-border">
                 <span className="text-secondary font-bold mt-0.5 shrink-0">?</span>
                 <span className="text-muted-foreground text-sm leading-relaxed">{q}</span>
               </li>

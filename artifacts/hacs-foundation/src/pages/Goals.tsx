@@ -84,7 +84,7 @@ export default function Goals() {
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Our Direction</p>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-6">Goals & Objectives</h1>
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-6">Goals & Objectives</h1>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
               These are the specific outcomes we pursue every day: the concrete commitments that give shape to our mission and direction to our work.
             </p>
@@ -117,7 +117,7 @@ export default function Goals() {
 
         <section className="py-16 hero-gradient text-center">
           <div className="max-w-3xl mx-auto px-4">
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-4">Help Us Achieve These Goals</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">Help Us Achieve These Goals</h2>
             <p className="text-primary-foreground/80 mb-8">
               Your donation directly funds these objectives, from feeding a child today to building the infrastructure that serves children for decades.
             </p>

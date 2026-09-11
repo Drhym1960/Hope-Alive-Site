@@ -67,7 +67,7 @@ export default function Contact() {
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Get in Touch</p>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-4">Contact Us</h1>
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-4">Contact Us</h1>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
               We'd love to hear from you. Whether you want to partner with us, volunteer, or simply ask a question, reach out anytime.
             </p>

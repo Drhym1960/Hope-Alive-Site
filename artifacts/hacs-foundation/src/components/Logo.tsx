@@ -29,7 +29,7 @@ export function Logo({
           <span
             className={cn(
               "font-serif font-bold text-sm leading-tight block transition-colors",
-              inverted ? "text-white" : "text-primary",
+              inverted ? "text-primary-foreground" : "text-primary",
             )}
           >
             Hope Alive Children Spring
@@ -37,7 +37,7 @@ export function Logo({
           <span
             className={cn(
               "text-xs block transition-colors",
-              inverted ? "text-white/80" : "text-muted-foreground",
+              inverted ? "text-primary-foreground/80" : "text-muted-foreground",
             )}
           >
             Foundation

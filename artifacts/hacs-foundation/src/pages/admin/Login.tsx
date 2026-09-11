@@ -35,7 +35,7 @@ export default function AdminLogin() {
           <div className="flex justify-center mb-4">
             <Logo size={72} wordmark={false} />
           </div>
-          <h1 className="font-serif text-2xl font-bold text-white">Admin Login</h1>
+          <h1 className="font-serif text-2xl font-bold text-primary-foreground">Admin Login</h1>
           <p className="text-primary-foreground/70 text-sm mt-1">Hope Alive Children Spring Foundation</p>
         </div>
         <form onSubmit={handleSubmit} className="bg-card border border-border rounded-2xl p-8 shadow-xl">

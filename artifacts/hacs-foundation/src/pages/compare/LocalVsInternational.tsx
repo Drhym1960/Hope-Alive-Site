@@ -61,10 +61,10 @@ export default function LocalVsInternational() {
       <section className="hero-gradient py-20 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">Compare</p>
-          <h1 className="font-serif text-4xl font-bold text-white mb-4 leading-tight">
+          <h1 className="font-serif text-4xl font-bold text-primary-foreground mb-4 leading-tight">
             Local vs International Children's Charities
           </h1>
-          <p className="text-white/80 text-lg max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg max-w-xl mx-auto">
             Should you donate to a local Nigerian children's charity or a large international organisation? Both have genuine strengths. This guide explains the key differences so you can make an informed choice.
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function LocalVsInternational() {
       <Breadcrumb items={[{ label: "Compare", href: "/site-map" }, { label: "Local vs International" }]} />
 
       {/* Intro */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="The Context"
@@ -97,7 +97,7 @@ export default function LocalVsInternational() {
               </thead>
               <tbody>
                 {rows.map((row, i) => (
-                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-white" : "bg-accent/20"}>
+                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-card" : "bg-accent/20"}>
                     <td className="px-5 py-4 font-semibold text-foreground align-top">{row.aspect}</td>
                     <td className="px-5 py-4 text-muted-foreground align-top">{row.local}</td>
                     <td className="px-5 py-4 text-muted-foreground align-top">{row.intl}</td>
@@ -110,7 +110,7 @@ export default function LocalVsInternational() {
       </section>
 
       {/* Local advantages */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="The Case for Local"
@@ -149,7 +149,7 @@ export default function LocalVsInternational() {
       </section>
 
       {/* Due diligence */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Due Diligence"

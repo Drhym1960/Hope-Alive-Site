@@ -54,7 +54,7 @@ export default function About() {
         <section className="hero-gradient py-24 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">About Us</p>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-6">Who We Are</h1>
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-6">Who We Are</h1>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
               Hope Alive Children Spring Foundation is a registered charitable foundation serving the most vulnerable children in Makurdi, Benue State, Nigeria.
             </p>

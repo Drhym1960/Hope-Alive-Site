@@ -46,10 +46,10 @@ export default function ChildSafeguarding() {
       <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">Safeguarding</p>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-5 leading-tight">
             Child Safeguarding Policy
           </h1>
-          <p className="text-white/80 text-lg leading-relaxed max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg leading-relaxed max-w-xl mx-auto">
             Protecting every child in our care is our highest priority. This policy sets out our commitment and the standards we expect from everyone associated with HACS Foundation.
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function ChildSafeguarding() {
       </div>
 
       {/* Introduction */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Our Commitment"
@@ -90,7 +90,7 @@ export default function ChildSafeguarding() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {principles.map((p) => (
-              <div key={p.title} className="bg-white border border-border rounded-2xl p-6 shadow-sm">
+              <div key={p.title} className="bg-card border border-border rounded-2xl p-6 shadow-sm">
                 <div className="text-3xl mb-3">{p.icon}</div>
                 <h3 className="font-serif font-bold text-foreground mb-2">{p.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
@@ -101,7 +101,7 @@ export default function ChildSafeguarding() {
       </section>
 
       {/* Photography */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Privacy" title="Photography and Media" />
           <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -129,7 +129,7 @@ export default function ChildSafeguarding() {
           />
           <ul className="space-y-3 mt-4">
             {conductRules.map((rule) => (
-              <li key={rule} className="flex items-start gap-3 bg-white rounded-xl px-5 py-4 border border-border">
+              <li key={rule} className="flex items-start gap-3 bg-card rounded-xl px-5 py-4 border border-border">
                 <span className="text-secondary font-bold mt-0.5">✓</span>
                 <span className="text-muted-foreground text-sm leading-relaxed">{rule}</span>
               </li>
@@ -139,7 +139,7 @@ export default function ChildSafeguarding() {
       </section>
 
       {/* Reporting */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Reporting Concerns"

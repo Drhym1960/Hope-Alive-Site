@@ -13,7 +13,7 @@ function formatDate(dateStr: string) {
 
 function ArticleCard({ post }: { post: BlogPost }) {
   return (
-    <article className="bg-white border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
+    <article className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
       <div className="bg-primary/10 px-6 pt-6 pb-0">
         <div className="flex items-center gap-3 mb-3">
           <span className="inline-block bg-secondary/20 text-secondary text-xs font-semibold px-3 py-1 rounded-full">
@@ -75,10 +75,10 @@ export default function Blog() {
       <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">Our Blog</p>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-5 leading-tight">
             Children, Education & Community
           </h1>
-          <p className="text-white/80 text-lg leading-relaxed max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg leading-relaxed max-w-xl mx-auto">
             Articles and guides on child welfare, education support, responsible giving, and community action — from the HACS Foundation team in Makurdi, Nigeria.
           </p>
         </div>
@@ -111,7 +111,7 @@ export default function Blog() {
                   className={`w-10 h-10 flex items-center justify-center rounded-full text-sm font-medium transition-colors ${
                     p === currentPage
                       ? "bg-primary text-primary-foreground"
-                      : "bg-white border border-border text-foreground hover:bg-muted"
+                      : "bg-card border border-border text-foreground hover:bg-muted"
                   }`}
                   aria-current={p === currentPage ? "page" : undefined}
                 >
@@ -124,7 +124,7 @@ export default function Blog() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Support Our Work</h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-8">

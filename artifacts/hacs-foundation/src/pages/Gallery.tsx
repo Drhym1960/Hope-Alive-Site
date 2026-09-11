@@ -59,7 +59,7 @@ export default function Gallery() {
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Our Story in Pictures</p>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-4">Gallery & Impact</h1>
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-4">Gallery & Impact</h1>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
               A glimpse into the lives we are touching every day: children laughing, learning, growing, and thriving at Hope Alive Children Spring Foundation.
             </p>

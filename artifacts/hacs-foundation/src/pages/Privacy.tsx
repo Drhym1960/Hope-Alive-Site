@@ -13,7 +13,7 @@ export default function Privacy() {
       <div className="pt-16">
         <section className="hero-gradient py-20 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="font-serif text-4xl font-bold text-white mb-4">Privacy Policy</h1>
+            <h1 className="font-serif text-4xl font-bold text-primary-foreground mb-4">Privacy Policy</h1>
             <p className="text-primary-foreground/80">Last updated: January 2025</p>
           </div>
         </section>

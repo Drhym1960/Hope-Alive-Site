@@ -35,10 +35,10 @@ export default function Transparency() {
       <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">Accountability</p>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-5 leading-tight">
             Transparency & Accountability
           </h1>
-          <p className="text-white/80 text-lg leading-relaxed max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg leading-relaxed max-w-xl mx-auto">
             We believe that donors, volunteers, and the communities we serve deserve honest, clear information about who we are, how we work, and how we use the resources entrusted to us.
           </p>
         </div>
@@ -47,7 +47,7 @@ export default function Transparency() {
       <Breadcrumb items={[{ label: "Transparency" }]} />
 
       {/* Organisation information */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Verified Information"
@@ -129,7 +129,7 @@ export default function Transparency() {
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
             {programmes.map((p) => (
-              <div key={p.name} className="bg-white rounded-xl border border-border p-5">
+              <div key={p.name} className="bg-card rounded-xl border border-border p-5">
                 <h3 className="font-serif font-bold text-foreground mb-1">{p.name}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
               </div>
@@ -142,7 +142,7 @@ export default function Transparency() {
       </section>
 
       {/* Reporting */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Accountability"
@@ -193,7 +193,7 @@ export default function Transparency() {
               <span className="font-semibold text-amber-900">Note to the Foundation team:</span> This section should include details of the governing board, governance structure, and meeting schedule once verified. Please update this page with accurate governance information before publishing.
             </p>
           </div>
-          <div className="mt-6 bg-white rounded-xl border border-border p-5">
+          <div className="mt-6 bg-card rounded-xl border border-border p-5">
             <p className="text-muted-foreground text-sm leading-relaxed">
               HACS Foundation is governed by a board of trustees in accordance with our founding documents and the requirements of Nigerian charity law. Our governance structures ensure that funds are managed responsibly and that the organisation's activities remain aligned with our mission of serving orphaned and vulnerable children.
             </p>
@@ -205,7 +205,7 @@ export default function Transparency() {
       </section>
 
       {/* Policies */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Policies" title="Key Policies" />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

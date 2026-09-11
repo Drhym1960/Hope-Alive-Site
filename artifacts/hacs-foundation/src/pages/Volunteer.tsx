@@ -80,10 +80,10 @@ export default function Volunteer() {
       <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">Get Involved</p>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-5 leading-tight">
             Volunteer with HACS Foundation
           </h1>
-          <p className="text-white/80 text-lg leading-relaxed max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg leading-relaxed max-w-xl mx-auto">
             Give your time, skills, and care to children who need it most. We welcome volunteers who share our commitment to child welfare, dignity, and genuine impact.
           </p>
         </div>
@@ -92,7 +92,7 @@ export default function Volunteer() {
       <Breadcrumb items={[{ label: "Volunteer" }]} />
 
       {/* Why volunteer */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Why Volunteer"
@@ -126,7 +126,7 @@ export default function Volunteer() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {roles.map((role) => (
-              <div key={role.title} className="bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div key={role.title} className="bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-3xl mb-3">{role.icon}</div>
                 <h3 className="font-serif font-bold text-lg text-foreground mb-2">{role.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">{role.description}</p>
@@ -141,7 +141,7 @@ export default function Volunteer() {
       </section>
 
       {/* Requirements */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Child Safeguarding"

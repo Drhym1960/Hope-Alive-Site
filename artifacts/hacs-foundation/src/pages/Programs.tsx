@@ -48,7 +48,7 @@ const programs = [
     icon: "🏠",
     description: "Every child needs a safe, stable place to call home. Our Shelter and Housing Program maintains clean, well-maintained living quarters where children are safe, secure, and cared for. Beyond physical shelter, we create a genuine home, a family environment where children are loved, their voices are heard, and they belong.",
     impact: "Safe home for 50+ resident children",
-    color: "bg-green-50 border-green-200",
+    color: "bg-primary/5 border-primary/20",
     details: [
       "Safe, clean, and comfortable accommodation for resident children",
       "Family-style living environment with house parents",
@@ -112,7 +112,7 @@ export default function Programs() {
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Our Work</p>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-6">Programs & Services</h1>
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-6">Programs & Services</h1>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
               Six comprehensive programs, one purpose: to care for every dimension of every child's wellbeing.
             </p>

@@ -67,10 +67,10 @@ export default function StreetChildrenSupport() {
       <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">At-Risk Youth</p>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-5 leading-tight">
             Supporting Street Children and At-Risk Youth
           </h1>
-          <p className="text-white/80 text-lg leading-relaxed max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg leading-relaxed max-w-xl mx-auto">
             Street children and at-risk youth are among the most visible yet most misunderstood young people in many communities. HACS Foundation provides safe, dignified, evidence-informed support for children who need it most in Makurdi, Benue State, Nigeria.
           </p>
         </div>
@@ -79,7 +79,7 @@ export default function StreetChildrenSupport() {
       <Breadcrumb items={[{ label: "Street Children Support" }]} />
 
       {/* Understanding */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Understanding the Situation"
@@ -110,7 +110,7 @@ export default function StreetChildrenSupport() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {approaches.map((a) => (
-              <div key={a.title} className="bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div key={a.title} className="bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-3xl mb-3">{a.icon}</div>
                 <h3 className="font-serif font-bold text-lg text-foreground mb-2">{a.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{a.desc}</p>
@@ -121,7 +121,7 @@ export default function StreetChildrenSupport() {
       </section>
 
       {/* Dignity and privacy */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Child Dignity"
@@ -154,9 +154,9 @@ export default function StreetChildrenSupport() {
             title="What Helps — and What Doesn't"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-6">
-            <div className="bg-green-50 border border-green-200 rounded-2xl p-6">
-              <h3 className="font-serif font-bold text-green-900 mb-3">What Genuinely Helps</h3>
-              <ul className="space-y-2 text-sm text-green-800">
+            <div className="bg-card border border-secondary/30 rounded-2xl p-6">
+              <h3 className="font-serif font-bold text-primary mb-3">What Genuinely Helps</h3>
+              <ul className="space-y-2 text-sm text-foreground">
                 {[
                   "Donating to verified organisations with child protection policies",
                   "Supporting education access and vocational training",

@@ -81,15 +81,15 @@ export default function SiteMap() {
       {/* Hero */}
       <section className="hero-gradient py-20 px-4 sm:px-6 text-center">
         <div className="max-w-2xl mx-auto">
-          <h1 className="font-serif text-4xl font-bold text-white mb-4">Site Map</h1>
-          <p className="text-white/80 text-lg">A complete directory of all pages on the HACS Foundation website.</p>
+          <h1 className="font-serif text-4xl font-bold text-primary-foreground mb-4">Site Map</h1>
+          <p className="text-primary-foreground/80 text-lg">A complete directory of all pages on the HACS Foundation website.</p>
         </div>
       </section>
 
       <Breadcrumb items={[{ label: "Site Map" }]} />
 
       {/* Sections */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {sections.map((section) => (

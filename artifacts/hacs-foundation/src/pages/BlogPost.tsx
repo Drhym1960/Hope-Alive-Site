@@ -15,7 +15,7 @@ function RelatedCard({ post }: { post: BlogPost }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="block bg-white border border-border rounded-xl p-5 hover:shadow-md transition-shadow group"
+      className="block bg-card border border-border rounded-xl p-5 hover:shadow-md transition-shadow group"
     >
       <span className="inline-block text-xs font-semibold text-secondary bg-secondary/10 px-2 py-0.5 rounded-full mb-2">
         {post.category}
@@ -89,10 +89,10 @@ export default function BlogPostPage() {
       <section className="hero-gradient py-20 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">{post.category}</p>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
+          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-primary-foreground leading-tight mb-4">
             {post.title}
           </h1>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-white/70 text-sm">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-primary-foreground/70 text-sm">
             <span>By {post.author}</span>
             <span className="hidden sm:inline">·</span>
             <time dateTime={post.date}>{formatDate(post.date)}</time>
@@ -136,7 +136,7 @@ export default function BlogPostPage() {
 
           {/* Author */}
           <div className="mt-8 p-5 bg-accent/40 rounded-xl flex gap-4 items-start">
-            <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 bg-white shadow-sm">
+            <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 bg-card shadow-sm">
               <img src="/logo.png" alt="Hope Alive Children Spring Foundation" className="w-full h-full object-contain" />
             </div>
             <div>
