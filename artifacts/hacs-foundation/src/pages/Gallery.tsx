@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
+import { LogoLoader } from "@/components/LogoLoader";
 import { useListGallery } from "@workspace/api-client-react";
 import { getListGalleryQueryKey } from "@workspace/api-client-react";
 import { Link } from "wouter";
@@ -68,10 +69,8 @@ export default function Gallery() {
         <section className="py-20 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {isLoading ? (
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {[...Array(6)].map((_, i) => (
-                  <div key={i} className="aspect-[4/3] bg-muted rounded-2xl animate-pulse" />
-                ))}
+              <div className="flex justify-center py-24">
+                <LogoLoader size={80} label="Loading gallery" />
               </div>
             ) : (
               <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">

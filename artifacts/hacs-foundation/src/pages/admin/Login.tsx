@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation } from "wouter";
 import Seo from "@/components/Seo";
 import { Logo } from "@/components/Logo";
+import { LogoLoader } from "@/components/LogoLoader";
 import { useAdminLogin } from "@workspace/api-client-react";
 
 export default function AdminLogin() {
@@ -72,7 +73,14 @@ export default function AdminLogin() {
             disabled={login.isPending}
             className="w-full py-3 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary/90 transition-colors disabled:opacity-60"
           >
-            {login.isPending ? "Logging in..." : "Login"}
+            {login.isPending ? (
+              <span className="inline-flex items-center justify-center gap-3">
+                <LogoLoader size={24} stacked={false} label="Logging in" />
+                Logging in...
+              </span>
+            ) : (
+              "Login"
+            )}
           </button>
         </form>
         <div className="text-center mt-4">
