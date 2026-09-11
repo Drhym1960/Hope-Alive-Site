@@ -143,7 +143,10 @@ export function ChildrenCarousel({
         <button
           type="button"
           onClick={() => api?.scrollPrev()}
-          className="absolute left-2 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-primary shadow-md hover:bg-white transition-colors"
+          className={cn(
+            "absolute z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-primary shadow-md hover:bg-white transition-colors",
+            framed ? "left-[8%] top-[42%] -translate-y-1/2" : "left-2 top-1/2 -translate-y-1/2",
+          )}
           aria-label="Previous photo"
         >
           <ChevronLeft className="h-5 w-5" />
@@ -151,7 +154,10 @@ export function ChildrenCarousel({
         <button
           type="button"
           onClick={() => api?.scrollNext()}
-          className="absolute right-2 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-primary shadow-md hover:bg-white transition-colors"
+          className={cn(
+            "absolute z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-primary shadow-md hover:bg-white transition-colors",
+            framed ? "right-[8%] top-[42%] -translate-y-1/2" : "right-2 top-1/2 -translate-y-1/2",
+          )}
           aria-label="Next photo"
         >
           <ChevronRight className="h-5 w-5" />

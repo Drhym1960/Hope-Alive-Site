@@ -46,7 +46,8 @@ function SunriseHero({ children }: { children: ReactNode }) {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <img src="/looks/sunrise-hope.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#140c04]/82 via-[#2a1608]/52 to-transparent" />
+      <div className="absolute inset-0 bg-black/20" />
+      <div className="absolute inset-y-0 left-0 w-[62%] bg-gradient-to-r from-[#120804]/78 via-[#120804]/42 to-transparent" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {children}

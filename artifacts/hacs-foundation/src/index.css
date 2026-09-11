@@ -265,6 +265,10 @@ main section.bg-background {
   background-color: transparent;
 }
 
+html[data-home] .logo-watermark {
+  display: none;
+}
+
 @keyframes hacs-logo-load {
   0% {
     transform: rotate(0deg) scale(0.92);

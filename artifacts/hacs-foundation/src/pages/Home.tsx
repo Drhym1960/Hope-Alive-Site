@@ -1,4 +1,5 @@
 import type { ComponentType } from "react";
+import { useEffect } from "react";
 import Seo from "@/components/Seo";
 import { useLanding } from "@/components/LandingProvider";
 import {
@@ -21,6 +22,13 @@ const landingBodies: Record<LandingId, ComponentType> = {
 export default function Home() {
   const { landingId } = useLanding();
   const LandingBody = landingBodies[landingId];
+
+  useEffect(() => {
+    document.documentElement.dataset.home = "true";
+    return () => {
+      delete document.documentElement.dataset.home;
+    };
+  }, []);
 
   return (
     <div>
