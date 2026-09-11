@@ -129,6 +129,156 @@
   --spacing: 0.25rem;
 }
 
+html[data-theme="azure-field"] {
+  --background: 196 40% 98%;
+  --foreground: 200 30% 10%;
+  --border: 196 18% 86%;
+  --card: 0 0% 100%;
+  --card-foreground: 200 30% 10%;
+  --card-border: 196 16% 90%;
+  --primary: 196 100% 42%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 196 100% 47%;
+  --secondary-foreground: 200 40% 8%;
+  --muted: 196 30% 94%;
+  --muted-foreground: 200 12% 38%;
+  --accent: 196 50% 94%;
+  --accent-foreground: 200 30% 16%;
+  --input: 196 14% 80%;
+  --ring: 196 100% 42%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 200 30% 10%;
+  --popover-border: 196 16% 90%;
+  --app-font-sans: "DM Sans", sans-serif;
+  --app-font-serif: "Source Serif 4", Georgia, serif;
+  --radius: 0.2rem;
+  --hero-image: none;
+  --hero-overlay-from: 196 80% 97%;
+  --hero-overlay-to: 196 90% 82%;
+  --hero-photo-opacity: 0.55;
+  --letter-display: -0.03em;
+}
+
+html[data-theme="signal-red"] {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 8%;
+  --border: 0 0% 88%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 8%;
+  --card-border: 0 0% 90%;
+  --primary: 4 77% 48%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 4 77% 48%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 38%;
+  --accent: 4 70% 96%;
+  --accent-foreground: 4 50% 22%;
+  --input: 0 0% 80%;
+  --ring: 4 77% 48%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 8%;
+  --popover-border: 0 0% 90%;
+  --app-font-sans: "Outfit", sans-serif;
+  --app-font-serif: "Lora", Georgia, serif;
+  --radius: 0.35rem;
+  --hero-image: none;
+  --hero-overlay-from: 0 0% 100%;
+  --hero-overlay-to: 4 40% 94%;
+  --hero-photo-opacity: 0.4;
+  --letter-display: -0.02em;
+}
+
+html[data-theme="horizon-amber"] {
+  --background: 24 100% 98%;
+  --foreground: 202 40% 12%;
+  --border: 24 30% 86%;
+  --card: 24 80% 99%;
+  --card-foreground: 202 40% 12%;
+  --card-border: 24 24% 88%;
+  --primary: 202 81% 25%;
+  --primary-foreground: 24 100% 98%;
+  --secondary: 24 97% 46%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 24 40% 94%;
+  --muted-foreground: 202 12% 36%;
+  --accent: 202 30% 94%;
+  --accent-foreground: 202 50% 18%;
+  --input: 24 20% 78%;
+  --ring: 24 97% 46%;
+  --popover: 24 80% 99%;
+  --popover-foreground: 202 40% 12%;
+  --popover-border: 24 24% 88%;
+  --app-font-sans: "Nunito Sans", sans-serif;
+  --app-font-serif: "Merriweather", Georgia, serif;
+  --radius: 1.15rem;
+  --hero-image: none;
+  --hero-overlay-from: 24 80% 97%;
+  --hero-overlay-to: 202 50% 88%;
+  --hero-photo-opacity: 0.5;
+  --letter-display: -0.02em;
+}
+
+html[data-theme="parchment-gate"] {
+  --background: 40 29% 94%;
+  --foreground: 210 16% 14%;
+  --border: 40 12% 82%;
+  --card: 40 33% 97%;
+  --card-foreground: 210 16% 14%;
+  --card-border: 40 12% 86%;
+  --primary: 210 16% 23%;
+  --primary-foreground: 40 29% 96%;
+  --secondary: 210 16% 23%;
+  --secondary-foreground: 40 29% 96%;
+  --muted: 40 16% 90%;
+  --muted-foreground: 210 8% 36%;
+  --accent: 40 20% 90%;
+  --accent-foreground: 210 16% 18%;
+  --input: 40 10% 76%;
+  --ring: 210 16% 23%;
+  --popover: 40 33% 97%;
+  --popover-foreground: 210 16% 14%;
+  --popover-border: 40 12% 86%;
+  --app-font-sans: "Noto Sans", sans-serif;
+  --app-font-serif: "Noto Serif", Georgia, serif;
+  --radius: 0rem;
+  --hero-image: none;
+  --hero-overlay-from: 40 29% 96%;
+  --hero-overlay-to: 210 10% 88%;
+  --hero-photo-opacity: 0.28;
+  --letter-display: -0.04em;
+}
+
+html[data-theme="civic-press"] {
+  --background: 36 47% 94%;
+  --foreground: 0 0% 10%;
+  --border: 36 18% 82%;
+  --card: 36 50% 98%;
+  --card-foreground: 0 0% 10%;
+  --card-border: 36 16% 86%;
+  --primary: 20 67% 46%;
+  --primary-foreground: 36 47% 97%;
+  --secondary: 150 18% 28%;
+  --secondary-foreground: 36 47% 97%;
+  --muted: 36 22% 90%;
+  --muted-foreground: 0 0% 36%;
+  --accent: 150 16% 92%;
+  --accent-foreground: 150 22% 18%;
+  --input: 36 14% 76%;
+  --ring: 20 67% 46%;
+  --popover: 36 50% 98%;
+  --popover-foreground: 0 0% 10%;
+  --popover-border: 36 16% 86%;
+  --app-font-sans: "IBM Plex Sans", sans-serif;
+  --app-font-serif: "Instrument Serif", Georgia, serif;
+  --radius: 0rem;
+  --hero-image: none;
+  --hero-overlay-from: 36 47% 96%;
+  --hero-overlay-to: 20 30% 88%;
+  --hero-photo-opacity: 0.35;
+  --letter-display: -0.035em;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -186,6 +336,42 @@ html {
   opacity: 1;
 }
 
+html[data-theme="azure-field"] .hero-stage-media {
+  background-image:
+    radial-gradient(900px 500px at 85% 20%, hsl(196 100% 70% / 0.45), transparent 55%),
+    linear-gradient(165deg, hsl(196 80% 97%) 0%, hsl(196 90% 78%) 100%);
+}
+
+html[data-theme="signal-red"] .hero-stage-media {
+  background-image:
+    linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 100%) 58%, hsl(4 77% 48% / 0.08) 100%);
+}
+
+html[data-theme="signal-red"] .hero-stage-inner {
+  box-shadow: inset 8px 0 0 hsl(var(--primary));
+}
+
+html[data-theme="horizon-amber"] .hero-stage-media {
+  background-image:
+    radial-gradient(800px 420px at 90% 10%, hsl(24 97% 56% / 0.28), transparent 50%),
+    linear-gradient(160deg, hsl(24 80% 97%) 0%, hsl(202 50% 86%) 100%);
+}
+
+html[data-theme="parchment-gate"] .hero-stage-media {
+  background-image:
+    linear-gradient(180deg, hsl(40 29% 96%) 0%, hsl(40 20% 90%) 100%);
+}
+
+html[data-theme="civic-press"] .hero-stage-media {
+  background-image:
+    linear-gradient(90deg, hsl(36 47% 96%) 0%, hsl(36 40% 92%) 100%);
+}
+
+html[data-theme="civic-press"] .hero-stage-inner {
+  border-top: 1px solid hsl(var(--foreground) / 0.2);
+  border-bottom: 1px solid hsl(var(--foreground) / 0.2);
+}
+
 .hero-stage-media::after {
   content: "";
   position: absolute;
@@ -197,16 +383,42 @@ html {
   pointer-events: none;
 }
 
-.rounded-2xl,
-.rounded-xl,
-.rounded-lg,
-.rounded-3xl {
+html[data-theme="azure-field"] .rounded-2xl,
+html[data-theme="azure-field"] .rounded-xl,
+html[data-theme="signal-red"] .rounded-2xl,
+html[data-theme="signal-red"] .rounded-xl {
+  border-radius: 0.35rem;
+}
+
+html[data-theme="horizon-amber"] .rounded-2xl {
+  border-radius: 1.35rem;
+}
+
+html[data-theme="horizon-amber"] nav a.rounded-full,
+html[data-theme="horizon-amber"] section a.rounded-full {
+  border-radius: 999px;
+}
+
+html[data-theme="parchment-gate"] .rounded-2xl,
+html[data-theme="parchment-gate"] .rounded-xl,
+html[data-theme="parchment-gate"] .rounded-lg,
+html[data-theme="parchment-gate"] .rounded-3xl,
+html[data-theme="civic-press"] .rounded-2xl,
+html[data-theme="civic-press"] .rounded-xl,
+html[data-theme="civic-press"] .rounded-lg,
+html[data-theme="civic-press"] .rounded-3xl {
   border-radius: 0;
 }
 
-nav a.rounded-full,
-section a.rounded-full {
-  border-radius: 0;
+html[data-theme="parchment-gate"] nav a.rounded-full,
+html[data-theme="parchment-gate"] section a.rounded-full,
+html[data-theme="civic-press"] nav a.rounded-full,
+html[data-theme="civic-press"] section a.rounded-full,
+html[data-theme="azure-field"] nav a.rounded-full,
+html[data-theme="azure-field"] section a.rounded-full,
+html[data-theme="signal-red"] nav a.rounded-full,
+html[data-theme="signal-red"] section a.rounded-full {
+  border-radius: 0.2rem;
 }
 
 .theme-stats {
@@ -234,6 +446,55 @@ section a.rounded-full {
 .section-divider {
   width: 3.5rem;
   height: 1px;
+  background: hsl(var(--primary));
+  border-radius: 0;
+}
+
+html[data-theme="azure-field"] .theme-stats,
+html[data-theme="signal-red"] .theme-stats,
+html[data-theme="horizon-amber"] .theme-stats {
+  background: hsl(var(--secondary));
+  border-block: 0;
+}
+
+html[data-theme="azure-field"] .theme-stat,
+html[data-theme="signal-red"] .theme-stat,
+html[data-theme="horizon-amber"] .theme-stat {
+  border: 0;
+  padding: 0;
+}
+
+html[data-theme="azure-field"] .theme-stat-value,
+html[data-theme="signal-red"] .theme-stat-value,
+html[data-theme="horizon-amber"] .theme-stat-value {
+  color: hsl(var(--secondary-foreground));
+}
+
+html[data-theme="azure-field"] .theme-stat-label,
+html[data-theme="signal-red"] .theme-stat-label,
+html[data-theme="horizon-amber"] .theme-stat-label {
+  color: hsl(var(--secondary-foreground) / 0.8);
+}
+
+html[data-theme="parchment-gate"] .section-divider,
+html[data-theme="civic-press"] .section-divider {
+  width: 4rem;
+  height: 1px;
+  background: hsl(var(--foreground));
+  border-radius: 0;
+}
+
+html[data-theme="horizon-amber"] .section-divider {
+  width: 4.5rem;
+  height: 4px;
+  background: hsl(var(--secondary));
+  border-radius: 999px;
+}
+
+html[data-theme="azure-field"] .section-divider,
+html[data-theme="signal-red"] .section-divider {
+  width: 3rem;
+  height: 4px;
   background: hsl(var(--primary));
   border-radius: 0;
 }
