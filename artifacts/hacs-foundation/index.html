@@ -109,7 +109,53 @@
     </script>
   </head>
   <body>
+    <style>
+      #boot-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: hsl(90 28% 97%);
+        transition: opacity 0.35s ease;
+      }
+      #boot-loader.boot-loader-hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #boot-loader img {
+        width: 5.5rem;
+        height: 5.5rem;
+        border-radius: 50%;
+        object-fit: contain;
+        animation: hacs-boot-logo 2.4s ease-in-out infinite;
+      }
+      @keyframes hacs-boot-logo {
+        0% { transform: rotate(0deg) scale(0.92); opacity: 0.72; }
+        50% { transform: rotate(180deg) scale(1.06); opacity: 1; }
+        100% { transform: rotate(360deg) scale(0.92); opacity: 0.72; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #boot-loader img { animation: none; }
+      }
+    </style>
+    <div id="boot-loader" role="status" aria-live="polite" aria-label="Loading Hope Alive Children Spring Foundation">
+      <img src="/logo.png" alt="" width="88" height="88" />
+    </div>
     <div id="root"></div>
+    <script>
+      (function () {
+        var root = document.getElementById("root");
+        var boot = document.getElementById("boot-loader");
+        if (!boot) return;
+        if (root && root.childElementCount === 0) {
+          boot.style.display = "flex";
+        } else {
+          boot.remove();
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

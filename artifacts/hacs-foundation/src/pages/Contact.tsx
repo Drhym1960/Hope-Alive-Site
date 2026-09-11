@@ -6,6 +6,7 @@ import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import { useSubmitContact } from "@workspace/api-client-react";
 import { SectionHeader } from "@/components/SectionHeader";
+import { LogoLoader } from "@/components/LogoLoader";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -183,7 +184,14 @@ export default function Contact() {
                       disabled={isSubmitting}
                       className="w-full py-4 bg-primary text-primary-foreground rounded-xl font-bold text-base hover:bg-primary/90 transition-all disabled:opacity-60"
                     >
-                      {isSubmitting ? "Sending..." : "Send Message"}
+                      {isSubmitting ? (
+                        <span className="inline-flex items-center justify-center gap-3">
+                          <LogoLoader size={24} stacked={false} label="Sending message" />
+                          Sending...
+                        </span>
+                      ) : (
+                        "Send Message"
+                      )}
                     </button>
                   </form>
                 )}

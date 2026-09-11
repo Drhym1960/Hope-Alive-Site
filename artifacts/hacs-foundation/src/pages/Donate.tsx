@@ -7,6 +7,7 @@ import Seo from "@/components/Seo";
 import { useCreateDonation, useCreateStripeSession, useCreateKorapayCharge } from "@workspace/api-client-react";
 import { useLocation } from "wouter";
 import { SectionHeader } from "@/components/SectionHeader";
+import { LogoLoader } from "@/components/LogoLoader";
 
 const ngnPresets = [1000, 5000, 10000, 50000];
 const gbpPresets = [5, 20, 50, 100];
@@ -296,7 +297,14 @@ export default function Donate() {
                     disabled={isSubmitting}
                     className="w-full py-4 bg-secondary text-secondary-foreground rounded-xl font-bold text-lg hover:bg-secondary/90 transition-all disabled:opacity-60 disabled:cursor-not-allowed donate-btn-pulse"
                   >
-                    {isSubmitting ? "Processing..." : `Donate ${cur.symbol}${(watch("amount") || 0).toLocaleString()} • ${methodLabel(paymentMethod)}`}
+                    {isSubmitting ? (
+                      <span className="inline-flex items-center justify-center gap-3">
+                        <LogoLoader size={28} stacked={false} label="Processing donation" />
+                        Processing...
+                      </span>
+                    ) : (
+                      `Donate ${cur.symbol}${(watch("amount") || 0).toLocaleString()} • ${methodLabel(paymentMethod)}`
+                    )}
                   </button>
 
                   <p className="text-xs text-muted-foreground text-center">

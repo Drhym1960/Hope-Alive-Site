@@ -24,6 +24,7 @@ import {
 } from "@workspace/api-client-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Logo } from "@/components/Logo";
+import { LogoLoader } from "@/components/LogoLoader";
 
 type Tab = "overview" | "donations" | "contacts" | "gallery" | "faqs";
 
@@ -45,8 +46,8 @@ export default function AdminDashboard() {
 
   if (meLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="text-muted-foreground">Loading...</div>
+      <div className="min-h-screen flex items-center justify-center">
+        <LogoLoader size={88} label="Loading admin" />
       </div>
     );
   }
@@ -65,7 +66,7 @@ export default function AdminDashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <Seo title="Admin Dashboard" description="Administrator dashboard." path="/admin" noindex />
       {/* Header */}
       <header className="bg-primary text-primary-foreground px-4 sm:px-6 py-4 flex items-center justify-between sticky top-0 z-40 shadow-md">
@@ -513,7 +514,7 @@ function StatCard({ label, value, sub }: { label: string; value: string; sub: st
 function LoadingState() {
   return (
     <div className="flex justify-center py-16">
-      <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full" />
+      <LogoLoader size={64} />
     </div>
   );
 }
