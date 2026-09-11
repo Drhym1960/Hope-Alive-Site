@@ -75,8 +75,6 @@ function StudentCard({
   expanded: boolean;
   onToggle: () => void;
 }) {
-  const isUniversity = student.level === "university";
-
   return (
     <article className="bg-card border border-border rounded-2xl shadow-sm overflow-hidden">
       <button
@@ -91,13 +89,10 @@ function StudentCard({
               {LEVEL_LABELS[student.level]}
             </p>
             <h3 className="font-serif text-xl font-bold text-foreground leading-tight">{student.name}</h3>
-            {isUniversity && student.institution && (
+            {student.institution && (
               <p className="mt-2 text-sm text-foreground/80 leading-relaxed">{student.institution}</p>
             )}
-            <p className="mt-2 text-xs text-muted-foreground">
-              Academic session {student.session}
-              {!student.institution && student.level !== "university" ? " · School to be added" : ""}
-            </p>
+            <p className="mt-2 text-xs text-muted-foreground">Academic session {student.session}</p>
           </div>
           <div className="text-right shrink-0">
             <p className="font-serif text-lg sm:text-xl font-bold text-primary tabular-nums">
