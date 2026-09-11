@@ -74,6 +74,14 @@ export function HomeLanding() {
         </div>
       </section>
 
+      <GoldPromiseRest />
+    </div>
+  );
+}
+
+export function GoldPromiseRest() {
+  return (
+    <>
       <section className="bg-secondary py-10">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat) => (
@@ -163,6 +171,6 @@ export function HomeLanding() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

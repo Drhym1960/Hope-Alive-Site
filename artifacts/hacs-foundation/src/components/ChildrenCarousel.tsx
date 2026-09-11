@@ -14,7 +14,7 @@ import child3 from "@assets/file_00000000c7c071fdaf3524db2a32f965_1776680948966.
 import child4 from "@assets/file_00000000eeb471f887e0f300041016ed_1776680949165.png";
 import child5 from "@assets/file_000000006b2871fdb04677d531835d82_1776680949100.png";
 
-const childrenSlides = [
+export const childrenSlides = [
   {
     src: child1,
     alt: "A smiling Nigerian girl at Hope Alive Children Spring Foundation in Makurdi",
