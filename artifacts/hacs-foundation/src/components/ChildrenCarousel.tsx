@@ -90,7 +90,7 @@ export function ChildrenCarousel({ className }: { className?: string }) {
         <CarouselContent className="-ml-3">
           {childrenSlides.map((slide, index) => (
             <CarouselItem key={slide.alt} className="basis-[88%] sm:basis-[78%] pl-3">
-              <figure className="relative overflow-hidden bg-muted shadow-xl">
+              <figure className="relative overflow-hidden bg-muted rounded-[1.75rem] shadow-xl">
                 <img
                   src={slide.src}
                   alt={slide.alt}

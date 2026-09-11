@@ -67,52 +67,49 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  /* Pearl Atelier — locked site theme */
-  --background: 80 20% 99%;
-  --foreground: 160 12% 10%;
-  --border: 150 10% 88%;
-  --card: 0 0% 100%;
-  --card-foreground: 160 12% 10%;
-  --card-border: 150 10% 90%;
-  --sidebar: 160 42% 14%;
-  --sidebar-foreground: 80 20% 99%;
-  --sidebar-border: 160 28% 20%;
-  --sidebar-primary: 160 18% 32%;
-  --sidebar-primary-foreground: 80 20% 99%;
-  --sidebar-accent: 160 30% 20%;
-  --sidebar-accent-foreground: 80 20% 99%;
-  --sidebar-ring: 160 72% 22%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 160 12% 10%;
-  --popover-border: 150 10% 90%;
-  --primary: 160 72% 22%;
-  --primary-foreground: 80 20% 99%;
-  --secondary: 160 18% 32%;
-  --secondary-foreground: 80 20% 99%;
-  --muted: 80 12% 96%;
-  --muted-foreground: 160 8% 38%;
-  --accent: 160 18% 95%;
-  --accent-foreground: 160 40% 18%;
+  /* Living Garden theme for Hope Alive Children Spring Foundation */
+  --background: 90 28% 97%;
+  --foreground: 140 28% 12%;
+  --border: 140 18% 82%;
+  --card: 90 35% 99%;
+  --card-foreground: 140 28% 12%;
+  --card-border: 140 18% 86%;
+  --sidebar: 142 28% 14%;
+  --sidebar-foreground: 80 40% 92%;
+  --sidebar-border: 142 22% 20%;
+  --sidebar-primary: 45 85% 48%;
+  --sidebar-primary-foreground: 140 30% 8%;
+  --sidebar-accent: 142 22% 22%;
+  --sidebar-accent-foreground: 80 40% 92%;
+  --sidebar-ring: 45 85% 48%;
+  --popover: 90 35% 99%;
+  --popover-foreground: 140 28% 12%;
+  --popover-border: 140 18% 86%;
+  --primary: 142 48% 26%;
+  --primary-foreground: 80 40% 97%;
+  --secondary: 45 85% 48%;
+  --secondary-foreground: 140 30% 8%;
+  --muted: 90 22% 93%;
+  --muted-foreground: 140 14% 38%;
+  --accent: 90 40% 93%;
+  --accent-foreground: 142 35% 18%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
-  --input: 150 10% 80%;
-  --ring: 160 72% 22%;
-  --chart-1: 160 72% 22%;
-  --chart-2: 160 18% 32%;
-  --chart-3: 150 10% 48%;
-  --chart-4: 80 8% 42%;
-  --chart-5: 200 20% 36%;
+  --input: 150 15% 76%;
+  --ring: 142 48% 26%;
+  --chart-1: 142 48% 26%;
+  --chart-2: 45 85% 48%;
+  --chart-3: 200 60% 45%;
+  --chart-4: 340 65% 48%;
+  --chart-5: 270 50% 52%;
 
-  --app-font-sans: "Plus Jakarta Sans", sans-serif;
-  --app-font-serif: "Newsreader", Georgia, serif;
+  --app-font-sans: 'Inter', sans-serif;
+  --app-font-serif: 'Lora', Georgia, serif;
   --app-font-mono: Menlo, monospace;
-  --radius: 0rem;
-  --hero-image: url("/looks/pearl-atelier.jpg");
-  --hero-overlay-from: 80 20% 99%;
-  --hero-overlay-to: 160 12% 94%;
-  --hero-photo-opacity: 0.32;
-  --nav-bg: 80 20% 99%;
-  --letter-display: -0.045em;
+  --radius: 0.5rem;
+  --hero-image: url("/looks/living-garden.jpg");
+  --hero-overlay-from: 142 40% 12%;
+  --hero-overlay-to: 90 30% 22%;
   --shadow-sm: 0 1px 3px 0 rgba(0,0,0,0.08), 0 1px 2px -1px rgba(0,0,0,0.06);
   --shadow: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.06);
   --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.06);
@@ -138,7 +135,6 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--app-font-serif);
-    letter-spacing: var(--letter-display, 0);
   }
 }
 
@@ -153,78 +149,12 @@ html {
 }
 
 .hero-gradient {
-  background-color: hsl(var(--primary));
+  background-color: hsl(var(--hero-overlay-from));
   background-image:
-    linear-gradient(
-      135deg,
-      hsl(var(--primary) / 0.94) 0%,
-      hsl(var(--primary) / 0.78) 58%,
-      hsl(var(--secondary) / 0.42) 100%
-    ),
+    linear-gradient(135deg, hsl(var(--hero-overlay-from) / 0.88) 0%, hsl(var(--hero-overlay-to) / 0.72) 100%),
     var(--hero-image);
   background-size: cover;
   background-position: center;
-}
-
-.hero-stage {
-  position: relative;
-  min-height: 92vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background: hsl(var(--background));
-}
-
-.hero-stage-media {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(120deg, hsl(var(--hero-overlay-from) / 0.92) 0%, hsl(var(--hero-overlay-to) / 0.55) 48%, transparent 100%),
-    var(--hero-image);
-  background-size: cover;
-  background-position: center;
-  opacity: 1;
-}
-
-.hero-stage-media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: var(--hero-photo-opacity);
-  background:
-    radial-gradient(1200px 600px at 80% 20%, hsl(var(--secondary) / 0.18), transparent 55%),
-    radial-gradient(900px 500px at 10% 90%, hsl(var(--primary) / 0.12), transparent 50%);
-  pointer-events: none;
-}
-
-.rounded-2xl,
-.rounded-xl,
-.rounded-lg,
-.rounded-3xl {
-  border-radius: 0;
-}
-
-nav a.rounded-full,
-section a.rounded-full {
-  border-radius: 0;
-}
-
-.theme-stats {
-  background: transparent;
-  border-block: 1px solid hsl(var(--border));
-}
-
-.theme-stat {
-  border: 1px solid hsl(var(--border));
-  padding: 1.25rem 0.75rem;
-}
-
-.theme-stat-value {
-  color: hsl(var(--primary));
-}
-
-.theme-stat-label {
-  color: hsl(var(--muted-foreground));
 }
 
 .warm-gradient {
@@ -232,10 +162,10 @@ section a.rounded-full {
 }
 
 .section-divider {
-  width: 3.5rem;
-  height: 1px;
-  background: hsl(var(--primary));
-  border-radius: 0;
+  width: 64px;
+  height: 4px;
+  background: hsl(var(--secondary));
+  border-radius: 2px;
 }
 
 /* Animation classes */
@@ -259,8 +189,8 @@ section a.rounded-full {
 
 /* Donation button pulse */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--secondary) / 0.4); }
-  50% { box-shadow: 0 0 0 8px hsl(var(--secondary) / 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(245, 158, 11, 0); }
 }
 
 .donate-btn-pulse {

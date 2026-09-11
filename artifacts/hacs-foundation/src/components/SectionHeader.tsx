@@ -14,7 +14,7 @@ export function SectionHeader({ eyebrow, title, subtitle, centered = false, ligh
           {eyebrow}
         </p>
       )}
-      <h2 className={`font-serif text-3xl sm:text-4xl font-bold leading-tight mb-4 ${light ? "text-primary-foreground" : "text-foreground"}`}>
+      <h2 className={`font-serif text-3xl sm:text-4xl font-bold leading-tight mb-4 ${light ? "text-white" : "text-foreground"}`}>
         {title}
       </h2>
       {centered && <div className="section-divider mx-auto mb-4" />}

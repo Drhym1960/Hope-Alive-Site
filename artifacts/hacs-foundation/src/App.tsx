@@ -112,12 +112,6 @@ function dismissBootLoader() {
 
 function App() {
   useEffect(() => {
-    try {
-      window.localStorage.removeItem("hacs-premium-theme-preview");
-    } catch {
-      /* ignore */
-    }
-    document.documentElement.removeAttribute("data-theme");
     dismissBootLoader();
   }, []);
 
