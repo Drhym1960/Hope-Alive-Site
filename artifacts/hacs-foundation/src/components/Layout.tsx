@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Logo } from "@/components/Logo";
+import { useLanding } from "@/components/LandingProvider";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -18,7 +19,9 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [location] = useLocation();
+  const { landingId } = useLanding();
   const isHome = location === "/";
+  const cinemaInvert = landingId === "cinema-field" && isHome && !scrolled && !open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -32,15 +35,17 @@ export function Navbar() {
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled || !isHome
-          ? "bg-white/95 backdrop-blur-md shadow-md"
-          : "bg-white/45 backdrop-blur-md",
+        cinemaInvert
+          ? "bg-transparent"
+          : scrolled || !isHome
+            ? "bg-white/95 backdrop-blur-md shadow-md"
+            : "bg-white/45 backdrop-blur-md",
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link href="/" className="group">
-            <Logo size={52} wordmarkHiddenOnMobile />
+            <Logo size={52} wordmarkHiddenOnMobile inverted={cinemaInvert} />
           </Link>
 
           <div className="hidden lg:flex items-center gap-3 xl:gap-5">
@@ -53,8 +58,12 @@ export function Navbar() {
                   location === link.href ||
                     (link.href !== "/" && location.startsWith(link.href)) ||
                     (link.href === "/scholarship-beneficiaries" && location === "/children-we-support")
-                    ? "text-primary"
-                    : "text-foreground",
+                    ? cinemaInvert
+                      ? "text-secondary"
+                      : "text-primary"
+                    : cinemaInvert
+                      ? "text-white"
+                      : "text-foreground",
                 )}
               >
                 {link.label}
@@ -70,13 +79,16 @@ export function Navbar() {
 
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden p-2 rounded-md transition-colors text-foreground hover:bg-muted"
+            className={cn(
+              "lg:hidden p-2 rounded-md transition-colors",
+              cinemaInvert ? "text-white hover:bg-white/10" : "text-foreground hover:bg-muted",
+            )}
             aria-label="Toggle menu"
           >
             <div className="w-6 h-5 flex flex-col justify-between">
-              <span className={cn("block w-full h-0.5 transition-all bg-foreground", open && "rotate-45 translate-y-2")} />
-              <span className={cn("block w-full h-0.5 transition-all bg-foreground", open && "opacity-0")} />
-              <span className={cn("block w-full h-0.5 transition-all bg-foreground", open && "-rotate-45 -translate-y-2.5")} />
+              <span className={cn("block w-full h-0.5 transition-all", cinemaInvert ? "bg-white" : "bg-foreground", open && "rotate-45 translate-y-2")} />
+              <span className={cn("block w-full h-0.5 transition-all", cinemaInvert ? "bg-white" : "bg-foreground", open && "opacity-0")} />
+              <span className={cn("block w-full h-0.5 transition-all", cinemaInvert ? "bg-white" : "bg-foreground", open && "-rotate-45 -translate-y-2.5")} />
             </div>
           </button>
         </div>
