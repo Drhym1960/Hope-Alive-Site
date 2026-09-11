@@ -104,12 +104,12 @@
   --chart-5: 270 50% 52%;
 
   --app-font-sans: 'Inter', sans-serif;
-  --app-font-serif: 'Lora', Georgia, serif;
+  --app-font-serif: Fraunces, Georgia, serif;
   --app-font-mono: Menlo, monospace;
   --radius: 0.5rem;
-  --hero-image: url("/looks/living-garden.jpg");
-  --hero-overlay-from: 142 40% 12%;
-  --hero-overlay-to: 90 30% 22%;
+  --hero-image: url("/looks/sunrise-hope.jpg");
+  --hero-overlay-from: 24 55% 10%;
+  --hero-overlay-to: 32 45% 18%;
   --shadow-sm: 0 1px 3px 0 rgba(0,0,0,0.08), 0 1px 2px -1px rgba(0,0,0,0.06);
   --shadow: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.06);
   --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.06);
@@ -146,6 +146,14 @@ html {
 /* Custom utilities */
 .font-serif {
   font-family: var(--app-font-serif) !important;
+}
+
+.portrait-frame {
+  background:
+    linear-gradient(145deg, #f8e7b4 0%, #d4a017 32%, #8a5a12 68%, #f3d98a 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 236, 180, 0.55),
+    inset 0 0 0 3px rgba(90, 50, 8, 0.35);
 }
 
 .hero-gradient {
@@ -235,6 +243,10 @@ html {
 /* Let cream page-fill sections show the watermark behind text */
 main section.bg-background {
   background-color: transparent;
+}
+
+html[data-home] .logo-watermark {
+  display: none;
 }
 
 @keyframes hacs-logo-load {
