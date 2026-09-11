@@ -4,8 +4,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LogoWatermark } from "@/components/LogoWatermark";
-import { LandingProvider } from "@/components/LandingProvider";
-import { LandingPicker } from "@/components/LandingPicker";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Layout from "@/components/Layout";
@@ -120,16 +118,13 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <LandingProvider>
-          <LogoWatermark />
-          <div className="relative z-10">
-            <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-              <Router />
-            </WouterRouter>
-          </div>
-          <LandingPicker />
-          <Toaster />
-        </LandingProvider>
+        <LogoWatermark />
+        <div className="relative z-10">
+          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+            <Router />
+          </WouterRouter>
+        </div>
+        <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
   );

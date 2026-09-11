@@ -1,28 +1,8 @@
-import type { ComponentType } from "react";
 import { useEffect } from "react";
 import Seo from "@/components/Seo";
-import { useLanding } from "@/components/LandingProvider";
-import {
-  DawnVerseLanding,
-  GoldPromiseLanding,
-  HouseLetterLanding,
-  ScriptSunriseLanding,
-  QuietRecordLanding,
-} from "@/components/LandingPages";
-import type { LandingId } from "@/lib/landings";
-
-const landingBodies: Record<LandingId, ComponentType> = {
-  "dawn-verse": DawnVerseLanding,
-  "gold-promise": GoldPromiseLanding,
-  "house-letter": HouseLetterLanding,
-  "script-sunrise": ScriptSunriseLanding,
-  "quiet-record": QuietRecordLanding,
-};
+import { HomeLanding } from "@/components/LandingPages";
 
 export default function Home() {
-  const { landingId } = useLanding();
-  const LandingBody = landingBodies[landingId];
-
   useEffect(() => {
     document.documentElement.dataset.home = "true";
     return () => {
@@ -52,7 +32,7 @@ export default function Home() {
           }
         }}
       />
-      <LandingBody />
+      <HomeLanding />
     </div>
   );
 }

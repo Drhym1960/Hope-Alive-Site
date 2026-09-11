@@ -104,7 +104,7 @@
   --chart-5: 270 50% 52%;
 
   --app-font-sans: 'Inter', sans-serif;
-  --app-font-serif: 'Lora', Georgia, serif;
+  --app-font-serif: Fraunces, Georgia, serif;
   --app-font-mono: Menlo, monospace;
   --radius: 0.5rem;
   --hero-image: url("/looks/sunrise-hope.jpg");
@@ -146,26 +146,6 @@ html {
 /* Custom utilities */
 .font-serif {
   font-family: var(--app-font-serif) !important;
-}
-
-.font-verse {
-  font-family: "Cormorant Garamond", "Lora", Georgia, serif;
-}
-
-.font-promise {
-  font-family: Fraunces, "Lora", Georgia, serif;
-}
-
-.font-script {
-  font-family: "Great Vibes", "Cormorant Garamond", cursive;
-}
-
-.font-display {
-  font-family: "Playfair Display", "Lora", Georgia, serif;
-}
-
-.font-record {
-  font-family: Cinzel, "Times New Roman", serif;
 }
 
 .portrait-frame {
