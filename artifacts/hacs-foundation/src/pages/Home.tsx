@@ -1,19 +1,8 @@
-import type { ComponentType } from "react";
 import { useEffect } from "react";
 import Seo from "@/components/Seo";
-import { usePicture } from "@/components/PictureProvider";
-import { PathHeroLanding, GuideCardsLanding } from "@/components/PictureLandings";
-import type { PictureId } from "@/lib/pictureLayouts";
-
-const pictureBodies: Record<PictureId, ComponentType> = {
-  "path-hero": PathHeroLanding,
-  "guide-cards": GuideCardsLanding,
-};
+import { HomeLanding } from "@/components/LandingPages";
 
 export default function Home() {
-  const { pictureId } = usePicture();
-  const Body = pictureBodies[pictureId];
-
   useEffect(() => {
     document.documentElement.dataset.home = "true";
     return () => {
@@ -43,7 +32,7 @@ export default function Home() {
           }
         }}
       />
-      <Body />
+      <HomeLanding />
     </div>
   );
 }

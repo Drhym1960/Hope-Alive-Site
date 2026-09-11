@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
 import { Link } from "wouter";
-import { ChildrenCarousel } from "@/components/ChildrenCarousel";
+import { childrenSlides } from "@/components/ChildrenCarousel";
 import { LeadershipSection } from "@/components/LeadershipSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import scumlCert from "@assets/file_0000000005dc72468a99f867fb432e41_1776950214037.png";
@@ -28,49 +29,106 @@ const stories = [
 ];
 
 export function HomeLanding() {
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused) return;
+    const timer = window.setTimeout(() => {
+      setCurrent((value) => (value + 1) % childrenSlides.length);
+    }, 5000);
+    return () => window.clearTimeout(timer);
+  }, [current, paused]);
+
   return (
     <div>
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <img src="/looks/sunrise-hope.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-y-0 left-0 w-[62%] bg-gradient-to-r from-[#120804]/78 via-[#120804]/42 to-transparent" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <p className="text-secondary text-xs font-bold uppercase tracking-[0.38em] mb-5">Hope Alive</p>
-              <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.02] mb-8">
-                <span className="block">A child.</span>
-                <span className="block text-secondary">A home.</span>
-                <span className="block">A horizon.</span>
-              </h1>
-              <p className="text-white/85 text-lg sm:text-xl leading-relaxed mb-10 max-w-lg">
-                We do not wait for chance. We feed, school, shelter, and stand with children in Makurdi until they can stand alone.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/donate"
-                  className="px-8 py-4 bg-secondary text-secondary-foreground font-semibold shadow-lg donate-btn-pulse rounded-full"
-                >
-                  Place a gift
-                </Link>
-                <Link
-                  href="/scholarship-beneficiaries"
-                  className="px-8 py-4 border-2 border-white/45 text-white font-semibold hover:bg-white/10 rounded-full"
-                >
-                  Meet the children
-                </Link>
+      <section className="bg-[#1c1410] pt-20">
+        <div
+          className="relative w-full overflow-hidden"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
+          <div className="relative isolate h-[min(62vh,34.875rem)] w-full overflow-hidden bg-[#1c1410]">
+            {childrenSlides.map((item, index) => (
+              <div
+                key={item.alt}
+                className={index === current ? "hero-crossfade-layer is-active" : "hero-crossfade-layer"}
+                aria-hidden={index !== current}
+              >
+                <img
+                  src={item.src}
+                  alt={index === current ? item.alt : ""}
+                  fetchPriority={index === 0 ? "high" : "low"}
+                />
+              </div>
+            ))}
+            <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-black/80 via-black/40 to-black/15" />
+            <div className="relative z-10 flex h-full items-end px-6 sm:px-10 lg:px-16 pb-20 pt-16">
+              <div>
+                <p className="text-secondary text-xs font-bold uppercase tracking-[0.38em] mb-5">Hope Alive</p>
+                <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.02] mb-8">
+                  <span className="block">A child.</span>
+                  <span className="block text-secondary">A home.</span>
+                  <span className="block">A horizon.</span>
+                </h1>
+                <p className="text-white/85 text-lg sm:text-xl leading-relaxed mb-10 max-w-lg">
+                  We do not wait for chance. We feed, school, shelter, and stand with children in Makurdi until they can stand alone.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/donate"
+                    className="px-8 py-4 bg-secondary text-secondary-foreground font-semibold shadow-lg donate-btn-pulse rounded-full"
+                  >
+                    Place a gift
+                  </Link>
+                  <Link
+                    href="/scholarship-beneficiaries"
+                    className="px-8 py-4 border-2 border-white/45 text-white font-semibold hover:bg-white/10 rounded-full"
+                  >
+                    Meet the children
+                  </Link>
+                </div>
               </div>
             </div>
-            <ChildrenCarousel variant="framed" />
+            <div className="absolute bottom-8 left-0 right-0 z-10 flex justify-center gap-2" role="tablist" aria-label="Hero photographs">
+              {childrenSlides.map((item, index) => (
+                <button
+                  key={item.alt}
+                  type="button"
+                  role="tab"
+                  aria-selected={index === current}
+                  aria-label={item.caption}
+                  onClick={() => setCurrent(index)}
+                  className={index === current ? "hero-dot is-active" : "hero-dot"}
+                />
+              ))}
+            </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-14">
-            <path
-              d="M0 80L60 73.3C120 66.7 240 53.3 360 46.7C480 40 600 40 720 46.7C840 53.3 960 66.7 1080 66.7C1200 66.7 1320 53.3 1380 46.7L1440 40V80H0Z"
-              fill="hsl(var(--background))"
-            />
-          </svg>
+      </section>
+
+      <section className="bg-[#fbf7f0] py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary mb-2">The children</p>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-8">In our house</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {childrenSlides.map((slide) => (
+              <Link
+                key={slide.alt}
+                href="/scholarship-beneficiaries"
+                className="flex items-center gap-4 rounded-[1.25rem] border border-secondary/35 bg-card p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
+              >
+                <img src={slide.src} alt={slide.alt} className="h-[4.5rem] w-[4.5rem] rounded-xl object-cover shrink-0" />
+                <div className="min-w-0 flex-1">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-secondary mb-1">In our care</p>
+                  <h3 className="font-serif font-bold text-foreground leading-tight mb-3">{slide.caption}</h3>
+                  <span className="inline-flex items-center justify-center rounded-full bg-secondary text-secondary-foreground text-xs font-semibold px-4 py-1.5">
+                    Meet them
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -79,7 +137,7 @@ export function HomeLanding() {
   );
 }
 
-export function GoldPromiseRest() {
+function GoldPromiseRest() {
   return (
     <>
       <section className="bg-secondary py-10">
