@@ -152,6 +152,23 @@ export default function Programs() {
           </div>
         </section>
 
+        <section className="py-16 bg-accent/40 text-center">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-4">
+              See Who We Are Supporting This Session
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              19 students — primary, secondary, and university — are receiving documented education scholarships for 2026/2027.
+            </p>
+            <Link
+              href="/scholarship-beneficiaries"
+              className="inline-block px-10 py-4 bg-primary text-primary-foreground rounded-full font-bold hover:bg-primary/90 transition-colors"
+            >
+              View Scholarship Beneficiaries
+            </Link>
+          </div>
+        </section>
+
         <section className="py-16 bg-secondary text-center">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-secondary-foreground mb-4">

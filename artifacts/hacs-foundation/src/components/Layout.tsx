@@ -7,6 +7,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/programs", label: "Programs" },
+  { href: "/scholarship-beneficiaries", label: "Scholarships" },
   { href: "/donate", label: "Donate" },
   { href: "/volunteer", label: "Volunteer" },
   { href: "/blog", label: "Blog" },
@@ -42,14 +43,16 @@ export function Navbar() {
             <Logo size={52} wordmarkHiddenOnMobile />
           </Link>
 
-          <div className="hidden lg:flex items-center gap-5">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-secondary",
-                  location === link.href || (link.href !== "/" && location.startsWith(link.href))
+                  location === link.href ||
+                    (link.href !== "/" && location.startsWith(link.href)) ||
+                    (link.href === "/scholarship-beneficiaries" && location === "/children-we-support")
                     ? "text-primary"
                     : "text-foreground",
                 )}
@@ -130,6 +133,7 @@ export function Footer() {
                 { href: "/mission", label: "Our Mission" },
                 { href: "/goals", label: "Goals & Objectives" },
                 { href: "/programs", label: "Our Programs" },
+                { href: "/scholarship-beneficiaries", label: "Scholarship Beneficiaries" },
                 { href: "/transparency", label: "Transparency" },
                 { href: "/child-safeguarding", label: "Child Safeguarding" },
                 { href: "/gallery", label: "Gallery" },

@@ -143,6 +143,7 @@ export default function EducationSupport() {
           <h2 className="font-serif text-2xl font-bold text-foreground mb-5">Learn More</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
+              { title: "Scholarship Beneficiaries 2026/2027", href: "/scholarship-beneficiaries" },
               { title: "Why Education Support Matters (Blog)", href: "/blog/why-education-support-matters" },
               { title: "How to Organise a School Supplies Drive", href: "/blog/how-to-organise-a-school-supplies-drive" },
               { title: "All Our Programmes", href: "/programs" },

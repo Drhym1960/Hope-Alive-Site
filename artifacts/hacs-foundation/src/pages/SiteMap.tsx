@@ -29,6 +29,7 @@ const sections = [
     links: [
       { href: "/programs", label: "All Programmes" },
       { href: "/education-support", label: "Education Support" },
+      { href: "/scholarship-beneficiaries", label: "Scholarship Beneficiaries" },
       { href: "/orphans-and-vulnerable-children", label: "Orphans & Vulnerable Children" },
       { href: "/street-children-support", label: "Street Children Support" },
       { href: "/gallery", label: "Photo Gallery" },

@@ -538,6 +538,31 @@ const PAGES = [
     ],
   },
 
+  // ── Scholarship Beneficiaries ─────────────────────────────────────────────
+  {
+    route: "/scholarship-beneficiaries",
+    title: `Education Scholarship Programme 2026/2027 | ${SITE_NAME}`,
+    description:
+      "Hope Alive Children Spring Foundation is supporting 19 students in the 2026/2027 academic session — 12 primary, 5 secondary, and 2 university — with a documented scholarship commitment of ₦1,671,000.",
+    h1: "Education Scholarship Programme 2026/2027",
+    intro:
+      "Hope Alive Children Spring Foundation supports children at primary, secondary, and university levels by helping with tuition and other educational expenses for the 2026/2027 academic session. 19 students are currently receiving documented scholarship support totalling ₦1,671,000.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `${BASE_URL}/scholarship-beneficiaries`,
+        name: `Education Scholarship Programme 2026/2027 | ${SITE_NAME}`,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+        breadcrumb: breadcrumb([
+          { name: "Home", item: `${BASE_URL}/` },
+          { name: "Programs", item: `${BASE_URL}/programs` },
+          { name: "Scholarship Beneficiaries", item: `${BASE_URL}/scholarship-beneficiaries` },
+        ]),
+      },
+    ],
+  },
+
   // ── Orphans and Vulnerable Children ──────────────────────────────────────
   {
     route: "/orphans-and-vulnerable-children",
