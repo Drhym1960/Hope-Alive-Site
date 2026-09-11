@@ -67,52 +67,52 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  /* Savannah Copper — locked site theme */
-  --background: 32 38% 95%;
-  --foreground: 25 22% 12%;
-  --border: 32 22% 82%;
-  --card: 32 45% 98%;
-  --card-foreground: 25 22% 12%;
-  --card-border: 32 20% 86%;
-  --sidebar: 95 22% 18%;
-  --sidebar-foreground: 36 40% 96%;
-  --sidebar-border: 95 16% 24%;
-  --sidebar-primary: 28 52% 46%;
-  --sidebar-primary-foreground: 32 40% 97%;
-  --sidebar-accent: 95 16% 26%;
-  --sidebar-accent-foreground: 36 40% 96%;
-  --sidebar-ring: 28 52% 46%;
-  --popover: 32 45% 98%;
-  --popover-foreground: 25 22% 12%;
-  --popover-border: 32 20% 86%;
-  --primary: 95 22% 24%;
-  --primary-foreground: 36 40% 96%;
-  --secondary: 28 52% 46%;
-  --secondary-foreground: 32 40% 97%;
-  --muted: 32 24% 91%;
-  --muted-foreground: 25 12% 38%;
-  --accent: 32 40% 92%;
-  --accent-foreground: 95 22% 20%;
+  /* Pearl Atelier — locked site theme */
+  --background: 80 20% 99%;
+  --foreground: 160 12% 10%;
+  --border: 150 10% 88%;
+  --card: 0 0% 100%;
+  --card-foreground: 160 12% 10%;
+  --card-border: 150 10% 90%;
+  --sidebar: 160 42% 14%;
+  --sidebar-foreground: 80 20% 99%;
+  --sidebar-border: 160 28% 20%;
+  --sidebar-primary: 160 18% 32%;
+  --sidebar-primary-foreground: 80 20% 99%;
+  --sidebar-accent: 160 30% 20%;
+  --sidebar-accent-foreground: 80 20% 99%;
+  --sidebar-ring: 160 72% 22%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 160 12% 10%;
+  --popover-border: 150 10% 90%;
+  --primary: 160 72% 22%;
+  --primary-foreground: 80 20% 99%;
+  --secondary: 160 18% 32%;
+  --secondary-foreground: 80 20% 99%;
+  --muted: 80 12% 96%;
+  --muted-foreground: 160 8% 38%;
+  --accent: 160 18% 95%;
+  --accent-foreground: 160 40% 18%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
-  --input: 32 16% 76%;
-  --ring: 95 22% 24%;
-  --chart-1: 95 22% 24%;
-  --chart-2: 28 52% 46%;
-  --chart-3: 32 38% 55%;
-  --chart-4: 18 48% 42%;
-  --chart-5: 150 18% 32%;
+  --input: 150 10% 80%;
+  --ring: 160 72% 22%;
+  --chart-1: 160 72% 22%;
+  --chart-2: 160 18% 32%;
+  --chart-3: 150 10% 48%;
+  --chart-4: 80 8% 42%;
+  --chart-5: 200 20% 36%;
 
-  --app-font-sans: "Figtree", sans-serif;
-  --app-font-serif: "Fraunces", Georgia, serif;
+  --app-font-sans: "Plus Jakarta Sans", sans-serif;
+  --app-font-serif: "Newsreader", Georgia, serif;
   --app-font-mono: Menlo, monospace;
-  --radius: 1rem;
-  --hero-image: url("/looks/savannah-copper.jpg");
-  --hero-overlay-from: 32 40% 96%;
-  --hero-overlay-to: 28 35% 86%;
-  --hero-photo-opacity: 0.42;
-  --nav-bg: 32 38% 95%;
-  --letter-display: -0.025em;
+  --radius: 0rem;
+  --hero-image: url("/looks/pearl-atelier.jpg");
+  --hero-overlay-from: 80 20% 99%;
+  --hero-overlay-to: 160 12% 94%;
+  --hero-photo-opacity: 0.32;
+  --nav-bg: 80 20% 99%;
+  --letter-display: -0.045em;
   --shadow-sm: 0 1px 3px 0 rgba(0,0,0,0.08), 0 1px 2px -1px rgba(0,0,0,0.06);
   --shadow: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.06);
   --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.06);
@@ -168,7 +168,7 @@ html {
 
 .hero-stage {
   position: relative;
-  min-height: 100vh;
+  min-height: 92vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -197,20 +197,34 @@ html {
   pointer-events: none;
 }
 
-.rounded-2xl {
-  border-radius: 1.35rem;
+.rounded-2xl,
+.rounded-xl,
+.rounded-lg,
+.rounded-3xl {
+  border-radius: 0;
+}
+
+nav a.rounded-full,
+section a.rounded-full {
+  border-radius: 0;
 }
 
 .theme-stats {
-  background: hsl(var(--secondary));
+  background: transparent;
+  border-block: 1px solid hsl(var(--border));
+}
+
+.theme-stat {
+  border: 1px solid hsl(var(--border));
+  padding: 1.25rem 0.75rem;
 }
 
 .theme-stat-value {
-  color: hsl(var(--secondary-foreground));
+  color: hsl(var(--primary));
 }
 
 .theme-stat-label {
-  color: hsl(var(--secondary-foreground) / 0.8);
+  color: hsl(var(--muted-foreground));
 }
 
 .warm-gradient {
@@ -218,10 +232,10 @@ html {
 }
 
 .section-divider {
-  width: 72px;
-  height: 3px;
-  background: hsl(var(--secondary));
-  border-radius: 999px;
+  width: 3.5rem;
+  height: 1px;
+  background: hsl(var(--primary));
+  border-radius: 0;
 }
 
 /* Animation classes */
