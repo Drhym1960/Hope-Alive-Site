@@ -42,7 +42,13 @@ const childrenSlides = [
   },
 ];
 
-export function ChildrenCarousel({ className }: { className?: string }) {
+export function ChildrenCarousel({
+  className,
+  variant = "strip",
+}: {
+  className?: string;
+  variant?: "strip" | "framed";
+}) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -84,25 +90,52 @@ export function ChildrenCarousel({ className }: { className?: string }) {
 
   const goTo = useCallback((index: number) => api?.scrollTo(index), [api]);
 
+  const framed = variant === "framed";
+
   return (
     <div className={cn("relative", className)}>
       <Carousel opts={{ loop: true, align: "start" }} setApi={setApi} className="w-full">
-        <CarouselContent className="-ml-3">
+        <CarouselContent className={framed ? undefined : "-ml-3"}>
           {childrenSlides.map((slide, index) => (
-            <CarouselItem key={slide.alt} className="basis-[88%] sm:basis-[78%] pl-3">
-              <figure className="relative overflow-hidden bg-muted rounded-[1.75rem] shadow-xl">
-                <img
-                  src={slide.src}
-                  alt={slide.alt}
-                  className={cn(
-                    "aspect-[4/5] sm:aspect-[5/6] w-full object-cover transition-transform duration-700",
-                    index === current ? "scale-100" : "scale-[1.03]",
-                  )}
-                />
-                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-4 py-4">
-                  <p className="text-white text-sm font-medium">{slide.caption}</p>
-                </figcaption>
-              </figure>
+            <CarouselItem
+              key={slide.alt}
+              className={framed ? "basis-full" : "basis-[88%] sm:basis-[78%] pl-3"}
+            >
+              {framed ? (
+                <figure className="mx-auto max-w-[22rem] sm:max-w-[26rem]">
+                  <div className="portrait-frame p-[11px] sm:p-[14px] shadow-[0_28px_70px_rgba(20,10,0,0.55)]">
+                    <div className="bg-[#f7f0dc] p-2.5 sm:p-3">
+                      <div className="relative overflow-hidden bg-[#1a1208]">
+                        <img
+                          src={slide.src}
+                          alt={slide.alt}
+                          className={cn(
+                            "aspect-[4/5] w-full object-cover transition-transform duration-700",
+                            index === current ? "scale-100" : "scale-[1.04]",
+                          )}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <figcaption className="mt-4 text-center">
+                    <p className="text-secondary font-serif italic text-base">{slide.caption}</p>
+                  </figcaption>
+                </figure>
+              ) : (
+                <figure className="relative overflow-hidden bg-muted rounded-[1.75rem] shadow-xl">
+                  <img
+                    src={slide.src}
+                    alt={slide.alt}
+                    className={cn(
+                      "aspect-[4/5] sm:aspect-[5/6] w-full object-cover transition-transform duration-700",
+                      index === current ? "scale-100" : "scale-[1.03]",
+                    )}
+                  />
+                  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-4 py-4">
+                    <p className="text-white text-sm font-medium">{slide.caption}</p>
+                  </figcaption>
+                </figure>
+              )}
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -136,7 +169,11 @@ export function ChildrenCarousel({ className }: { className?: string }) {
             onClick={() => goTo(index)}
             className={cn(
               "h-2.5 rounded-full transition-all",
-              index === current ? "w-8 bg-secondary" : "w-2.5 bg-primary/25 hover:bg-primary/40",
+              index === current
+                ? "w-8 bg-secondary"
+                : framed
+                  ? "w-2.5 bg-white/35 hover:bg-white/55"
+                  : "w-2.5 bg-primary/25 hover:bg-primary/40",
             )}
           />
         ))}

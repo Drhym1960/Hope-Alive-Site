@@ -2,20 +2,20 @@ import type { ComponentType } from "react";
 import Seo from "@/components/Seo";
 import { useLanding } from "@/components/LandingProvider";
 import {
-  BeaconLanding,
-  CinemaLanding,
-  TrustFirstLanding,
-  CarePathLanding,
-  HouseLedgerLanding,
+  DawnVerseLanding,
+  GoldPromiseLanding,
+  HouseLetterLanding,
+  ScriptSunriseLanding,
+  QuietRecordLanding,
 } from "@/components/LandingPages";
 import type { LandingId } from "@/lib/landings";
 
 const landingBodies: Record<LandingId, ComponentType> = {
-  "beacon-split": BeaconLanding,
-  "cinema-field": CinemaLanding,
-  "trust-first": TrustFirstLanding,
-  "care-path": CarePathLanding,
-  "house-ledger": HouseLedgerLanding,
+  "dawn-verse": DawnVerseLanding,
+  "gold-promise": GoldPromiseLanding,
+  "house-letter": HouseLetterLanding,
+  "script-sunrise": ScriptSunriseLanding,
+  "quiet-record": QuietRecordLanding,
 };
 
 export default function Home() {

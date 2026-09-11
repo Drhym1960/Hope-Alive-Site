@@ -34,10 +34,10 @@
       (function () {
         try {
           var stored = localStorage.getItem("hacs-landing-structure-preview");
-          var allowed = ["beacon-split", "cinema-field", "trust-first", "care-path", "house-ledger"];
-          document.documentElement.dataset.landing = allowed.indexOf(stored) >= 0 ? stored : "beacon-split";
+          var allowed = ["dawn-verse", "gold-promise", "house-letter", "script-sunrise", "quiet-record"];
+          document.documentElement.dataset.landing = allowed.indexOf(stored) >= 0 ? stored : "dawn-verse";
         } catch (e) {
-          document.documentElement.dataset.landing = "beacon-split";
+          document.documentElement.dataset.landing = "dawn-verse";
         }
       })();
     </script>
@@ -45,7 +45,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,500&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
 
     <!-- Google Search Console verification — injected by prerender.mjs when GOOGLE_SITE_VERIFICATION env var is set -->
     <!-- GOOGLE_VERIFICATION_META -->

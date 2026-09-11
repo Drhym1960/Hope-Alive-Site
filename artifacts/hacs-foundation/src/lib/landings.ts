@@ -1,9 +1,9 @@
 export type LandingId =
-  | "beacon-split"
-  | "cinema-field"
-  | "trust-first"
-  | "care-path"
-  | "house-ledger";
+  | "dawn-verse"
+  | "gold-promise"
+  | "house-letter"
+  | "script-sunrise"
+  | "quiet-record";
 
 export type LandingLayout = {
   id: LandingId;
@@ -15,43 +15,43 @@ export type LandingLayout = {
 
 export const LANDING_LAYOUTS: LandingLayout[] = [
   {
-    id: "beacon-split",
+    id: "dawn-verse",
     number: 1,
-    name: "Beacon Split",
-    tagline: "Classic two-column",
-    description: "Headline and photos side by side, then a gold impact bar. A familiar charity homepage that leads with the children.",
+    name: "Dawn Verse",
+    tagline: "Poetic italic lines",
+    description: "Soft hymn-like writing. The headline falls in three quiet lines, like a verse at first light.",
   },
   {
-    id: "cinema-field",
+    id: "gold-promise",
     number: 2,
-    name: "Cinema Field",
-    tagline: "Full-screen story",
-    description: "A cinematic full-bleed hero with the ask on the photograph, then a filmstrip of children and a quieter page below.",
+    name: "Gold Promise",
+    tagline: "Three short vows",
+    description: "Bold stacked promises: a child, a home, a horizon. Few words, large type, gold on the middle line.",
   },
   {
-    id: "trust-first",
+    id: "house-letter",
     number: 3,
-    name: "Trust First",
-    tagline: "Credentials opening",
-    description: "A compact welcome, then registration documents immediately. Built for donors who need proof before the story.",
+    name: "House Letter",
+    tagline: "A letter to a friend",
+    description: "Warm first-person voice. Opens like a letter from the house in Makurdi, not a campaign slogan.",
   },
   {
-    id: "care-path",
+    id: "script-sunrise",
     number: 4,
-    name: "Care Path",
-    tagline: "Three-step journey",
-    description: "A centred welcome and a clear path: shelter, school, future. Programs sit as a simple numbered path, not a card grid.",
+    name: "Script Sunrise",
+    tagline: "Handwritten blessing",
+    description: "A script blessing over a clear serif line. Elegant, ceremonial, and close to the old motto.",
   },
   {
-    id: "house-ledger",
+    id: "quiet-record",
     number: 5,
-    name: "House Ledger",
-    tagline: "Photo-led editorial",
-    description: "Photographs lead on the left. Impact is a typographic ledger, not a coloured bar. Quiet, editorial, and spacious.",
+    name: "Quiet Record",
+    tagline: "Small-caps institutional",
+    description: "Measured, official type. Small capitals and a spare headline for donors who read like a ledger.",
   },
 ];
 
-export const DEFAULT_LANDING_ID: LandingId = "beacon-split";
+export const DEFAULT_LANDING_ID: LandingId = "dawn-verse";
 export const LANDING_STORAGE_KEY = "hacs-landing-structure-preview";
 
 export function isLandingId(value: string | null): value is LandingId {

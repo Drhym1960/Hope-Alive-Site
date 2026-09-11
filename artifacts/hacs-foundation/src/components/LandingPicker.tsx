@@ -10,16 +10,16 @@ export function LandingPicker() {
   return (
     <aside
       className="landing-picker theme-picker fixed z-[80] left-3 right-3 bottom-3 md:left-auto md:right-4 md:bottom-4 md:w-[24rem]"
-      aria-label="Landing page structure mockups"
+      aria-label="Sunrise Hope word-style mockups"
     >
       <div className="rounded-2xl border border-border bg-card/95 backdrop-blur-md shadow-xl p-3 sm:p-4">
         <div className="flex items-start justify-between gap-3 mb-2">
           <div>
             <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.18em] text-secondary">
-              5 landing structures
+              Sunrise Hope · 5 word styles
             </p>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              New homepage layouts. Reply with the number to keep.
+              Same hills and framed portrait. Reply with the number to keep.
             </p>
           </div>
           <button
