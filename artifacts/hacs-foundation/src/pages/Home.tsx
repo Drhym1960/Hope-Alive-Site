@@ -105,13 +105,13 @@ export default function Home() {
       <HeroSection />
 
       {/* Stats Bar */}
-      <section className="bg-secondary py-10">
+      <section className="theme-stats py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="font-serif text-3xl sm:text-4xl font-bold text-secondary-foreground">{stat.number}</div>
-                <div className="text-secondary-foreground/80 text-sm mt-1">{stat.label}</div>
+              <div key={stat.label} className="theme-stat text-center">
+                <div className="theme-stat-value font-serif text-3xl sm:text-4xl font-bold">{stat.number}</div>
+                <div className="theme-stat-label text-sm mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -126,9 +126,9 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <SectionHeader
-                eyebrow="Our Mission"
-                title="Transforming Lives, One Child at a Time"
-                subtitle="Hope Alive Children Spring Foundation was established to provide a loving, safe environment for orphaned and vulnerable children in Benue State, Nigeria. We believe every child deserves the chance to grow, learn, and thrive, regardless of their circumstances."
+                eyebrow="Our calling"
+                title="A life of dignity, one child at a time"
+                subtitle="Hope Alive Children Spring Foundation was established to provide a safe, loving home for orphaned and vulnerable children in Benue State. We believe every child deserves the chance to learn, heal, and belong."
               />
               <p className="text-muted-foreground leading-relaxed mb-8">
                 Founded with compassion at its core, our foundation works tirelessly to address the root causes of child vulnerability: poverty, loss, abuse, and neglect. Through comprehensive care programs, we restore hope and dignity to children who have been left behind by circumstance.
@@ -222,9 +222,9 @@ export default function Home() {
       <section className="py-20 warm-gradient">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            eyebrow="What We Do"
-            title="Our Programs & Services"
-            subtitle="From feeding hungry children to educating tomorrow's leaders, our programs address every dimension of a child's wellbeing."
+            eyebrow="What we do"
+            title="Care in every dimension"
+            subtitle="From daily meals to university scholarships, our programmes meet the whole child — body, mind, and future."
             centered
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -248,9 +248,9 @@ export default function Home() {
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            eyebrow="Their Stories"
-            title="Voices of Hope"
-            subtitle="Behind every statistic is a real child with a real story. These are their words."
+            eyebrow="Voices"
+            title="In their own words"
+            subtitle="Behind every figure is a child, a family, and a neighbour who chose to stand with us."
             centered
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -273,9 +273,9 @@ export default function Home() {
       {/* Donation CTA */}
       <section className="py-20 hero-gradient">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Make a Difference Today</p>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-6">
-            Your Gift Changes a Child's Life Forever
+          <p className="text-secondary text-sm font-semibold uppercase tracking-[0.22em] mb-4">Your place in their story</p>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-primary-foreground mb-6">
+            A gift that restores a childhood
           </h2>
           <p className="text-primary-foreground/80 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
             A donation of any amount provides food, education, healthcare, and love to a child who has lost everything. Be the reason a child smiles today.

@@ -58,7 +58,7 @@ export default function HacsVsCrowdfunding() {
       <Breadcrumb items={[{ label: "Compare", href: "/site-map" }, { label: "HACS Foundation vs Crowdfunding" }]} />
 
       {/* Intro */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="The Choice"
@@ -82,7 +82,7 @@ export default function HacsVsCrowdfunding() {
               </thead>
               <tbody>
                 {rows.map((row, i) => (
-                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-white" : "bg-accent/20"}>
+                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-card" : "bg-accent/20"}>
                     <td className="px-5 py-4 font-semibold text-foreground align-top">{row.aspect}</td>
                     <td className="px-5 py-4 text-muted-foreground align-top">
                       <span className="flex gap-2"><span className="text-green-600 font-bold shrink-0">✓</span>{row.hacs}</span>
@@ -99,7 +99,7 @@ export default function HacsVsCrowdfunding() {
       </section>
 
       {/* Crowdfunding risks */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Understanding Risk"
@@ -134,7 +134,7 @@ export default function HacsVsCrowdfunding() {
           />
           <ul className="space-y-3 mt-4">
             {donorQuestions.map((q) => (
-              <li key={q} className="flex items-start gap-3 bg-white rounded-xl px-5 py-4 border border-border">
+              <li key={q} className="flex items-start gap-3 bg-card rounded-xl px-5 py-4 border border-border">
                 <span className="text-secondary font-bold mt-0.5 shrink-0">?</span>
                 <span className="text-muted-foreground text-sm leading-relaxed">{q}</span>
               </li>

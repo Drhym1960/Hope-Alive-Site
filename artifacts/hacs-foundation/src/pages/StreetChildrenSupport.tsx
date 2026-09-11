@@ -79,7 +79,7 @@ export default function StreetChildrenSupport() {
       <Breadcrumb items={[{ label: "Street Children Support" }]} />
 
       {/* Understanding */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Understanding the Situation"
@@ -110,7 +110,7 @@ export default function StreetChildrenSupport() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {approaches.map((a) => (
-              <div key={a.title} className="bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div key={a.title} className="bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-3xl mb-3">{a.icon}</div>
                 <h3 className="font-serif font-bold text-lg text-foreground mb-2">{a.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{a.desc}</p>
@@ -121,7 +121,7 @@ export default function StreetChildrenSupport() {
       </section>
 
       {/* Dignity and privacy */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Child Dignity"

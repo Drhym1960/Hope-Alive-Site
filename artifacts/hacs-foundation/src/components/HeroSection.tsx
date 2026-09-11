@@ -1,43 +1,52 @@
 import { Link } from "wouter";
 import { ChildrenCarousel } from "@/components/ChildrenCarousel";
+import { useTheme } from "@/components/ThemeProvider";
+import { cn } from "@/lib/utils";
 
 export function HeroSection() {
+  const { theme } = useTheme();
+  const dark = theme.heroTone === "dark";
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#f4f7ef]">
-      <img
-        src="/looks/living-garden.jpg"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover opacity-35"
-      />
-      <div className="absolute inset-0 bg-gradient-to-br from-[#f7faf3]/90 via-[#eef6e8]/75 to-transparent" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24 w-full">
+    <section className="hero-stage">
+      <div className="hero-stage-media" aria-hidden="true" />
+      <div className="relative hero-stage-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24 w-full">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest mb-4 animate-fade-in text-primary">
-              Hope Alive Children Spring Foundation
+            <p
+              className={cn(
+                "text-sm font-semibold uppercase tracking-[0.22em] mb-4 animate-fade-in",
+                dark ? "text-secondary" : "text-primary",
+              )}
+            >
+              A registered foundation in Makurdi, Benue State
             </p>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up text-foreground">
-              Every Child Deserves{" "}
-              <span className="text-secondary">Love,</span> Care &{" "}
-              <span className="text-secondary">Hope</span>
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.4rem] font-bold leading-[1.12] mb-6 animate-fade-in-up text-foreground">
+              Dignity, education, and belonging{" "}
+              <span className="text-secondary italic font-medium">for every child.</span>
             </h1>
             <p className="text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl animate-fade-in-up text-muted-foreground">
-              We are a charitable foundation in Makurdi, Nigeria, dedicated to supporting orphans and
-              vulnerable children with shelter, education, healthcare, and unconditional love.{" "}
-              <em className="text-primary">Giving Love a Chance.</em>
+              Hope Alive Children Spring Foundation walks with orphaned and vulnerable children
+              through shelter, schooling, healthcare, and love.{" "}
+              <em className={dark ? "text-secondary" : "text-primary"}>Giving Love a Chance.</em>
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-in-up">
               <Link
                 href="/donate"
-                className="px-8 py-4 bg-secondary text-secondary-foreground rounded-full font-semibold text-base hover:bg-secondary/90 transition-all shadow-lg donate-btn-pulse"
+                className="px-8 py-4 bg-secondary text-secondary-foreground font-semibold text-base hover:bg-secondary/90 transition-all shadow-lg donate-btn-pulse rounded-full"
               >
-                Donate Today
+                Become a patron
               </Link>
               <Link
                 href="/about"
-                className="px-8 py-4 border-2 rounded-full font-semibold text-base transition-all border-primary/30 text-primary hover:bg-primary/5"
+                className={cn(
+                  "px-8 py-4 border-2 font-semibold text-base transition-all rounded-full",
+                  dark
+                    ? "border-secondary/70 text-secondary hover:bg-secondary/10"
+                    : "border-primary/30 text-primary hover:bg-primary/5",
+                )}
               >
-                Learn Our Story
+                Our story
               </Link>
             </div>
           </div>

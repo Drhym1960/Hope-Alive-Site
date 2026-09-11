@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Logo } from "@/components/Logo";
 import { cn } from "@/lib/utils";
+import { useTheme } from "@/components/ThemeProvider";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -19,6 +20,8 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [location] = useLocation();
   const isHome = location === "/";
+  const { theme } = useTheme();
+  const invertBrand = theme.heroTone === "dark";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -33,14 +36,14 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled || !isHome
-          ? "bg-white/95 backdrop-blur-md shadow-md"
-          : "bg-white/45 backdrop-blur-md",
+          ? "bg-background/95 backdrop-blur-md shadow-md"
+          : "bg-background/45 backdrop-blur-md",
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link href="/" className="group">
-            <Logo size={52} wordmarkHiddenOnMobile />
+            <Logo size={52} wordmarkHiddenOnMobile inverted={invertBrand} />
           </Link>
 
           <div className="hidden lg:flex items-center gap-3 xl:gap-5">
@@ -53,7 +56,9 @@ export function Navbar() {
                   location === link.href ||
                     (link.href !== "/" && location.startsWith(link.href)) ||
                     (link.href === "/scholarship-beneficiaries" && location === "/children-we-support")
-                    ? "text-primary"
+                    ? invertBrand
+                      ? "text-secondary"
+                      : "text-primary"
                     : "text-foreground",
                 )}
               >
@@ -82,7 +87,7 @@ export function Navbar() {
         </div>
 
         {open && (
-          <div className="lg:hidden bg-white border-t border-border shadow-lg rounded-b-xl">
+          <div className="lg:hidden bg-card border-t border-border shadow-lg rounded-b-xl">
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) => (
                 <Link

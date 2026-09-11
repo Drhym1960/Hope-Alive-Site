@@ -73,7 +73,7 @@ export default function LocalVsInternational() {
       <Breadcrumb items={[{ label: "Compare", href: "/site-map" }, { label: "Local vs International" }]} />
 
       {/* Intro */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="The Context"
@@ -97,7 +97,7 @@ export default function LocalVsInternational() {
               </thead>
               <tbody>
                 {rows.map((row, i) => (
-                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-white" : "bg-accent/20"}>
+                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-card" : "bg-accent/20"}>
                     <td className="px-5 py-4 font-semibold text-foreground align-top">{row.aspect}</td>
                     <td className="px-5 py-4 text-muted-foreground align-top">{row.local}</td>
                     <td className="px-5 py-4 text-muted-foreground align-top">{row.intl}</td>
@@ -110,7 +110,7 @@ export default function LocalVsInternational() {
       </section>
 
       {/* Local advantages */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="The Case for Local"
@@ -149,7 +149,7 @@ export default function LocalVsInternational() {
       </section>
 
       {/* Due diligence */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Due Diligence"

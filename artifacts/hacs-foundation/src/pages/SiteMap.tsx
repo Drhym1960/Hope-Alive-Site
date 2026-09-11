@@ -89,7 +89,7 @@ export default function SiteMap() {
       <Breadcrumb items={[{ label: "Site Map" }]} />
 
       {/* Sections */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {sections.map((section) => (

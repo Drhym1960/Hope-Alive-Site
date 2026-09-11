@@ -56,7 +56,7 @@ export default function OrphansAndVulnerableChildren() {
       <Breadcrumb items={[{ label: "Orphans & Vulnerable Children" }]} />
 
       {/* Who we mean */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Understanding the Context"
@@ -87,7 +87,7 @@ export default function OrphansAndVulnerableChildren() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {needs.map((n) => (
-              <div key={n.title} className="bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div key={n.title} className="bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-3xl mb-3">{n.icon}</div>
                 <h3 className="font-serif font-bold text-lg text-foreground mb-2">{n.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{n.desc}</p>
@@ -98,7 +98,7 @@ export default function OrphansAndVulnerableChildren() {
       </section>
 
       {/* HACS response */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="HACS Foundation's Response"
@@ -138,7 +138,7 @@ export default function OrphansAndVulnerableChildren() {
               { title: "Partner With Us", desc: "Organisations can support our work through formal partnerships.", href: "/partner-with-us" },
               { title: "Raise Awareness", desc: "Share information about HACS Foundation with your network.", href: "/blog" },
             ].map((item) => (
-              <Link key={item.href} href={item.href} className="block bg-white rounded-2xl border border-border p-5 hover:shadow-md transition-shadow group">
+              <Link key={item.href} href={item.href} className="block bg-card rounded-2xl border border-border p-5 hover:shadow-md transition-shadow group">
                 <h3 className="font-serif font-bold text-foreground group-hover:text-secondary transition-colors mb-1">{item.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
               </Link>

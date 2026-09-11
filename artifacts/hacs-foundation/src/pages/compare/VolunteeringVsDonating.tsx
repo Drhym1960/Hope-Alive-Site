@@ -49,7 +49,7 @@ export default function VolunteeringVsDonating() {
       <Breadcrumb items={[{ label: "Compare", href: "/site-map" }, { label: "Volunteering vs Donating" }]} />
 
       {/* Intro */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="The Short Answer"
@@ -73,7 +73,7 @@ export default function VolunteeringVsDonating() {
               </thead>
               <tbody>
                 {rows.map((row, i) => (
-                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-white" : "bg-accent/20"}>
+                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-card" : "bg-accent/20"}>
                     <td className="px-5 py-4 font-semibold text-foreground align-top">{row.aspect}</td>
                     <td className="px-5 py-4 text-muted-foreground align-top">{row.volunteer}</td>
                     <td className="px-5 py-4 text-muted-foreground align-top">{row.donate}</td>
@@ -86,7 +86,7 @@ export default function VolunteeringVsDonating() {
       </section>
 
       {/* When to volunteer */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="bg-accent/30 rounded-2xl p-6">
@@ -133,7 +133,7 @@ export default function VolunteeringVsDonating() {
       </section>
 
       {/* Important note about volunteering */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Important" title="Volunteering With Children Requires Safeguarding" />
           <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">

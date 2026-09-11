@@ -84,7 +84,7 @@ export default function PartnerWithUs() {
       <Breadcrumb items={[{ label: "Partner with Us" }]} />
 
       {/* Intro */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Why Partner With Us"
@@ -123,7 +123,7 @@ export default function PartnerWithUs() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {partnerTypes.map((type) => (
-              <div key={type.title} className="bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div key={type.title} className="bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-3xl mb-3">{type.icon}</div>
                 <h3 className="font-serif font-bold text-lg text-foreground mb-2">{type.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">{type.description}</p>
@@ -141,7 +141,7 @@ export default function PartnerWithUs() {
       </section>
 
       {/* How it works */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="The Process"

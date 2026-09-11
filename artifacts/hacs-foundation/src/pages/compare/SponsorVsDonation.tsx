@@ -49,7 +49,7 @@ export default function SponsorVsDonation() {
       <Breadcrumb items={[{ label: "Compare", href: "/site-map" }, { label: "Sponsorship vs Donation" }]} />
 
       {/* Intro */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Two Models"
@@ -86,7 +86,7 @@ export default function SponsorVsDonation() {
               </thead>
               <tbody>
                 {rows.map((row, i) => (
-                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-white" : "bg-accent/20"}>
+                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-card" : "bg-accent/20"}>
                     <td className="px-5 py-4 font-semibold text-foreground align-top">{row.aspect}</td>
                     <td className="px-5 py-4 text-muted-foreground align-top">{row.sponsor}</td>
                     <td className="px-5 py-4 text-muted-foreground align-top">{row.general}</td>
@@ -99,7 +99,7 @@ export default function SponsorVsDonation() {
       </section>
 
       {/* Child protection note */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Child Protection" title="The Privacy and Dignity Consideration" />
           <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -135,7 +135,7 @@ export default function SponsorVsDonation() {
       </section>
 
       {/* Questions to ask */}
-      <section className="py-14 bg-white">
+      <section className="py-14 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Before You Decide" title="Questions to Ask Any Organisation" />
           <ul className="space-y-3 mt-2">

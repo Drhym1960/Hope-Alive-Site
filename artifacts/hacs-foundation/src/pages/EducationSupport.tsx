@@ -54,7 +54,7 @@ export default function EducationSupport() {
       <Breadcrumb items={[{ label: "Education Support" }]} />
 
       {/* Why it matters */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Why It Matters"
@@ -84,7 +84,7 @@ export default function EducationSupport() {
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-6">
             {barriers.map((b) => (
-              <div key={b.title} className="bg-white rounded-2xl border border-border p-5">
+              <div key={b.title} className="bg-card rounded-2xl border border-border p-5">
                 <h3 className="font-serif font-bold text-foreground mb-2">{b.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{b.desc}</p>
               </div>
@@ -94,7 +94,7 @@ export default function EducationSupport() {
       </section>
 
       {/* Programme components */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Our Approach"
@@ -129,7 +129,7 @@ export default function EducationSupport() {
               This is the multiplier effect that makes education one of the highest-impact areas of charitable intervention. The change that begins with a set of textbooks and a school uniform can reach across decades and generations.
             </p>
           </div>
-          <div className="mt-8 p-6 bg-white rounded-2xl border border-border">
+          <div className="mt-8 p-6 bg-card rounded-2xl border border-border">
             <p className="text-muted-foreground text-sm italic leading-relaxed">
               "Education is the most powerful tool we can give a child to change their story."
             </p>
@@ -138,7 +138,7 @@ export default function EducationSupport() {
       </section>
 
       {/* Related links */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-2xl font-bold text-foreground mb-5">Learn More</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
