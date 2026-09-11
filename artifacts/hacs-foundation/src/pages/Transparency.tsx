@@ -35,10 +35,10 @@ export default function Transparency() {
       <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">Accountability</p>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-5 leading-tight">
             Transparency & Accountability
           </h1>
-          <p className="text-white/80 text-lg leading-relaxed max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg leading-relaxed max-w-xl mx-auto">
             We believe that donors, volunteers, and the communities we serve deserve honest, clear information about who we are, how we work, and how we use the resources entrusted to us.
           </p>
         </div>

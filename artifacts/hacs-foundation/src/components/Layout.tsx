@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Logo } from "@/components/Logo";
 import { cn } from "@/lib/utils";
-import { useTheme } from "@/components/ThemeProvider";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -20,8 +19,6 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [location] = useLocation();
   const isHome = location === "/";
-  const { theme } = useTheme();
-  const invertBrand = theme.heroTone === "dark";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -43,7 +40,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link href="/" className="group">
-            <Logo size={52} wordmarkHiddenOnMobile inverted={invertBrand} />
+            <Logo size={52} wordmarkHiddenOnMobile />
           </Link>
 
           <div className="hidden lg:flex items-center gap-3 xl:gap-5">
@@ -56,9 +53,7 @@ export function Navbar() {
                   location === link.href ||
                     (link.href !== "/" && location.startsWith(link.href)) ||
                     (link.href === "/scholarship-beneficiaries" && location === "/children-we-support")
-                    ? invertBrand
-                      ? "text-secondary"
-                      : "text-primary"
+                    ? "text-primary"
                     : "text-foreground",
                 )}
               >

@@ -44,10 +44,10 @@ export default function OrphansAndVulnerableChildren() {
       <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">Our Mission</p>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-5 leading-tight">
             Orphans and Vulnerable Children
           </h1>
-          <p className="text-white/80 text-lg leading-relaxed max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg leading-relaxed max-w-xl mx-auto">
             Every child deserves safety, love, and opportunity — regardless of whether they have parents to provide those things. HACS Foundation exists to bridge that gap for children in Makurdi, Benue State, Nigeria.
           </p>
         </div>

@@ -67,10 +67,10 @@ export default function StreetChildrenSupport() {
       <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">At-Risk Youth</p>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-5 leading-tight">
             Supporting Street Children and At-Risk Youth
           </h1>
-          <p className="text-white/80 text-lg leading-relaxed max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg leading-relaxed max-w-xl mx-auto">
             Street children and at-risk youth are among the most visible yet most misunderstood young people in many communities. HACS Foundation provides safe, dignified, evidence-informed support for children who need it most in Makurdi, Benue State, Nigeria.
           </p>
         </div>
@@ -154,9 +154,9 @@ export default function StreetChildrenSupport() {
             title="What Helps — and What Doesn't"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-6">
-            <div className="bg-green-50 border border-green-200 rounded-2xl p-6">
-              <h3 className="font-serif font-bold text-green-900 mb-3">What Genuinely Helps</h3>
-              <ul className="space-y-2 text-sm text-green-800">
+            <div className="bg-card border border-secondary/30 rounded-2xl p-6">
+              <h3 className="font-serif font-bold text-primary mb-3">What Genuinely Helps</h3>
+              <ul className="space-y-2 text-sm text-foreground">
                 {[
                   "Donating to verified organisations with child protection policies",
                   "Supporting education access and vocational training",

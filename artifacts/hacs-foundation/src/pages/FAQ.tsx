@@ -93,7 +93,7 @@ export default function FAQ() {
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">Questions & Answers</p>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-4">Frequently Asked Questions</h1>
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-4">Frequently Asked Questions</h1>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
               Everything you need to know about HACS Foundation and how you can support our work.
             </p>

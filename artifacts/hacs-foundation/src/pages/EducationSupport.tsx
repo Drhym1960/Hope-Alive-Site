@@ -42,10 +42,10 @@ export default function EducationSupport() {
       <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">Education Programme</p>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-5 leading-tight">
             Education Support for Vulnerable Children
           </h1>
-          <p className="text-white/80 text-lg leading-relaxed max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg leading-relaxed max-w-xl mx-auto">
             Education is the most powerful tool a child has to change their future. HACS Foundation ensures that no child in our care is denied access to learning because of the circumstances of their birth.
           </p>
         </div>

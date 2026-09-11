@@ -80,10 +80,10 @@ export default function Volunteer() {
       <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">Get Involved</p>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-5 leading-tight">
             Volunteer with HACS Foundation
           </h1>
-          <p className="text-white/80 text-lg leading-relaxed max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg leading-relaxed max-w-xl mx-auto">
             Give your time, skills, and care to children who need it most. We welcome volunteers who share our commitment to child welfare, dignity, and genuine impact.
           </p>
         </div>

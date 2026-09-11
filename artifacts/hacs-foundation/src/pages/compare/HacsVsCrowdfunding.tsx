@@ -46,10 +46,10 @@ export default function HacsVsCrowdfunding() {
       <section className="hero-gradient py-20 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">Compare</p>
-          <h1 className="font-serif text-4xl font-bold text-white mb-4 leading-tight">
+          <h1 className="font-serif text-4xl font-bold text-primary-foreground mb-4 leading-tight">
             HACS Foundation vs Crowdfunding Campaigns
           </h1>
-          <p className="text-white/80 text-lg max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg max-w-xl mx-auto">
             Understanding the difference between donating to a registered foundation and contributing to a crowdfunding campaign helps you give safely and effectively.
           </p>
         </div>
@@ -85,7 +85,7 @@ export default function HacsVsCrowdfunding() {
                   <tr key={row.aspect} className={i % 2 === 0 ? "bg-card" : "bg-accent/20"}>
                     <td className="px-5 py-4 font-semibold text-foreground align-top">{row.aspect}</td>
                     <td className="px-5 py-4 text-muted-foreground align-top">
-                      <span className="flex gap-2"><span className="text-green-600 font-bold shrink-0">✓</span>{row.hacs}</span>
+                      <span className="flex gap-2"><span className="text-secondary font-bold shrink-0">✓</span>{row.hacs}</span>
                     </td>
                     <td className="px-5 py-4 text-muted-foreground align-top">
                       <span className="flex gap-2"><span className="text-amber-500 font-bold shrink-0">!</span>{row.crowd}</span>

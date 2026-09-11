@@ -61,10 +61,10 @@ export default function LocalVsInternational() {
       <section className="hero-gradient py-20 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">Compare</p>
-          <h1 className="font-serif text-4xl font-bold text-white mb-4 leading-tight">
+          <h1 className="font-serif text-4xl font-bold text-primary-foreground mb-4 leading-tight">
             Local vs International Children's Charities
           </h1>
-          <p className="text-white/80 text-lg max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg max-w-xl mx-auto">
             Should you donate to a local Nigerian children's charity or a large international organisation? Both have genuine strengths. This guide explains the key differences so you can make an informed choice.
           </p>
         </div>

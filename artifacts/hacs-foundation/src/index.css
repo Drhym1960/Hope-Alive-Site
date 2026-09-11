@@ -67,52 +67,52 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  /* Fallback until a premium preview theme is applied */
-  --background: 40 33% 96%;
-  --foreground: 155 28% 12%;
-  --border: 40 18% 82%;
-  --card: 40 40% 99%;
-  --card-foreground: 155 28% 12%;
-  --card-border: 40 18% 86%;
-  --sidebar: 152 32% 14%;
-  --sidebar-foreground: 40 30% 92%;
-  --sidebar-border: 152 22% 20%;
-  --sidebar-primary: 42 48% 55%;
-  --sidebar-primary-foreground: 155 30% 8%;
-  --sidebar-accent: 152 22% 22%;
-  --sidebar-accent-foreground: 40 30% 92%;
-  --sidebar-ring: 42 48% 55%;
-  --popover: 40 40% 99%;
-  --popover-foreground: 155 28% 12%;
-  --popover-border: 40 18% 86%;
-  --primary: 152 42% 22%;
-  --primary-foreground: 40 40% 97%;
-  --secondary: 42 48% 55%;
-  --secondary-foreground: 155 30% 8%;
-  --muted: 40 20% 92%;
-  --muted-foreground: 155 12% 36%;
-  --accent: 40 30% 93%;
-  --accent-foreground: 152 30% 18%;
+  /* Savannah Copper — locked site theme */
+  --background: 32 38% 95%;
+  --foreground: 25 22% 12%;
+  --border: 32 22% 82%;
+  --card: 32 45% 98%;
+  --card-foreground: 25 22% 12%;
+  --card-border: 32 20% 86%;
+  --sidebar: 95 22% 18%;
+  --sidebar-foreground: 36 40% 96%;
+  --sidebar-border: 95 16% 24%;
+  --sidebar-primary: 28 52% 46%;
+  --sidebar-primary-foreground: 32 40% 97%;
+  --sidebar-accent: 95 16% 26%;
+  --sidebar-accent-foreground: 36 40% 96%;
+  --sidebar-ring: 28 52% 46%;
+  --popover: 32 45% 98%;
+  --popover-foreground: 25 22% 12%;
+  --popover-border: 32 20% 86%;
+  --primary: 95 22% 24%;
+  --primary-foreground: 36 40% 96%;
+  --secondary: 28 52% 46%;
+  --secondary-foreground: 32 40% 97%;
+  --muted: 32 24% 91%;
+  --muted-foreground: 25 12% 38%;
+  --accent: 32 40% 92%;
+  --accent-foreground: 95 22% 20%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
-  --input: 40 15% 76%;
-  --ring: 152 42% 22%;
-  --chart-1: 152 42% 22%;
-  --chart-2: 42 48% 55%;
-  --chart-3: 200 60% 45%;
-  --chart-4: 340 65% 48%;
-  --chart-5: 270 50% 52%;
+  --input: 32 16% 76%;
+  --ring: 95 22% 24%;
+  --chart-1: 95 22% 24%;
+  --chart-2: 28 52% 46%;
+  --chart-3: 32 38% 55%;
+  --chart-4: 18 48% 42%;
+  --chart-5: 150 18% 32%;
 
-  --app-font-sans: "Outfit", sans-serif;
-  --app-font-serif: "Cormorant Garamond", Georgia, serif;
+  --app-font-sans: "Figtree", sans-serif;
+  --app-font-serif: "Fraunces", Georgia, serif;
   --app-font-mono: Menlo, monospace;
-  --radius: 0.35rem;
-  --hero-image: url("/looks/ivory-estate.jpg");
-  --hero-overlay-from: 40 30% 96%;
-  --hero-overlay-to: 152 18% 86%;
-  --hero-photo-opacity: 0.28;
-  --nav-bg: 40 33% 96%;
-  --letter-display: -0.03em;
+  --radius: 1rem;
+  --hero-image: url("/looks/savannah-copper.jpg");
+  --hero-overlay-from: 32 40% 96%;
+  --hero-overlay-to: 28 35% 86%;
+  --hero-photo-opacity: 0.42;
+  --nav-bg: 32 38% 95%;
+  --letter-display: -0.025em;
   --shadow-sm: 0 1px 3px 0 rgba(0,0,0,0.08), 0 1px 2px -1px rgba(0,0,0,0.06);
   --shadow: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.06);
   --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.06);
@@ -127,150 +127,6 @@
   --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
-}
-
-html[data-theme="ivory-estate"] {
-  --background: 40 33% 96%;
-  --foreground: 155 28% 12%;
-  --border: 40 18% 82%;
-  --card: 40 40% 99%;
-  --card-foreground: 155 28% 12%;
-  --card-border: 40 18% 86%;
-  --primary: 152 42% 22%;
-  --primary-foreground: 40 40% 97%;
-  --secondary: 42 48% 55%;
-  --secondary-foreground: 155 30% 8%;
-  --muted: 40 20% 92%;
-  --muted-foreground: 155 12% 36%;
-  --accent: 40 30% 93%;
-  --accent-foreground: 152 30% 18%;
-  --input: 40 15% 76%;
-  --ring: 152 42% 22%;
-  --app-font-sans: "Outfit", sans-serif;
-  --app-font-serif: "Cormorant Garamond", Georgia, serif;
-  --radius: 0.35rem;
-  --hero-image: url("/looks/ivory-estate.jpg");
-  --hero-overlay-from: 40 33% 97%;
-  --hero-overlay-to: 152 20% 88%;
-  --hero-photo-opacity: 0.38;
-  --nav-bg: 40 33% 96%;
-  --letter-display: -0.03em;
-}
-
-html[data-theme="midnight-gala"] {
-  color-scheme: dark;
-  --background: 222 32% 8%;
-  --foreground: 40 28% 94%;
-  --border: 222 18% 22%;
-  --card: 222 28% 12%;
-  --card-foreground: 40 28% 94%;
-  --card-border: 222 16% 24%;
-  --primary: 222 40% 14%;
-  --primary-foreground: 40 30% 96%;
-  --secondary: 42 72% 52%;
-  --secondary-foreground: 222 32% 8%;
-  --muted: 222 22% 15%;
-  --muted-foreground: 40 12% 72%;
-  --accent: 222 24% 16%;
-  --accent-foreground: 40 30% 92%;
-  --input: 222 16% 30%;
-  --ring: 42 72% 52%;
-  --popover: 222 28% 12%;
-  --popover-foreground: 40 28% 94%;
-  --popover-border: 222 16% 24%;
-  --app-font-sans: "Manrope", sans-serif;
-  --app-font-serif: "Playfair Display", Georgia, serif;
-  --radius: 0.85rem;
-  --hero-image: url("/looks/midnight-gala.jpg");
-  --hero-overlay-from: 222 45% 6%;
-  --hero-overlay-to: 222 30% 14%;
-  --hero-photo-opacity: 0.55;
-  --nav-bg: 222 32% 8%;
-  --letter-display: -0.02em;
-}
-
-html[data-theme="savannah-copper"] {
-  --background: 32 38% 95%;
-  --foreground: 25 22% 12%;
-  --border: 32 22% 82%;
-  --card: 32 45% 98%;
-  --card-foreground: 25 22% 12%;
-  --card-border: 32 20% 86%;
-  --primary: 95 22% 24%;
-  --primary-foreground: 36 40% 96%;
-  --secondary: 28 52% 46%;
-  --secondary-foreground: 32 40% 97%;
-  --muted: 32 24% 91%;
-  --muted-foreground: 25 12% 38%;
-  --accent: 32 40% 92%;
-  --accent-foreground: 95 22% 20%;
-  --input: 32 16% 76%;
-  --ring: 95 22% 24%;
-  --app-font-sans: "Figtree", sans-serif;
-  --app-font-serif: "Fraunces", Georgia, serif;
-  --radius: 1rem;
-  --hero-image: url("/looks/savannah-copper.jpg");
-  --hero-overlay-from: 32 40% 96%;
-  --hero-overlay-to: 28 35% 86%;
-  --hero-photo-opacity: 0.42;
-  --nav-bg: 32 38% 95%;
-  --letter-display: -0.025em;
-}
-
-html[data-theme="pearl-atelier"] {
-  --background: 80 20% 99%;
-  --foreground: 160 12% 10%;
-  --border: 150 10% 88%;
-  --card: 0 0% 100%;
-  --card-foreground: 160 12% 10%;
-  --card-border: 150 10% 90%;
-  --primary: 160 72% 22%;
-  --primary-foreground: 80 20% 99%;
-  --secondary: 160 18% 32%;
-  --secondary-foreground: 80 20% 99%;
-  --muted: 80 12% 96%;
-  --muted-foreground: 160 8% 38%;
-  --accent: 160 18% 95%;
-  --accent-foreground: 160 40% 18%;
-  --input: 150 10% 80%;
-  --ring: 160 72% 22%;
-  --app-font-sans: "Plus Jakarta Sans", sans-serif;
-  --app-font-serif: "Newsreader", Georgia, serif;
-  --radius: 0rem;
-  --hero-image: url("/looks/pearl-atelier.jpg");
-  --hero-overlay-from: 80 20% 99%;
-  --hero-overlay-to: 160 12% 94%;
-  --hero-photo-opacity: 0.32;
-  --nav-bg: 80 20% 99%;
-  --letter-display: -0.045em;
-}
-
-html[data-theme="velvet-patron"] {
-  --background: 36 40% 96%;
-  --foreground: 350 28% 12%;
-  --border: 36 20% 82%;
-  --card: 36 45% 99%;
-  --card-foreground: 350 28% 12%;
-  --card-border: 36 18% 86%;
-  --primary: 350 55% 28%;
-  --primary-foreground: 36 40% 97%;
-  --secondary: 42 62% 48%;
-  --secondary-foreground: 350 30% 10%;
-  --muted: 36 22% 92%;
-  --muted-foreground: 350 10% 38%;
-  --accent: 36 32% 93%;
-  --accent-foreground: 350 40% 20%;
-  --input: 36 16% 76%;
-  --ring: 350 55% 28%;
-  --app-font-sans: "Nunito Sans", sans-serif;
-  --app-font-serif: "Libre Baskerville", Georgia, serif;
-  --radius: 0.5rem;
-  --hero-image: url("/looks/velvet-patron.jpg");
-  --hero-overlay-from: 36 40% 97%;
-  --hero-overlay-to: 350 20% 90%;
-  --hero-photo-opacity: 0.4;
-  --nav-bg: 36 40% 96%;
-  --letter-display: -0.02em;
 }
 
 @layer base {
@@ -341,50 +197,8 @@ html {
   pointer-events: none;
 }
 
-html[data-theme="midnight-gala"] .hero-stage-media {
-  background-image:
-    linear-gradient(160deg, hsl(222 45% 5% / 0.88) 0%, hsl(222 32% 10% / 0.7) 55%, hsl(42 72% 52% / 0.12) 100%),
-    var(--hero-image);
-}
-
-html[data-theme="pearl-atelier"] .hero-stage {
-  min-height: 92vh;
-}
-
-html[data-theme="velvet-patron"] .hero-stage-inner {
-  box-shadow: inset 0 0 0 1px hsl(var(--secondary) / 0.28);
-}
-
-html[data-theme="pearl-atelier"] .rounded-2xl,
-html[data-theme="pearl-atelier"] .rounded-xl,
-html[data-theme="pearl-atelier"] .rounded-lg {
-  border-radius: 0;
-}
-
-html[data-theme="pearl-atelier"] a.rounded-full,
-html[data-theme="pearl-atelier"] button.rounded-full {
-  border-radius: 0;
-}
-
-html[data-theme="savannah-copper"] .rounded-2xl {
+.rounded-2xl {
   border-radius: 1.35rem;
-}
-
-html[data-theme="velvet-patron"] .section-divider {
-  height: 1px;
-  width: 5rem;
-  background: linear-gradient(90deg, transparent, hsl(var(--secondary)), transparent);
-}
-
-html[data-theme="midnight-gala"] .section-divider {
-  height: 1px;
-  width: 6rem;
-}
-
-html[data-theme="pearl-atelier"] .section-divider {
-  height: 1px;
-  width: 3.5rem;
-  background: hsl(var(--primary));
 }
 
 .theme-stats {
@@ -399,47 +213,15 @@ html[data-theme="pearl-atelier"] .section-divider {
   color: hsl(var(--secondary-foreground) / 0.8);
 }
 
-html[data-theme="pearl-atelier"] .theme-stats {
-  background: transparent;
-  border-block: 1px solid hsl(var(--border));
-}
-
-html[data-theme="pearl-atelier"] .theme-stat {
-  border: 1px solid hsl(var(--border));
-  padding: 1.25rem 0.75rem;
-}
-
-html[data-theme="pearl-atelier"] .theme-stat-value,
-html[data-theme="pearl-atelier"] .theme-stat-label {
-  color: hsl(var(--foreground));
-}
-
-html[data-theme="pearl-atelier"] .theme-stat-value {
-  color: hsl(var(--primary));
-}
-
-html[data-theme="midnight-gala"] .theme-stats {
-  background: hsl(var(--card));
-  border-block: 1px solid hsl(var(--border));
-}
-
-html[data-theme="midnight-gala"] .theme-stat-value {
-  color: hsl(var(--secondary));
-}
-
-html[data-theme="midnight-gala"] .theme-stat-label {
-  color: hsl(var(--muted-foreground));
-}
-
 .warm-gradient {
   background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--muted)) 100%);
 }
 
 .section-divider {
-  width: 64px;
-  height: 4px;
+  width: 72px;
+  height: 3px;
   background: hsl(var(--secondary));
-  border-radius: 2px;
+  border-radius: 999px;
 }
 
 /* Animation classes */

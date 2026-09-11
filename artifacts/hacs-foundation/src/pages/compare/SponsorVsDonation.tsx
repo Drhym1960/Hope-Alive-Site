@@ -37,10 +37,10 @@ export default function SponsorVsDonation() {
       <section className="hero-gradient py-20 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">Compare</p>
-          <h1 className="font-serif text-4xl font-bold text-white mb-4 leading-tight">
+          <h1 className="font-serif text-4xl font-bold text-primary-foreground mb-4 leading-tight">
             Child Sponsorship vs General Donation
           </h1>
-          <p className="text-white/80 text-lg max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg max-w-xl mx-auto">
             Many donors want to know: should I sponsor a specific child, or make a general donation? Both approaches have real merits and real limitations. This page helps you decide.
           </p>
         </div>
@@ -62,9 +62,9 @@ export default function SponsorVsDonation() {
                 The donor is linked to one named child. They may receive updates, photographs, or letters from or about that child. Their donation is understood as supporting that specific child's needs over time.
               </p>
             </div>
-            <div className="bg-green-50 border border-green-200 rounded-2xl p-6">
-              <h3 className="font-serif font-bold text-green-900 text-lg mb-3">General Donation</h3>
-              <p className="text-green-800 text-sm leading-relaxed">
+            <div className="bg-card border border-secondary/30 rounded-2xl p-6">
+              <h3 className="font-serif font-bold text-primary text-lg mb-3">General Donation</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 The donor gives to the organisation's general programmes. Funds are allocated by staff to the areas of greatest current need — education, healthcare, feeding, shelter, or psychosocial support.
               </p>
             </div>

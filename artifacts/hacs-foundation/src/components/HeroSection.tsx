@@ -1,24 +1,14 @@
 import { Link } from "wouter";
 import { ChildrenCarousel } from "@/components/ChildrenCarousel";
-import { useTheme } from "@/components/ThemeProvider";
-import { cn } from "@/lib/utils";
 
 export function HeroSection() {
-  const { theme } = useTheme();
-  const dark = theme.heroTone === "dark";
-
   return (
     <section className="hero-stage">
       <div className="hero-stage-media" aria-hidden="true" />
       <div className="relative hero-stage-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24 w-full">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
-            <p
-              className={cn(
-                "text-sm font-semibold uppercase tracking-[0.22em] mb-4 animate-fade-in",
-                dark ? "text-secondary" : "text-primary",
-              )}
-            >
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] mb-4 animate-fade-in text-primary">
               A registered foundation in Makurdi, Benue State
             </p>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.4rem] font-bold leading-[1.12] mb-6 animate-fade-in-up text-foreground">
@@ -28,7 +18,7 @@ export function HeroSection() {
             <p className="text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl animate-fade-in-up text-muted-foreground">
               Hope Alive Children Spring Foundation walks with orphaned and vulnerable children
               through shelter, schooling, healthcare, and love.{" "}
-              <em className={dark ? "text-secondary" : "text-primary"}>Giving Love a Chance.</em>
+              <em className="text-primary">Giving Love a Chance.</em>
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-in-up">
               <Link
@@ -39,12 +29,7 @@ export function HeroSection() {
               </Link>
               <Link
                 href="/about"
-                className={cn(
-                  "px-8 py-4 border-2 font-semibold text-base transition-all rounded-full",
-                  dark
-                    ? "border-secondary/70 text-secondary hover:bg-secondary/10"
-                    : "border-primary/30 text-primary hover:bg-primary/5",
-                )}
+                className="px-8 py-4 border-2 font-semibold text-base transition-all rounded-full border-primary/30 text-primary hover:bg-primary/5"
               >
                 Our story
               </Link>

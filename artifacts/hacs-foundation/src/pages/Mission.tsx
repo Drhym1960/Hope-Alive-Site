@@ -31,7 +31,7 @@ export default function Mission() {
         <section className="hero-gradient py-24 px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-4">What Drives Us</p>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-6">Mission & Vision</h1>
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-6">Mission & Vision</h1>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
               Guided by love and driven by purpose, every action we take flows from a clear mission and a bold vision for Nigeria's children.
             </p>
@@ -44,7 +44,7 @@ export default function Mission() {
               {/* Mission */}
               <div className="bg-primary rounded-3xl p-10 text-primary-foreground">
                 <p className="text-secondary text-xs font-semibold uppercase tracking-widest mb-4">Our Mission</p>
-                <h2 className="font-serif text-2xl font-bold text-white mb-6">What We Are Called to Do</h2>
+                <h2 className="font-serif text-2xl font-bold text-primary-foreground mb-6">What We Are Called to Do</h2>
                 <div className="space-y-4 text-primary-foreground/85 leading-relaxed">
                   <p>
                     The mission of Hope Alive Children Spring Foundation is to provide comprehensive, compassionate care to orphaned, abandoned, and vulnerable children in Nigeria, restoring their dignity, nurturing their potential, and empowering them to become confident, contributing members of society.

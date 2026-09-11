@@ -37,10 +37,10 @@ export default function VolunteeringVsDonating() {
       <section className="hero-gradient py-20 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">Compare</p>
-          <h1 className="font-serif text-4xl font-bold text-white mb-4 leading-tight">
+          <h1 className="font-serif text-4xl font-bold text-primary-foreground mb-4 leading-tight">
             Volunteering vs Donating
           </h1>
-          <p className="text-white/80 text-lg max-w-xl mx-auto">
+          <p className="text-primary-foreground/80 text-lg max-w-xl mx-auto">
             Two powerful ways to support children's charities — but they work differently. This guide helps you understand the trade-offs and choose what's right for your situation.
           </p>
         </div>

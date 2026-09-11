@@ -201,10 +201,10 @@ export default function ScholarshipBeneficiaries() {
             <p className="text-secondary text-sm font-semibold uppercase tracking-widest mb-3">
               Children We Support
             </p>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary-foreground mb-5 leading-tight">
               Education Scholarship Programme {SCHOLARSHIP_SESSION}
             </h1>
-            <p className="text-white/80 text-lg leading-relaxed max-w-2xl mx-auto">
+            <p className="text-primary-foreground/80 text-lg leading-relaxed max-w-2xl mx-auto">
               Hope Alive Children Spring Foundation supports children at primary, secondary, and university levels by helping with tuition and other educational expenses for the {SCHOLARSHIP_SESSION} academic session.
             </p>
           </div>
