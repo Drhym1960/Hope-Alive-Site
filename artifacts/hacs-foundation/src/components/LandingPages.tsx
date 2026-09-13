@@ -23,12 +23,6 @@ const programs = [
   { n: "06", title: "The heart", desc: "Counselling that mends what the years took." },
 ];
 
-const stories = [
-  { name: "Amaka, 9", quote: "I go to school every day now. I want to be a doctor for children like me." },
-  { name: "Tunde, 14", quote: "They gave me a home when I had nowhere. They gave me back my years." },
-  { name: "Faith, 11", quote: "I used to sleep hungry. Now I eat, I learn, and I am not afraid." },
-];
-
 export function HomeLanding() {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -193,17 +187,6 @@ function GoldPromiseRest() {
       </section>
 
       <TestimoniesSection />
-
-      <section className="py-16">
-        <div className="max-w-3xl mx-auto px-4">
-          {stories.map((s) => (
-            <blockquote key={s.name} className="py-8 border-b border-border last:border-0">
-              <p className="font-serif text-xl sm:text-2xl italic text-foreground mb-3">“{s.quote}”</p>
-              <cite className="text-sm not-italic text-primary font-semibold">{s.name}</cite>
-            </blockquote>
-          ))}
-        </div>
-      </section>
 
       <section className="py-20 hero-gradient">
         <div className="max-w-4xl mx-auto px-4 text-center">

@@ -4,12 +4,6 @@ import Seo from "@/components/Seo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { TestimoniesSection } from "@/components/TestimoniesSection";
 
-const quotes = [
-  { name: "Amaka, 9", quote: "I go to school every day now. I want to be a doctor for children like me." },
-  { name: "Tunde, 14", quote: "They gave me a home when I had nowhere. They gave me back my years." },
-  { name: "Faith, 11", quote: "I used to sleep hungry. Now I eat, I learn, and I am not afraid." },
-];
-
 export default function Testimonies() {
   return (
     <Layout>
@@ -44,19 +38,6 @@ export default function Testimonies() {
       <Breadcrumb items={[{ label: "Testimonies" }]} />
 
       <TestimoniesSection showIntro={false} />
-
-      <section className="py-16 bg-background">
-        <div className="max-w-3xl mx-auto px-4">
-          <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-secondary mb-2">In their own words</p>
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-8">More voices from the house</h2>
-          {quotes.map((s) => (
-            <blockquote key={s.name} className="py-8 border-b border-border last:border-0">
-              <p className="font-serif text-xl sm:text-2xl italic text-foreground mb-3">“{s.quote}”</p>
-              <cite className="text-sm not-italic text-primary font-semibold">{s.name}</cite>
-            </blockquote>
-          ))}
-        </div>
-      </section>
 
       <section className="py-16 hero-gradient">
         <div className="max-w-3xl mx-auto px-4 text-center">
