@@ -22,7 +22,7 @@ export function TestimoniesSection({
           {videoTestimonies.map((item) => (
             <figure
               key={item.src}
-              className="rounded-[1.25rem] border border-secondary/35 bg-card p-4 shadow-sm"
+              className="rounded-[1.25rem] border border-secondary/55 bg-card p-4 shadow-sm"
             >
               <div className="overflow-hidden rounded-xl bg-[#1c1410]">
                 <video
