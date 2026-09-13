@@ -563,6 +563,30 @@ const PAGES = [
     ],
   },
 
+  // ── Testimonies ──────────────────────────────────────────────────────────
+  {
+    route: "/testimonies",
+    title: `Testimonies from Our Beneficiaries | ${SITE_NAME}`,
+    description:
+      "Hear from beneficiaries of Hope Alive Children Spring Foundation in Makurdi — young people whose schooling, shelter, and care have been held by the house.",
+    h1: "Testimonies from our beneficiaries",
+    intro:
+      "These are the young people in our care, speaking for themselves. Watch video testimonies from scholarship and care beneficiaries, and read more voices from the house.",
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `${BASE_URL}/testimonies`,
+        name: `Testimonies from Our Beneficiaries | ${SITE_NAME}`,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+        breadcrumb: breadcrumb([
+          { name: "Home", item: `${BASE_URL}/` },
+          { name: "Testimonies", item: `${BASE_URL}/testimonies` },
+        ]),
+      },
+    ],
+  },
+
   // ── Orphans and Vulnerable Children ──────────────────────────────────────
   {
     route: "/orphans-and-vulnerable-children",

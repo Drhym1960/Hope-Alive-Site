@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { childrenSlides } from "@/components/ChildrenCarousel";
 import { LeadershipSection } from "@/components/LeadershipSection";
 import { SectionHeader } from "@/components/SectionHeader";
+import { TestimoniesSection } from "@/components/TestimoniesSection";
 import scumlCert from "@assets/file_0000000005dc72468a99f867fb432e41_1776950214037.png";
 import cacCert from "@assets/file_00000000ffdc7243a39fe6ba3dd8dfef_1776950214093.png";
 
@@ -190,6 +191,8 @@ function GoldPromiseRest() {
           </div>
         </div>
       </section>
+
+      <TestimoniesSection />
 
       <section className="py-16">
         <div className="max-w-3xl mx-auto px-4">

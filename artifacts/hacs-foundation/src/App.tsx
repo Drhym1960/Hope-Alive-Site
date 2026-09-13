@@ -28,6 +28,7 @@ import Transparency from "@/pages/Transparency";
 import ChildSafeguarding from "@/pages/ChildSafeguarding";
 import EducationSupport from "@/pages/EducationSupport";
 import ScholarshipBeneficiaries from "@/pages/ScholarshipBeneficiaries";
+import Testimonies from "@/pages/Testimonies";
 import OrphansAndVulnerableChildren from "@/pages/OrphansAndVulnerableChildren";
 import StreetChildrenSupport from "@/pages/StreetChildrenSupport";
 import SiteMap from "@/pages/SiteMap";
@@ -78,6 +79,7 @@ function Router() {
       <Route path="/child-safeguarding" component={ChildSafeguarding} />
       <Route path="/education-support" component={EducationSupport} />
       <Route path="/scholarship-beneficiaries" component={ScholarshipBeneficiaries} />
+      <Route path="/testimonies" component={Testimonies} />
       <Route path="/children-we-support" component={ScholarshipBeneficiaries} />
       <Route path="/orphans-and-vulnerable-children" component={OrphansAndVulnerableChildren} />
       <Route path="/street-children-support" component={StreetChildrenSupport} />
