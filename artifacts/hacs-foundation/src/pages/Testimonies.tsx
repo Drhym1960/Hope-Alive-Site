@@ -17,7 +17,7 @@ export default function Testimonies() {
           "@type": "WebPage",
           url: "https://www.hacsfoundation.com/testimonies",
           name: "Testimonies from Our Beneficiaries | HACS Foundation",
-          description: "Video testimonies and words from beneficiaries of Hope Alive Children Spring Foundation.",
+          description: "Video testimonies from beneficiaries of Hope Alive Children Spring Foundation.",
           isPartOf: { "@id": "https://www.hacsfoundation.com/#website" },
           about: { "@id": "https://www.hacsfoundation.com/#organization" },
         }}
